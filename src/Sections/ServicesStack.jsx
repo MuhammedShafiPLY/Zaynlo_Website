@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Globe2, Cpu, Smartphone, ArrowUpRight } from "lucide-react";
 import Gradient from "../Components/Gradient";
@@ -28,20 +28,42 @@ const services = [
 ];
 
 const TiltCard = ({ children, color }) => {
+  // 1. MOBILE CHECK LOGIC
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 }); // Optimized spring
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
   const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["12deg", "-12deg"]); // Subtle tilt
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["12deg", "-12deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-12deg", "12deg"]);
 
   const handleMouseMove = (e) => {
+    if (isMobile) return; // Stop math on mobile
     const rect = e.currentTarget.getBoundingClientRect();
     x.set((e.clientX - rect.left) / rect.width - 0.5);
     y.set((e.clientY - rect.top) / rect.height - 0.5);
   };
 
+  // 2. MOBILE RETURN (Static Card)
+  if (isMobile) {
+    return (
+        <div className={`relative min-h-[450px] rounded-[45px] p-8 flex flex-col justify-between border border-white/10 ${color} overflow-hidden`}>
+             <div className="h-full flex flex-col justify-between relative z-10">
+                {children}
+             </div>
+             {/* Simple static glow for mobile atmosphere */}
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-[#dbe11d]/10 blur-[80px] rounded-full pointer-events-none" />
+        </div>
+    );
+  }
+
+  // 3. DESKTOP RETURN (Physics Card)
   return (
     <motion.div
       onMouseMove={handleMouseMove}
@@ -74,7 +96,7 @@ const TiltCard = ({ children, color }) => {
   );
 };
 
-const Services3D = () => {
+const ServicesStack = () => { // Renamed to match your import in Home.jsx
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -203,4 +225,4 @@ const Services3D = () => {
   );
 };
 
-export default Services3D;
+export default ServicesStack;

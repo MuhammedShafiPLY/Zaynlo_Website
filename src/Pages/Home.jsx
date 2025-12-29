@@ -1,14 +1,14 @@
 import React from 'react'
 
 // 1. Layout & Scroll Components
-import SmoothScroll from '../Components/SmoothScroll' // Ensure you created this from step 1
+import SmoothScroll from '../Components/SmoothScroll'
 import Footer from '../Components/Footer'
 
 // 2. Sections
 import Hero from '../Sections/Hero'
-import SmallAbout from '../Sections/SmallAbout' // Assuming this is MissionVision or similar
+import SmallAbout from '../Sections/SmallAbout'
 import WhyChooseUs from '../Sections/WhyChooseUs'
-import ServicesStack from '../Sections/ServicesStack' // Assuming this is the Services3D component
+import ServicesStack from '../Sections/ServicesStack' // Ensure this matches your file name
 import SmallProjects from '../Sections/SmallProjects'
 import Testimonials from '../Sections/Testimonials'
 import ContactForm from '../Sections/ContactForm'
@@ -16,12 +16,14 @@ import ContactForm from '../Sections/ContactForm'
 const Home = () => {
   return (
     <SmoothScroll>
-      {/* 'overflow-x-hidden' is CRITICAL here. 
-         It prevents 3D elements/glows from breaking the mobile layout.
+      {/* OPTIMIZATION APPLIED: 
+          1. 'overflow-x-hidden': Prevents horizontal scroll caused by animations.
+          2. 'will-change-transform': Forces the browser to use the GPU for scrolling, 
+             fixing the lag/stuck feeling on mobile.
       */}
-      <main className="w-full relative overflow-x-hidden bg-zinc-950">
+      <main className="w-full relative overflow-x-hidden bg-zinc-950 will-change-transform">
         
-        {/* Hero Section (Contains 3D Spline & Loop) */}
+        {/* Hero Section (Optimized: No 3D on Mobile) */}
         <Hero />
 
         {/* Core Values / About */}
@@ -30,13 +32,13 @@ const Home = () => {
         {/* Features / Why Us */}
         <WhyChooseUs />
 
-        {/* 3D Services Tilt Cards */}
+        {/* 3D Services Tilt Cards (Optimized: No Tilt on Mobile) */}
         <ServicesStack />
 
-        {/* Project Carousel (Mobile optimized) */}
+        {/* Project Carousel */}
         <SmallProjects />
 
-        {/* Testimonials (Swipeable) */}
+        {/* Testimonials */}
         <Testimonials />
 
         {/* Contact Form */}

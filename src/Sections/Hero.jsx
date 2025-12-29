@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 import Gradient from "../Components/Gradient";
@@ -6,6 +6,22 @@ import Hero3D from "../Components/Hero3D";
 import ServicesHeroLoop from "../Components/ServicesHeroLoop";
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(true); // Default to true to prevent hydration mismatch/flash
+
+  // 1. Detect Mobile Viewport
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Check on mount
+    checkMobile();
+    
+    // Check on resize
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   // Stagger animation for text elements
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -28,9 +44,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-zinc-950 text-white flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-screen bg-zinc-950 text-white flex flex-col justify-center overflow-hidden will-change-transform">
       
-      {/* 1. BACKGROUND GRADIENTS (GPU Optimized) */}
+      {/* 2. BACKGROUND GRADIENTS (GPU Optimized) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <Gradient location="absolute transparent h-0 w-[30rem] shadow-[10px_50px_900px_20px_#cfcfcf] rotate-[30deg] z-0 top-[100px] -left-5 will-change-transform transform-gpu" />
         <Gradient location="absolute bg-transparent h-0 w-[50rem] shadow-[50px_50px_900px_30px_#cfcfcf] rotate-[30deg] z-0 bottom-[100px] -right-[400px] will-change-transform transform-gpu" />
@@ -74,25 +90,35 @@ const Hero = () => {
             </motion.p>
           </motion.div>
 
-          {/* RIGHT SECTION (3D Content) */}
+          {/* RIGHT SECTION (3D Content - OPTIMIZED) */}
           <div className="relative w-full h-[400px] md:h-[500px] lg:h-[700px] flex items-center justify-center order-1 lg:order-2">
              
-             {/* Spline Container */}
-             <motion.div 
-               initial={{ opacity: 0, scale: 0.8 }}
-               animate={{ opacity: 1, scale: 1 }}
-               transition={{ duration: 1.5, ease: "easeOut" }}
-               className="relative w-full h-full z-20"
-             >
-               <Spline scene="https://prod.spline.design/nLjKp9VWI8LPaWUk/scene.splinecode" />
-             </motion.div>
+             {/* 3. LOGIC: Only render heavy 3D on Desktop (!isMobile) */}
+             {!isMobile ? (
+                <>
+                    {/* Spline Container */}
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="relative w-full h-full z-20"
+                    >
+                        <Spline scene="https://prod.spline.design/nLjKp9VWI8LPaWUk/scene.splinecode" />
+                    </motion.div>
 
-             {/* Background 3D Blobs (Visual Anchor) */}
-             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                <Hero3D className="w-[80%] opacity-40 animate-pulse-slow will-change-transform" />
-             </div>
+                    {/* Background 3D Blobs (Visual Anchor) */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                        <Hero3D className="w-[80%] opacity-40 animate-pulse-slow will-change-transform" />
+                    </div>
+                </>
+             ) : (
+                /* 4. MOBILE FALLBACK: Lightweight CSS Glow */
+                <div className="w-full h-full flex items-center justify-center">
+                    <div className="w-64 h-64 bg-gradient-to-tr from-[#dbe11d] to-zinc-800 rounded-full blur-[80px] opacity-60 animate-pulse" />
+                </div>
+             )}
 
-             {/* Glow Behind Model */}
+             {/* Glow Behind Model (Keep this on both for atmosphere) */}
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#dbe11d]/10 blur-[120px] rounded-full -z-10 will-change-transform transform-gpu" />
           </div>
 
@@ -100,7 +126,7 @@ const Hero = () => {
       </div>
 
       {/* THE SERVICE LOOP COMPONENT (Anchored to Bottom) */}
-      <div className="absolute bottom-0 left-0 w-full z-20">
+      <div className="absolute bottom-0 left-0 w-full z-20 pointer-events-none">
         <ServicesHeroLoop />
       </div>
 
