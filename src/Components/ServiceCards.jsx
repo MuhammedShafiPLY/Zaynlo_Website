@@ -9,7 +9,7 @@ const servicesData = [
     title: "Web Design & Development",
     description: "We build digital experiences that live at the intersection of art and code. Get high-performance, responsive, and visually stunning websites that define your brand.",
     subServices: ["UI/UX Design", "Frontend Dev", "Backend Systems", "Maintenance"],
-    image: "/service_webdev.webp",
+    image: "/service_webdev.webp", // Ensure these images exist in /public
     link: "/services/web-development"
   },
   {
@@ -90,20 +90,26 @@ const ServiceCards = () => {
   return (
     <section className="bg-black py-24 px-6 relative overflow-hidden">
       
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#dbe11d] rounded-full blur-[300px] opacity-5 pointer-events-none" />
+      {/* Background Decor (Optimized Blur) */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#dbe11d] rounded-full blur-[250px] opacity-5 pointer-events-none will-change-transform transform-gpu" />
 
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
-        <div className="mb-20">
+        <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-20"
+        >
             <h6 className="text-[#dbe11d] font-black uppercase tracking-[0.4em] text-xs mb-2">
               Our Expertise
             </h6>
             <h2 className="text-5xl md:text-7xl font-black text-white italic uppercase tracking-tighter">
               What We <span className="text-zinc-600">Do Best.</span>
             </h2>
-        </div>
+        </motion.div>
 
         {/* Cards Container */}
         <div className="flex flex-col gap-12">
@@ -123,18 +129,18 @@ const ServiceCard = ({ data, index }) => {
     <motion.div 
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.7, delay: 0.1 }} // Simple delay
-      className="bg-zinc-900 border border-white/5 rounded-[40px] p-8 md:p-12 lg:p-16 flex flex-col-reverse lg:flex-row gap-12 items-center group hover:border-[#dbe11d]/30 transition-colors duration-500"
+      viewport={{ once: true, margin: "-50px" }} // Trigger slightly before it enters view
+      transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+      className="bg-zinc-900 border border-white/5 rounded-[40px] p-8 md:p-12 lg:p-16 flex flex-col-reverse lg:flex-row gap-12 items-center group hover:border-[#dbe11d]/30 transition-colors duration-500 will-change-transform"
     >
       
       {/* LEFT SIDE: Text Content */}
       <div className="w-full lg:w-1/2 space-y-8">
         <div>
-          <h3 className="text-3xl md:text-4xl font-black text-white mb-6">
+          <h3 className="text-3xl md:text-4xl font-black text-white mb-6 uppercase italic tracking-tighter">
             {data.title}
           </h3>
-          <p className="text-zinc-400 text-lg leading-relaxed">
+          <p className="text-zinc-400 text-lg leading-relaxed font-light">
             {data.description}
           </p>
         </div>
@@ -142,10 +148,10 @@ const ServiceCard = ({ data, index }) => {
         {/* Sub-services List */}
         <ul className="space-y-4">
           {data.subServices.map((item, i) => (
-            <li key={i} className="border-b border-white/10 pb-3 text-zinc-300 font-medium text-sm md:text-base flex items-center justify-between group/item hover:text-white transition-colors">
+            <li key={i} className="border-b border-white/10 pb-3 text-zinc-300 font-medium text-sm md:text-base flex items-center justify-between group/item hover:text-white transition-colors cursor-default">
               {item}
               <span className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300 text-[#dbe11d]">
-                 →
+                  →
               </span>
             </li>
           ))}
@@ -153,7 +159,7 @@ const ServiceCard = ({ data, index }) => {
 
         {/* Button */}
         <div className="pt-4">
-          <a href={data.link} className="inline-flex items-center gap-2 bg-[#dbe11d] text-black px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(219,225,29,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+          <a href={data.link} className="inline-flex items-center gap-2 bg-[#dbe11d] text-black px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(219,225,29,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1">
             View Plans
             <ArrowUpRight size={16} strokeWidth={3} />
           </a>
@@ -161,14 +167,25 @@ const ServiceCard = ({ data, index }) => {
       </div>
 
       {/* RIGHT SIDE: Image */}
-      <div className="w-full lg:w-1/2 h-[300px] md:h-[400px] lg:h-full min-h-[300px] relative overflow-hidden rounded-3xl">
+      <div className="w-full lg:w-1/2 h-[300px] md:h-[400px] lg:h-[450px] relative overflow-hidden rounded-3xl bg-zinc-800">
         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
-        {/* Note: You can reuse the same image for multiple items if you don't have 10 unique images yet */}
+        
+        {/* Placeholder Fallback Logic in case image fails to load or doesn't exist */}
         <img 
           src={data.image} 
           alt={data.title} 
-          className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110 transition-all duration-700 ease-in-out"
+          onError={(e) => {
+            e.target.style.display = 'none'; // Hide broken image
+            e.target.nextSibling.style.display = 'flex'; // Show fallback
+          }}
+          className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700 ease-in-out will-change-transform"
         />
+        
+        {/* Fallback Div (Hidden by default, shown on error) */}
+        <div className="hidden w-full h-full items-center justify-center bg-zinc-800 text-zinc-600 font-bold uppercase tracking-widest">
+            {data.title}
+        </div>
+
       </div>
 
     </motion.div>

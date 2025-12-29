@@ -9,7 +9,8 @@ const FloatingAsset = ({
   duration = 5 
 }) => {
   return (
-    <div className={`pointer-events-none z-0 ${className}`}>
+    // UPDATED: 'hidden md:block' hides the container on mobile and shows it on desktop/tablet
+    <div className={`pointer-events-none z-0 hidden md:block ${className}`}>
       <motion.img
         src={imgSrc}
         alt="Zaynlo Asset"
@@ -20,15 +21,16 @@ const FloatingAsset = ({
           filter: "drop-shadow(0 0 50px rgba(219, 225, 29, 0.2))" 
         }}
         animate={{
-          y: [0, -20, 0], // Melle ponganum thaazhanum
-          rotate: [0, 2, 0], // Subtle rotation for 3D feel
+          y: [0, -20, 0], // Smooth floating
+          rotate: [0, 2, 0], // Subtle 3D rotation
         }}
         transition={{
           duration: duration,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="w-full h-auto object-contain opacity-80"
+        // UPDATED: Removed 'sm:hidden' (which was incorrect) and added 'will-change-transform'
+        className="w-full h-auto object-contain opacity-80 will-change-transform"
       />
     </div>
   );

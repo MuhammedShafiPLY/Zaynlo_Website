@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Zap, Target, BarChart3 } from "lucide-react";
-import Gradient from "../Components/Gradient";
 import FloatingAsset from "../Components/FlotingAsset";
 
 const WhyChooseUs = () => {
@@ -28,88 +27,72 @@ const WhyChooseUs = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { 
+        opacity: 1, 
+        x: 0,
+        transition: { duration: 0.5, ease: "easeOut" }
+    },
+  };
+
   return (
-    <section className="relative min-h-screen bg-zinc-950 py-24 px-10 lg:px-24 flex items-center">
+    <section className="relative min-h-screen bg-zinc-950 py-24 px-6 lg:px-24 flex items-center overflow-hidden">
+      
+      {/* --- BACKGROUND ELEMENTS --- */}
+      
+      {/* Pulsing Glow Background */}
       <motion.div
-        initial={{ opacity: 0.1, scale: 0.9 }}
         animate={{
-          opacity: [0.1, 0.25, 0.1], // Pulsing opacity
-          scale: [0.9, 1.1, 0.9], // Subtle breathing effect
+          opacity: [0.1, 0.2, 0.1],
+          scale: [1, 1.1, 1],
         }}
         transition={{
-          duration: 8, // How long one breath takes
-          repeat: Infinity, // Loop forever
+          duration: 8,
+          repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-0 -left-[30rem] h-screen w-[50rem] rounded-full bg-[#dbe11d] shadow-[0_0_1000px_150px_#dbe11d] z-10 pointer-events-none"
+        className="absolute top-0 -left-[30rem] h-[100vh] w-[50rem] rounded-full bg-[#dbe11d] shadow-[0_0_1000px_150px_#dbe11d] z-0 pointer-events-none will-change-transform"
       />
 
-
-        <FloatingAsset 
-        imgSrc="/image01.png" // Fixed path string
-        className="absolute -top-[40%] left-[10%] w-[200px] md:w-[400px] z-20" // z-99 maatti
+      {/* Floating Assets (Decorations) */}
+      <FloatingAsset 
+        imgSrc="/image01.png" 
+        className="absolute -top-[10%] left-[5%] w-[150px] md:w-[300px] z-10 opacity-60 pointer-events-none" 
         flipX={true}
         duration={6}
       />
 
-      
-        <FloatingAsset 
-        imgSrc="/image02.png" // Fixed path string
-        className="absolute -bottom-[40%] right-[10%] w-[300px] md:w-[500px] z-20" // z-99 maatti
+      <FloatingAsset 
+        imgSrc="/image02.png" 
+        className="absolute -bottom-[10%] right-[5%] w-[200px] md:w-[400px] z-10 opacity-60 pointer-events-none" 
         flipX={true}
-        duration={6}
+        duration={7}
       />
 
-
-      {/* <Gradient location="absolute bg-transparent h-0 w-[50rem] shadow-[50px_50px_900px_30px_#cfcfcf] rotate-[30deg] z-10 bottom-[100px] -right-[400px]" /> */}
-
-      {/* Background Ambient Glow */}
-      {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#dbe11d]/5 blur-[180px] rounded-full pointer-events-none" /> */}
-
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
-        {/* RIGHT: Feature Cards Container */}
-        <div className="grid grid-cols-1 gap-6">
-          {features.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15, duration: 0.6 }}
-              viewport={{ once: true }}
-              whileHover={{ x: 15 }}
-              className="group relative flex items-start gap-6 p-8 bg-zinc-900/40 border border-white/5 rounded-3xl backdrop-blur-sm transition-all hover:border-[#dbe11d]/30 overflow-hidden"
-            >
-              {/* Animated Background Line on Hover */}
-              <div className="absolute top-0 left-0 w-1 h-full bg-[#dbe11d] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top" />
-
-              <div className="flex-shrink-0 w-14 h-14 bg-zinc-800 rounded-2xl flex items-center justify-center text-[#dbe11d] group-hover:bg-[#dbe11d] group-hover:text-black transition-colors duration-300 shadow-xl">
-                {item.icon}
-              </div>
-
-              <div className="space-y-2">
-                <h4 className="text-2xl font-bold uppercase italic tracking-tight text-white group-hover:text-[#dbe11d] transition-colors">
-                  {item.title}
-                </h4>
-                <p className="text-zinc-500 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">
-                  {item.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* LEFT: The Big Statement */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-20">
+        
+        {/* LEFT COLUMN: The Big Statement (Order 1 on Desktop, Order 1 on Mobile) */}
         <div className="space-y-10">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="space-y-4"
           >
             <h6 className="text-[#dbe11d] font-black uppercase tracking-[0.4em] text-xs">
               The Zaynlo Advantage
             </h6>
-            <h2 className="text-6xl md:text-8xl font-black uppercase italic leading-[0.9] tracking-tighter">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase italic leading-[0.9] tracking-tighter text-white">
               Why <br />
               Partner <br />
               <span className="text-[#dbe11d] drop-shadow-[0_0_20px_rgba(219,225,29,0.4)]">
@@ -121,8 +104,9 @@ const WhyChooseUs = () => {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-zinc-500 text-xl max-w-md leading-relaxed border-l-4 border-[#dbe11d] pl-6"
+            className="text-zinc-500 text-lg md:text-xl max-w-md leading-relaxed border-l-4 border-[#dbe11d] pl-6"
           >
             Because standard isn't in our vocabulary. We engineer
             high-performance ecosystems that turn digital chaos into business
@@ -130,13 +114,48 @@ const WhyChooseUs = () => {
           </motion.p>
 
           <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: "#fff", color: "#000" }}
+            whileHover={{ scale: 1.05, backgroundColor: "#fff", color: "#000", borderColor: "#fff" }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-5 border-2 border-[#dbe11d] text-[#dbe11d] font-black uppercase tracking-widest text-xs rounded-full transition-colors"
+            className="px-10 py-4 border-2 border-[#dbe11d] text-[#dbe11d] font-black uppercase tracking-widest text-xs rounded-full transition-all duration-300"
           >
             Claim Your Strategy
           </motion.button>
         </div>
+
+        {/* RIGHT COLUMN: Feature Cards Container */}
+        <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 gap-6"
+        >
+          {features.map((item, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ x: 10, borderColor: "rgba(219, 225, 29, 0.4)" }}
+              className="group relative flex items-start gap-6 p-6 md:p-8 bg-zinc-900/60 border border-white/5 rounded-[30px] backdrop-blur-md transition-all duration-300 overflow-hidden"
+            >
+              {/* Animated Background Line on Hover */}
+              <div className="absolute top-0 left-0 w-1 h-full bg-[#dbe11d] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top" />
+
+              <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-zinc-800 rounded-2xl flex items-center justify-center text-[#dbe11d] group-hover:bg-[#dbe11d] group-hover:text-black transition-colors duration-300 shadow-xl">
+                {item.icon}
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="text-xl md:text-2xl font-black uppercase italic tracking-tight text-white group-hover:text-[#dbe11d] transition-colors">
+                  {item.title}
+                </h4>
+                <p className="text-zinc-500 text-sm md:text-base leading-relaxed group-hover:text-zinc-300 transition-colors">
+                  {item.desc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
       </div>
     </section>
   );

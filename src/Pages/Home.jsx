@@ -1,29 +1,52 @@
 import React from 'react'
+
+// 1. Layout & Scroll Components
+import SmoothScroll from '../Components/SmoothScroll' // Ensure you created this from step 1
+import Footer from '../Components/Footer'
+
+// 2. Sections
 import Hero from '../Sections/Hero'
-import SmallAbout from '../Sections/SmallAbout'
+import SmallAbout from '../Sections/SmallAbout' // Assuming this is MissionVision or similar
 import WhyChooseUs from '../Sections/WhyChooseUs'
-import ServicesDiagram from '../Sections/SmallServices'
-import ServiceModules from '../Sections/ServicesModule'
-import ServicesStack from '../Sections/ServicesStack'
+import ServicesStack from '../Sections/ServicesStack' // Assuming this is the Services3D component
 import SmallProjects from '../Sections/SmallProjects'
 import Testimonials from '../Sections/Testimonials'
 import ContactForm from '../Sections/ContactForm'
-import Footer from '../Components/Footer'
 
 const Home = () => {
   return (
-    <div>
+    <SmoothScroll>
+      {/* 'overflow-x-hidden' is CRITICAL here. 
+         It prevents 3D elements/glows from breaking the mobile layout.
+      */}
+      <main className="w-full relative overflow-x-hidden bg-zinc-950">
+        
+        {/* Hero Section (Contains 3D Spline & Loop) */}
         <Hero />
+
+        {/* Core Values / About */}
         <SmallAbout />
+
+        {/* Features / Why Us */}
         <WhyChooseUs />
-        {/* <ServicesDiagram /> */}
-        {/* <ServiceModules /> */}
+
+        {/* 3D Services Tilt Cards */}
         <ServicesStack />
+
+        {/* Project Carousel (Mobile optimized) */}
         <SmallProjects />
+
+        {/* Testimonials (Swipeable) */}
         <Testimonials />
+
+        {/* Contact Form */}
         <ContactForm />
+
+        {/* Footer */}
         <Footer />
-    </div>
+        
+      </main>
+    </SmoothScroll>
   )
 }
 

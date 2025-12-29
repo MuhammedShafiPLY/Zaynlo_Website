@@ -1,45 +1,63 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const TypewriterText = () => {
-  const text = "ZAYNLO";
+const TypewriterText = ({ 
+  text = "ZAYNLO", 
+  className = "",
+  cursorColor = "#dbe11d" 
+}) => {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [speed, setSpeed] = useState(150);
+  const [typingSpeed, setTypingSpeed] = useState(150);
 
   useEffect(() => {
     const handleTyping = () => {
-      if (!isDeleting) {
-        // Typing
-        setDisplayText(text.substring(0, displayText.length + 1));
-        setSpeed(150);
-        if (displayText === text) {
-          setTimeout(() => setIsDeleting(true), 2000); // Pause at end
-        }
+      const currentText = displayText;
+      
+      if (isDeleting) {
+        // Deleting Logic
+        setDisplayText(text.substring(0, currentText.length - 1));
+        setTypingSpeed(50); // Faster when deleting
       } else {
-        // Deleting
-        setDisplayText(text.substring(0, displayText.length - 1));
-        setSpeed(100);
-        if (displayText === "") {
-          setIsDeleting(false);
-        }
+        // Typing Logic
+        setDisplayText(text.substring(0, currentText.length + 1));
+        setTypingSpeed(150); // Standard typing speed
+      }
+
+      // Logic to switch states
+      if (!isDeleting && currentText === text) {
+        // Finished typing -> Wait before deleting
+        setTimeout(() => setIsDeleting(true), 2000); 
+      } else if (isDeleting && currentText === "") {
+        // Finished deleting -> Start typing again
+        setIsDeleting(false);
       }
     };
 
-    const timer = setTimeout(handleTyping, speed);
+    const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting]);
+  }, [displayText, isDeleting, text, typingSpeed]);
 
   return (
-    <span className="absolute top-100 right-100 font-black tracking-tighter">
-      {displayText}
+    <div className={`inline-flex items-center font-black tracking-tighter ${className}`}>
+      {/* The Text */}
+      <span className="text-white">
+        {displayText}
+      </span>
+
+      {/* The Cursor */}
       <motion.span
-        animate={{ opacity: [0, 1, 0] }}
-        transition={{ repeat: Infinity, duration: 0.8 }}
-        className="inline-block w-1 h-12 bg-lime-400 ml-1 ml-1"
-      >|</motion.span>
-    </span>
+        animate={{ opacity: [1, 0, 1] }}
+        transition={{ 
+          repeat: Infinity, 
+          duration: 0.8, 
+          ease: "linear" 
+        }}
+        style={{ backgroundColor: cursorColor }}
+        className="inline-block w-[3px] md:w-[6px] h-[1em] ml-1 align-middle shadow-[0_0_10px_currentColor]"
+      />
+    </div>
   );
 };
 
-export default TypewriterText
+export default TypewriterText;

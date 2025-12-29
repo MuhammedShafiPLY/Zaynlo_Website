@@ -6,6 +6,7 @@ import Projects from './Pages/Projects'
 import Services from './Pages/Services'
 import About from './Pages/About'
 import Contact from './Pages/Contact'
+import ScrollToTop from './Components/ScrollToTop'
 
 // Placeholder components for other pages
 // You can move these into their own files later
@@ -13,6 +14,7 @@ import Contact from './Pages/Contact'
 const App = () => {
   return (
     <div className="relative min-h-screen bg-zinc-950 overflow-x-hidden">
+      <ScrollToTop />
 
       {/* 2. Global Navbar (Stays on every page) */}
       <Navbar />

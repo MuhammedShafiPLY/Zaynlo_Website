@@ -3,79 +3,98 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const AboutBanner = () => {
+  // Stagger animation container for text elements
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Delays each child by 0.2s
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: [0.25, 0.4, 0.25, 1] } // Custom easing for premium feel
+    },
+  };
+
   return (
-    <section className="w-full h-screen bg-black relative flex items-center justify-center overflow-hidden">
-      {/* Right-side image (decorative) */}
-      <motion.img
-        src="/about_banner.webp"
-        alt="about banner"
-        className="absolute top-0 right-0 w-1/2 h-full object-cover opacity-80 hidden md:block z-0"
-        initial={{ x: 80, scale: 1.02, opacity: 0 }}
-        animate={{ x: 0, scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-      />
+    <section className="w-full h-screen min-h-[600px] bg-black relative flex items-center justify-center overflow-hidden">
+      
+      {/* 1. BACKGROUND ELEMENTS (Optimized) */}
+      
+      {/* Right-side image */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 pointer-events-none"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent md:bg-gradient-to-l z-10" />
+        <img
+          src="/about_banner.webp"
+          alt="about banner"
+          className="w-full h-full object-cover opacity-60 md:opacity-80 will-change-transform"
+        />
+      </motion.div>
 
-      {/* Gradient fade to blend image with black background */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/90 via-black/60 to-transparent hidden md:block z-10" />
+      {/* Decorative Lights - GPU Accelerated */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-10">
+        <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-white/5 rounded-full blur-[100px] animate-pulse will-change-transform transform-gpu opacity-20" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[30vw] h-[30vw] bg-[#dbe11d] rounded-full blur-[150px] will-change-transform transform-gpu opacity-10" />
+      </div>
 
-      {/* Decorative subtle lights */}
-      <motion.div
-        className="absolute top-6 left-6 w-40 h-40 rounded-full bg-white/3 blur-3xl pointer-events-none"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 0.25, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-        aria-hidden="true"
-      />
-      <motion.div
-        className="absolute bottom-6 right-6 w-56 h-56 rounded-full bg-white/5 blur-4xl pointer-events-none"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 0.18, 0] }}
-        transition={{ duration: 7, repeat: Infinity, delay: 0.6 }}
-        aria-hidden="true"
-      />
-
-      {/* Centered content */}
-      <div className="relative z-20 px-6 text-center max-w-4xl">
+      {/* 2. CENTERED CONTENT */}
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="relative z-20 px-6 text-center max-w-5xl mx-auto flex flex-col items-center"
+      >
+        
+        {/* Title */}
         <motion.h1
-          className="text-6xl sm:text-7xl md:text-8xl lg:text-[96px] font-extrabold leading-tight text-white uppercase italic"
-          initial={{ opacity: 0, y: 40, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
+          variants={itemVariants}
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-black leading-[0.9] text-white uppercase italic tracking-tighter"
         >
           About <span className="text-[#dbe11d]">Us.</span>
         </motion.h1>
 
+        {/* Description */}
         <motion.p
-          className="mt-6 text-zinc-300 text-lg md:text-xl max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.15 }}
+          variants={itemVariants}
+          className="mt-8 text-zinc-400 text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed font-light"
         >
-          We craft premium digital products, brand experiences, and growth strategies for ambitious teams.
+          We craft premium digital products, brand experiences, and growth strategies for ambitious teams who want to define the future.
         </motion.p>
 
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-            <Link
-              to="/contact"
-              className="inline-flex px-8 py-3 rounded-full bg-[#dbe11d] text-black font-semibold shadow-[0_12px_40px_rgba(219,225,29,0.18)] transition"
-              aria-label="Learn more about us"
-            >
+        {/* Buttons */}
+        <motion.div 
+          variants={itemVariants}
+          className="mt-10 flex flex-col sm:flex-row gap-5 w-full sm:w-auto"
+        >
+          <Link to="/contact" className="group relative w-full sm:w-auto">
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#dbe11d] to-[#fae635] rounded-full blur opacity-25 group-hover:opacity-75 transition duration-200 will-change-transform" />
+            <button className="relative w-full sm:w-auto px-10 py-4 bg-[#dbe11d] text-black font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white transition-colors duration-300">
               Get Us Now
-            </Link>
-          </motion.div>
+            </button>
+          </Link>
 
-          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-            <Link
-              to="/work"
-              className="inline-flex px-6 py-3 rounded-full border border-white/10 text-white hover:bg-white/6 transition"
-              aria-label="See our work"
-            >
+          <Link to="/work" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto px-10 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white/10 hover:border-white transition-all duration-300">
               Our Work
-            </Link>
-          </motion.div>
-        </div>
-      </div>
+            </button>
+          </Link>
+        </motion.div>
+
+      </motion.div>
     </section>
   );
 };

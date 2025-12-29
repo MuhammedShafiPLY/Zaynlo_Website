@@ -1,10 +1,16 @@
-import React from 'react'
+import React from "react";
 
 const Gradient = ({ location }) => {
   return (
-    /* Use the variable directly in className */
-    <div className={location}></div>
-  )
-}
+    <div
+      /* 1. pointer-events-none: Ensures the gradient never blocks clicks on buttons below it.
+         2. will-change-transform: Forces GPU rendering to prevent lag.
+         3. ${location}: Your custom classes (position, colors, blur) 
+      */
+      className={`pointer-events-none will-change-transform transform-gpu ${location}`}
+    />
+  );
+};
 
-export default Gradient
+// React.memo ensures this component doesn't re-render unnecessarily
+export default React.memo(Gradient);

@@ -1,62 +1,67 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ArrowUpRight } from 'lucide-react'
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
 
     const lastScrollY = useRef(0);
     const timerRef = useRef(null);
 
+    // 1. SCROLL LOGIC (Optimized)
     useEffect(() => {
-        // 1. Initialize lastScrollY to current position to prevent initial glitches
         lastScrollY.current = window.scrollY;
 
         const handleScroll = () => {
-            // --- DEBUGGING LINE ---
-            // Open Console (F12). If this number stays 0 while scrolling, 
-            // your window isn't the scroll container!
-            console.log("Current Scroll:", window.scrollY); 
-            // ----------------------
-
             const currentScrollY = window.scrollY;
 
-            // Glassmorphism logic
-            setScrolled(currentScrollY > 50);
+            // Glassmorphism trigger
+            setScrolled(currentScrollY > 20);
 
-            // Clear the auto-hide timer whenever scrolling happens
-            if (timerRef.current) {
-                clearTimeout(timerRef.current);
-            }
+            // Clear auto-hide timer on scroll
+            if (timerRef.current) clearTimeout(timerRef.current);
 
-            // Direction Logic: Hide on Down, Show on Up
-            // We use a small buffer (10px) to prevent jitter
-            if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
-                setIsVisible(false); // Scrolling Down -> Hide
+            // Show/Hide Logic
+            if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+                setIsVisible(false); // Hide when scrolling down
             } else {
-                setIsVisible(true);  // Scrolling Up -> Show
+                setIsVisible(true);  // Show when scrolling up
             }
 
             lastScrollY.current = currentScrollY;
 
-            // Auto-Hide after 3 seconds of inactivity
-            if (currentScrollY > 50) {
+            // Optional: Auto-hide after 5s of inactivity if not at top
+            if (currentScrollY > 100) {
                 timerRef.current = setTimeout(() => {
                     setIsVisible(false);
-                }, 3000);
+                }, 5000);
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
-        
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => {
             window.removeEventListener('scroll', handleScroll);
             if (timerRef.current) clearTimeout(timerRef.current);
         };
     }, []);
+
+    // 2. BODY SCROLL LOCK (Mobile Menu)
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [isOpen]);
+
+    // Close mobile menu when route changes
+    useEffect(() => {
+        setIsOpen(false);
+    }, [location]);
 
     const navLinks = [
         { name: 'Home', path: '/' },
@@ -67,111 +72,120 @@ const Navbar = () => {
     ];
 
     const desktopLinkVars = {
-        initial: { opacity: 0, y: -10 },
+        initial: { opacity: 0, y: -20 },
         animate: (i) => ({
             opacity: 1,
             y: 0,
-            transition: { delay: 0.3 + i * 0.1, duration: 1, ease: [0.22, 1, 0.36, 1] }
+            transition: { delay: 0.1 + i * 0.1, duration: 0.5, ease: "easeOut" }
         })
     };
 
     return (
-        <nav 
-            className={`fixed top-0 w-full z-[9999] transition-transform duration-500 ease-in-out px-6 py-5 pt-7 
-            ${scrolled ? 'bg-zinc-950/40 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'}
-            ${isVisible ? 'translate-y-0' : '-translate-y-full'} 
-            `}
-        >
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
-                
-                {/* Logo Section */}
-                <motion.div
-                    initial={{ opacity: 0, x: -100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ type: "spring", stiffness: 80, duration: 1.5, delay: .5 }}
-                >
-                    <Link to="/" className="flex items-center gap-2 group">
-                        <div className="w-8 h-8 bg-[#dbe11d] rounded-lg flex items-center justify-center group-hover:rotate-90 transition-transform duration-500">
-                            <div className="w-4 h-4 bg-black rounded-sm" /> 
+        <>
+            <motion.nav 
+                initial={{ y: -100 }}
+                animate={{ y: isVisible ? 0 : -100 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className={`fixed top-0 w-full z-[9999] transition-colors duration-300 px-6 py-4 lg:py-6 will-change-transform 
+                ${scrolled || isOpen ? 'bg-zinc-950/80 backdrop-blur-md border-b border-white/5' : 'bg-transparent'}`}
+            >
+                <div className="max-w-7xl mx-auto flex items-center justify-between">
+                    
+                    {/* Logo */}
+                    <Link to="/" className="flex items-center gap-2 group z-[1001] relative">
+                        <div className="w-8 h-8 md:w-10 md:h-10 bg-[#dbe11d] rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-[0_0_15px_rgba(219,225,29,0.4)]">
+                            <div className="w-3 h-3 md:w-4 md:h-4 bg-black rounded-sm" /> 
                         </div>
-                        <span className="text-white font-black tracking-tighter text-xl uppercase italic">
-                            NEXUS<span className="text-[#dbe11d]">.</span>
+                        <span className="text-white font-black tracking-tighter text-xl md:text-2xl uppercase italic">
+                            ZAYNLO<span className="text-[#dbe11d]">.</span>
                         </span>
                     </Link>
-                </motion.div>
 
-                {/* Desktop Links */}
-                <div className="hidden md:flex items-center gap-12">
-                    {navLinks.map((link, i) => (
-                        <motion.div
-                            key={link.name}
-                            custom={i}
-                            variants={desktopLinkVars}
-                            initial="initial"
-                            animate="animate"
-                        >
-                            <NavLink 
-                                to={link.path} 
-                                end
-                                className={({ isActive }) =>
-                                    `relative group text-xs font-bold uppercase tracking-[0.2em] transition-colors ${
-                                        isActive ? 'text-white' : 'text-[#dbe11d]'
-                                    }`
-                                }
+                    {/* Desktop Links */}
+                    <div className="hidden md:flex items-center gap-8 lg:gap-12">
+                        {navLinks.map((link, i) => (
+                            <motion.div
+                                key={link.name}
+                                custom={i}
+                                variants={desktopLinkVars}
+                                initial="initial"
+                                animate="animate"
                             >
-                                {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
-                            </NavLink>
-                        </motion.div>
-                    ))}
+                                <NavLink 
+                                    to={link.path} 
+                                    className={({ isActive }) =>
+                                        `relative text-xs font-bold uppercase tracking-[0.2em] transition-colors duration-300 hover:text-[#dbe11d] ${
+                                            isActive ? 'text-[#dbe11d]' : 'text-zinc-400'
+                                        }`
+                                    }
+                                >
+                                    {link.name}
+                                    {/* Active Dot Indicator */}
+                                    <span className={`absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#dbe11d] rounded-full transition-all duration-300 ${
+                                        location.pathname === link.path ? 'opacity-100' : 'opacity-0'
+                                    }`} />
+                                </NavLink>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* CTA Button */}
+                    <div className="hidden md:block">
+                        <Link to="/contact">
+                            <button className="px-6 py-3 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-[#dbe11d] transition-all duration-300 flex items-center gap-2 hover:scale-105 shadow-lg">
+                                HIRE US
+                                <ArrowUpRight size={14} strokeWidth={3} />
+                            </button>
+                        </Link>
+                    </div>
+
+                    {/* Mobile Toggle */}
+                    <button 
+                        className="md:hidden text-white p-2 z-[1001] relative"
+                        onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle Menu"
+                    >
+                        <AnimatePresence mode='wait'>
+                            {isOpen ? (
+                                <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
+                                    <X size={28} className="text-[#dbe11d]" />
+                                </motion.div>
+                            ) : (
+                                <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}>
+                                    <Menu size={28} />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </button>
                 </div>
+            </motion.nav>
 
-                {/* CTA Button */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.6 }}
-                    className="hidden md:block"
-                >
-                    <Link to="/contact">
-                        <button className="px-8 py-3 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-[#dbe11d] transition-all duration-300 flex items-center gap-2">
-                            HIRE US
-                            <ArrowUpRight size={14} />
-                        </button>
-                    </Link>
-                </motion.div>
-
-                {/* Mobile Toggle */}
-                <button 
-                    className="md:hidden text-white p-2"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    {isOpen ? <X size={28} className="text-[#dbe11d]" /> : <Menu size={28} />}
-                </button>
-            </div>
-
-            {/* Mobile Menu */}
+            {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 h-screen w-full bg-zinc-950 z-[110] flex flex-col justify-center items-center overflow-hidden"
+                        initial={{ opacity: 0, y: "-100%" }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: "-100%" }}
+                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        className="fixed inset-0 w-full h-screen bg-zinc-950 z-[1000] flex flex-col justify-center items-center overflow-hidden"
                     >
-                        <button onClick={() => setIsOpen(false)} className="absolute top-8 right-8 text-white p-2 border border-white/10 rounded-full">
-                            <X size={32} />
-                        </button>
-                        <div className="flex flex-col gap-6 text-center">
+                        {/* Background Decor */}
+                        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#dbe11d]/10 rounded-full blur-[100px] pointer-events-none" />
+                        
+                        <div className="flex flex-col gap-8 text-center z-10">
                             {navLinks.map((link, i) => (
                                 <motion.div
                                     key={link.name}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    animate={{ opacity: 1, y: 0, transition: { delay: i * 0.1, ease: "easeOut" } }}
+                                    initial={{ opacity: 0, y: 40 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.1 + i * 0.1, duration: 0.5, ease: "easeOut" }}
                                 >
                                     <Link
                                         to={link.path}
-                                        className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-lime-400/20 hover:text-[#dbe11d] transition-all duration-500"
+                                        className={`text-5xl font-black uppercase tracking-tighter transition-all duration-300 ${
+                                            location.pathname === link.path ? 'text-[#dbe11d]' : 'text-zinc-600 hover:text-white'
+                                        }`}
                                         onClick={() => setIsOpen(false)}
                                     >
                                         {link.name}
@@ -179,10 +193,24 @@ const Navbar = () => {
                                 </motion.div>
                             ))}
                         </div>
+
+                        {/* Mobile CTA */}
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.6 }}
+                            className="mt-12"
+                        >
+                             <Link to="/contact" onClick={() => setIsOpen(false)}>
+                                <button className="px-10 py-4 bg-[#dbe11d] text-black text-xs font-black uppercase tracking-[0.2em] rounded-full">
+                                    Start A Project
+                                </button>
+                             </Link>
+                        </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </>
     );
 };
 
