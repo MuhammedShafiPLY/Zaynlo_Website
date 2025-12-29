@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 
 // 1. IMPORT THE DATA
 // Adjust the path '../data/projectsData' based on where you saved the file
-import { projectsData, categories } from "../Data/ProjectsData"; 
+import { projectsData, categories } from "../data/projectsData"; 
 
 const ProjectGallery = () => {
   const [activeFilter, setActiveFilter] = useState("All");
