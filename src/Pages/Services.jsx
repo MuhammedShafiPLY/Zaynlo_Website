@@ -8,7 +8,7 @@ import GetInTouch from "../Components/GetInTouch";
 
 // 2. Sections
 // Ensure these paths match where you saved the files (likely inside /Sections)
-import ServiceCards from "../Sections/ServiceCards"; 
+import ServiceCards from "../Components/ServiceCards"; 
 import Testimonials from "../Sections/Testimonials";
 import ClientMarquee from "../Sections/ClientMarque"; 
 

@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-zinc-950 py-24 px-6 lg:px-24 flex items-center overflow-hidden">
+    <section className="relative min-h-screen bg-zinc-950 py-24 px-6 lg:px-24 flex items-center">
       
       {/* --- BACKGROUND ELEMENTS --- */}
       
@@ -70,13 +70,13 @@ const WhyChooseUs = () => {
         flipX={true}
         duration={6}
       />
-
+{/* 
       <FloatingAsset 
         imgSrc="/image02.png" 
         className="absolute -bottom-[10%] right-[5%] w-[200px] md:w-[400px] z-10 opacity-60 pointer-events-none" 
         flipX={true}
         duration={7}
-      />
+      /> */}
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-20">
         

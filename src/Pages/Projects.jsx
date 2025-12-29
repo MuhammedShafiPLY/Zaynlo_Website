@@ -8,7 +8,7 @@ import GetInTouch from "../Components/GetInTouch";
 
 // 2. Sections
 // Ensure these paths match where you saved the files
-import ProjectGallery from "../Sections/ProjectGallery"; // Changed to Sections for consistency
+import ProjectGallery from "../Components/ProjectGallery"; // Changed to Sections for consistency
 import Testimonials from "../Sections/Testimonials";
 import ClientMarquee from "../Sections/ClientMarque";
 
