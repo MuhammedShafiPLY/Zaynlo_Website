@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import React from 'react';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css'; // Essential for proper CSS setup
 

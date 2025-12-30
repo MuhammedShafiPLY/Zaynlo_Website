@@ -32,9 +32,13 @@ const TiltCard = ({ children, color }) => {
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile(); // Check immediately
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // ✅ CORRECT: Hooks are ALWAYS called, regardless of screen size
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
@@ -50,7 +54,13 @@ const TiltCard = ({ children, color }) => {
     y.set((e.clientY - rect.top) / rect.height - 0.5);
   };
 
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
   // 2. MOBILE RETURN (Static Card)
+  // ✅ This 'return' is AFTER all hooks are declared, so it's safe.
   if (isMobile) {
     return (
         <div className={`relative min-h-[450px] rounded-[45px] p-8 flex flex-col justify-between border border-white/10 ${color} overflow-hidden`}>
@@ -67,10 +77,7 @@ const TiltCard = ({ children, color }) => {
   return (
     <motion.div
       onMouseMove={handleMouseMove}
-      onMouseLeave={() => {
-        x.set(0);
-        y.set(0);
-      }}
+      onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
       className={`relative min-h-[450px] md:min-h-[520px] rounded-[45px] p-8 md:p-10 flex flex-col justify-between border border-white/10 backdrop-blur-2xl shadow-2xl transition-all duration-300 ${color} group overflow-hidden will-change-transform transform-gpu`}
     >
@@ -86,18 +93,17 @@ const TiltCard = ({ children, color }) => {
       
       {/* Mouse Following Light */}
       <motion.div
-        style={{
-          x: useTransform(mouseXSpring, [-0.5, 0.5], ["-50%", "50%"]),
-          y: useTransform(mouseYSpring, [-0.5, 0.5], ["-50%", "50%"]),
-        }}
+        // style={{
+        //   x: useTransform(mouseXSpring, [-0.5, 0.5], ["-50%", "50%"]),
+        //   y: useTransform(mouseYSpring, [-0.5, 0.5], ["-50%", "50%"]),
+        // }}
         className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#dbe11d]/20 blur-[100px] rounded-full pointer-events-none"
       />
     </motion.div>
   );
 };
 
-const ServicesStack = () => { // Renamed to match your import in Home.jsx
-  
+const ServicesStack = () => { 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

@@ -94,7 +94,7 @@ const SmallProjects = () => {
   };
 
   return (
-    <section className="bg-zinc-950 min-h-screen py-24 relative flex flex-col items-center justify-center overflow-hidden">
+    <section className="bg-zinc-950 min-h-screen py-24 relative flex flex-col items-center justify-center">
       
       {/* Background Decor */}
       <FloatingAsset
@@ -113,7 +113,7 @@ const SmallProjects = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="w-full max-w-7xl px-6 mb-16 space-y-4 text-center z-20"
+        className="w-full max-w-7xl px-6 mb-16 space-y-4 text-start z-20"
       >
         <h6 className="text-[#dbe11d] font-black uppercase tracking-[0.4em] text-xs">
           Our Portfolio
@@ -124,7 +124,7 @@ const SmallProjects = () => {
             The Future.
           </span>
         </h2>
-        <p className="text-zinc-500 max-w-2xl mx-auto mt-6 text-lg md:text-xl font-medium leading-relaxed">
+        <p className="text-zinc-500 max-w-2xl mt-6 text-lg md:text-xl font-medium leading-relaxed">
           We transform complex ideas into high-fidelity digital realities.
           Explore our neural interfaces.
         </p>
