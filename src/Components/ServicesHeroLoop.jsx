@@ -1,15 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Rocket, Cpu, Globe, Zap, Fingerprint, Layers } from "lucide-react";
+import { Rocket, Cpu, Globe, Zap, Fingerprint, Layers, Megaphone, CircleFadingPlus  } from "lucide-react";
 
 const ServicesHeroLoop = () => {
   const services = [
     { name: "Brand Identity", icon: <Fingerprint size={20} /> },
     { name: "UI/UX Design", icon: <Cpu size={20} /> },
     { name: "Web Development", icon: <Globe size={20} /> },
-    { name: "Digital Strategy", icon: <Rocket size={20} /> },
-    { name: "Motion Graphics", icon: <Layers size={20} /> },
-    { name: "Optimization", icon: <Zap size={20} /> },
+    { name: "Digital Marketing", icon: <Rocket size={20} /> },
+    { name: "E-Commerce Website", icon: <Layers size={20} /> },
+    { name: "Search Engine Optimization", icon: <Zap size={20} /> },
+    { name: "Advertising", icon: <Megaphone size={20} /> },
+    { name: "Social Media Management", icon: <CircleFadingPlus  size={20} /> },
   ];
 
   // Duplicate 4 times to ensure seamless looping on Ultrawide monitors

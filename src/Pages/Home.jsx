@@ -12,6 +12,7 @@ import ServicesStack from '../Sections/ServicesStack' // Ensure this matches you
 import SmallProjects from '../Sections/SmallProjects'
 import Testimonials from '../Sections/Testimonials'
 import ContactForm from '../Sections/ContactForm'
+import ContactUs from '../Components/ContactUs'
 
 const Home = () => {
   return (
@@ -43,6 +44,8 @@ const Home = () => {
 
         {/* Contact Form */}
         <ContactForm />
+
+        {/* <ContactUs /> */}
 
         {/* Footer */}
         <Footer />

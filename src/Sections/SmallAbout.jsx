@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Globe, Zap, Code, BarChart, Monitor } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
+
   const stats = [
     { label: "Solutions Delivered", value: "200+", icon: <Code className="text-[#dbe11d]" /> },
     { label: "Global Presence", value: "24/7", icon: <Globe className="text-[#dbe11d]" /> },
@@ -77,8 +80,11 @@ const About = () => {
               whileHover={{ x: 10 }}
               className="flex items-center gap-4 text-[#dbe11d] font-bold cursor-pointer group w-fit"
             >
+              
               <span className="h-[2px] w-12 bg-[#dbe11d] group-hover:w-20 transition-all duration-300 shadow-[0_0_10px_#dbe11d]"></span>
-              VIEW OUR TECH STACK
+              <Link to={'/projects'}>
+              VIEW OUR WORKS
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -136,10 +142,12 @@ const About = () => {
           ))}
 
           {/* Card 4: Action Card (High Visibility) */}
+          
           <motion.div 
             variants={itemVariants}
             whileHover={{ scale: 0.98 }}
             whileTap={{ scale: 0.96 }}
+            onClick={() => navigate('/contact')}
             className="md:col-span-2 bg-[#dbe11d] p-8 md:p-10 rounded-3xl flex items-center justify-between group cursor-pointer shadow-[0_20px_50px_rgba(219,225,29,0.15)] hover:shadow-[0_20px_50px_rgba(219,225,29,0.3)] transition-all duration-300 will-change-transform"
           >
             <div className="space-y-2">

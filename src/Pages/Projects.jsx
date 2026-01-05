@@ -22,11 +22,11 @@ const Projects = () => {
           title="Featured"
           highlight="Work."
           description="A showcase of our finest digital creations. See how we've helped ambitious brands redefine their digital presence."
-          imageSrc="/about_banner.webp" // Or a specific portfolio banner image
+          imageSrc="/project_banner.webp" // Or a specific portfolio banner image
           
           primaryBtn={{
-            text: "View All Cases",
-            link: "#gallery" // Anchors to the ID below
+            text: "Get Us Now",
+            link: "/contact" // Anchors to the ID below
           }}
           // No secondary button needed here, keeping it clean
         />

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import FloatingAsset from "../Components/FlotingAsset";
+import { Link } from "react-router-dom";
 
 // Utility for clean class names
 export function cn(...classes) {
@@ -36,7 +37,7 @@ const SmallProjects = () => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % projects.length);
-    }, 3000);
+    }, 1000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
@@ -208,10 +209,10 @@ const SmallProjects = () => {
         transition={{ delay: 0.5 }}
         className="flex gap-4 mt-16 z-20"
       >
-        <button className="group px-8 py-4 rounded-full border border-white/20 text-white hover:bg-[#dbe11d] hover:text-black hover:border-[#dbe11d] transition-all duration-300 flex items-center gap-3">
+        <Link to={'/projects'} className="group px-8 py-4 rounded-full border border-white/20 text-white hover:bg-[#dbe11d] hover:text-black hover:border-[#dbe11d] transition-all duration-300 flex items-center gap-3">
           <span className="text-xs font-black tracking-[0.2em] uppercase">Go To Showcase</span>
           <span className="group-hover:translate-x-1 transition-transform">→</span>
-        </button>
+        </Link>
       </motion.div>
 
     </section>

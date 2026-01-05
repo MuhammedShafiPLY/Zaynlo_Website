@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Globe2, Cpu, Smartphone, ArrowUpRight } from "lucide-react";
 import Gradient from "../Components/Gradient";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     title: "Web & App Development",
     desc: "We don't just build websites; we engineer high-performance digital ecosystems.",
     icon: <Globe2 size={40} />,
-    color: "bg-zinc-900/60",
-    text: "text-[#dbe11d]",
+    color: "bg-[#edffcc]",
+    text: "text-black",
   },
   {
     title: "Digital Marketing & SEO",
@@ -223,7 +224,9 @@ const ServicesStack = () => {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 md:px-10 md:py-5 border-2 border-[#dbe11d] text-[#dbe11d] font-black uppercase tracking-widest text-xs rounded-full transition-all duration-300"
           >
-            Claim Your Strategy
+            <Link to={'/services'}>
+            Find Our Services
+            </Link>
           </motion.button>
         </div>
       </div>

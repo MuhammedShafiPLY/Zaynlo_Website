@@ -35,27 +35,28 @@ const PageBanner = ({
   return (
     <section className="w-full min-h-[60vh] md:h-screen bg-black relative flex items-center justify-center overflow-hidden pt-20 md:pt-0">
       
-      {/* 1. BACKGROUND IMAGE (Optimized) */}
+      {/* 1. BACKGROUND IMAGE (Full Cover) */}
       {imageSrc && (
         <motion.div 
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 pointer-events-none"
+            // CHANGED: Removed 'top-0 right-0 md:w-1/2', Added 'inset-0 w-full'
+            className="absolute inset-0 w-full h-full z-0 pointer-events-none"
         >
-          {/* Gradient overlay for blending */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-transparent md:bg-gradient-to-l z-10" />
+          {/* Overlay: Uniform dark tint so text pops on any image */}
+          <div className="absolute inset-0 bg-black/70 z-10" />
           
           <img
             src={imageSrc}
             alt="Banner Visual"
-            className="w-full h-full object-cover opacity-50 md:opacity-80 will-change-transform"
+            className="w-full h-full object-cover will-change-transform"
           />
         </motion.div>
       )}
 
-      {/* Decorative Lights (GPU Accelerated) */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      {/* Decorative Lights (GPU Accelerated) - Optional: Lower opacity if image is busy */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-10 opacity-50">
          <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] bg-white/5 rounded-full blur-[100px] animate-pulse will-change-transform transform-gpu" />
          <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-[#dbe11d]/5 rounded-full blur-[150px] will-change-transform transform-gpu" />
       </div>
@@ -71,7 +72,7 @@ const PageBanner = ({
         {/* Dynamic Title */}
         <motion.h1
           variants={itemVariants}
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-black leading-[0.9] text-white uppercase italic tracking-tighter"
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-black leading-[0.9] text-white uppercase italic tracking-tighter drop-shadow-lg"
         >
           {title} <br className="md:hidden"/> <span className="text-[#dbe11d]">{highlight}</span>
         </motion.h1>
@@ -80,7 +81,7 @@ const PageBanner = ({
         {description && (
           <motion.p
             variants={itemVariants}
-            className="mt-8 text-zinc-300 text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed font-light"
+            className="mt-8 text-zinc-200 text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed font-light drop-shadow-md"
           >
             {description}
           </motion.p>
@@ -112,7 +113,7 @@ const PageBanner = ({
                     <motion.button 
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="w-full sm:w-auto px-10 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white/10 hover:border-white transition-all duration-300"
+                        className="w-full sm:w-auto px-10 py-4 border border-white/40 text-white font-bold uppercase tracking-widest text-xs rounded-full hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm"
                     >
                         {secondaryBtn.text}
                     </motion.button>

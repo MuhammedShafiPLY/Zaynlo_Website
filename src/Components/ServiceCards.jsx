@@ -4,83 +4,52 @@ import { ArrowUpRight } from "lucide-react";
 
 // Updated Data with 10 Individual Services
 const servicesData = [
+  
   {
     id: 1,
     title: "Web Design & Development",
-    description: "We build digital experiences that live at the intersection of art and code. Get high-performance, responsive, and visually stunning websites that define your brand.",
-    subServices: ["UI/UX Design", "Frontend Dev", "Backend Systems", "Maintenance"],
-    image: "/service_webdev.webp", // Ensure these images exist in /public
+    description: "We create high-performance, visually stunning websites that serve as the digital foundation of your business. Our approach blends creative aesthetics with robust technical architecture.",
+    subServices: ["Responsive & Mobile-First", "Custom UI/UX Design", "SEO-Friendly Structure", "Fast Loading Speed"],
+    image: "/service_webdev.webp",
     link: "/services/web-development"
   },
   {
     id: 2,
-    title: "Digital Marketing",
-    description: "Don't just exist; dominate. We craft data-driven strategies that put your brand in the spotlight, drive traffic, and convert visitors into loyal revenue.",
-    subServices: ["Strategy", "Content Marketing", "Email Campaigns", "Analytics"],
-    image: "/service_digitalmarketing.webp",
-    link: "/services/digital-marketing"
-  },
-  {
-    id: 3,
-    title: "SEO",
-    description: "Climb the ranks and own the keywords that matter. We optimize your entire digital footprint to ensure you are the first answer your customers see.",
-    subServices: ["On-Page SEO", "Technical Audits", "Link Building", "Keyword Research"],
-    image: "/service_seo.webp",
-    link: "/services/seo"
-  },
-  {
-    id: 4,
-    title: "SEM",
-    description: "Instant visibility, targeted results. We manage paid search campaigns (Search Engine Marketing) that maximize ROI and minimize wasted ad spend.",
-    subServices: ["PPC Campaigns", "Bid Management", "Ad Copywriting", "Conversion Tracking"],
-    image: "/service_sem.webp",
-    link: "/services/sem"
-  },
-  {
-    id: 5,
-    title: "SMM",
-    description: "Spark conversations that matter. We build communities and engage audiences across all major social platforms with content that stops the scroll.",
-    subServices: ["Content Creation", "Community Mgmt", "Influencer Marketing", "Social Strategy"],
-    image: "/service_smm.webp",
-    link: "/services/smm"
-  },
-  {
-    id: 6,
-    title: "Graphic Design",
-    description: "Visuals that stick. From social assets to print media, we design high-impact graphics that capture attention and communicate your message instantly.",
-    subServices: ["Social Graphics", "Marketing Materials", "Illustrations", "Infographics"],
-    image: "/service_graphic.webp",
-    link: "/services/graphic-design"
-  },
-  {
-    id: 7,
-    title: "Branding",
-    description: "Define your DNA. We forge memorable brand identities—including logos, typography, and voice—that resonate deeply with your target audience.",
-    subServices: ["Logo Design", "Brand Strategy", "Visual Identity", "Style Guides"],
-    image: "/service_branding.webp",
-    link: "/services/branding"
-  },
-  {
-    id: 8,
-    title: "Advertising (Poster / Video)",
-    description: "Stories that sell. Whether it's a cinematic video ad or a striking poster, we produce creative assets that drive emotion and action.",
-    subServices: ["Video Production", "Motion Graphics", "Poster Design", "Display Ads"],
-    image: "/service_ad.webp",
-    link: "/services/advertising"
-  },
-  {
-    id: 9,
     title: "Google Ads",
-    description: "Capture intent at the perfect moment. We set up and optimize high-converting Google Ad campaigns to reach customers exactly when they are searching.",
-    subServices: ["Search Ads", "Display Network", "Shopping Ads", "Remarketing"],
+    description: "Accelerate your growth with targeted Pay-Per-Click (PPC) campaigns that place your brand directly in front of customers. We manage ad spend efficiently to maximize ROI.",
+    subServices: ["Precision Targeting", "Keyword Optimization", "Compelling Ad Copy", "Real-Time ROI Tracking"],
     image: "/service_googleads.webp",
     link: "/services/google-ads"
   },
   {
-    id: 10,
-    title: "E-Commerce Website",
-    description: "Sell everywhere, 24/7. We build robust, secure, and scalable online stores designed to streamline the user journey and maximize sales.",
-    subServices: ["Shopify/WooCommerce", "Payment Gateways", "Inventory Systems", "User Experience"],
+    id: 3,
+    title: "Social Media Marketing",
+    description: "We build and nurture your community across platforms. By combining creative storytelling with data-driven strategies, we turn your channels into tools for engagement and loyalty.",
+    subServices: ["Content Creation", "Community Engagement", "Platform-Specific Strategy", "Growth Analytics"],
+    image: "/service_smm.webp",
+    link: "/services/social-media"
+  },
+  {
+    id: 4,
+    title: "Branding",
+    description: "Branding is the soul of your business. We craft a distinct identity that resonates emotionally with your audience, differentiating you from competitors and building trust.",
+    subServices: ["Visual Identity Design", "Brand Voice & Messaging", "Brand Guidelines", "Market Positioning"],
+    image: "/service_branding.webp",
+    link: "/services/branding"
+  },
+  {
+    id: 5,
+    title: "Serach Engine Optimization (SEO)",
+    description: "A holistic approach to digital dominance combining organic growth, paid acceleration, and social engagement. This all-in-one strategy ensures your brand is visible everywhere.",
+    subServices: ["Keyword Dominance", "Cross-Channel Retargeting", "Content Authority", "Unified Performance Tracking"],
+    image: "/service_seo.webp",
+    link: "/services/seo"
+  },
+  {
+    id: 6,
+    title: "E-Commerce Solutions",
+    description: "We build powerful online stores that make selling effortless. From product browsing to secure checkout, our solutions provide a seamless shopping experience.",
+    subServices: ["Secure Payment Integration", "Inventory Management", "Conversion Tools", "Scalable Architecture"],
     image: "/service_ecommerce.webp",
     link: "/services/ecommerce"
   }
@@ -107,7 +76,7 @@ const ServiceCards = () => {
               Our Expertise
             </h6>
             <h2 className="text-5xl md:text-7xl font-black text-white italic uppercase tracking-tighter">
-              What We <span className="text-zinc-600">Do Best.</span>
+              What We <span className="text-[#dbe11d]">Do Best.</span>
             </h2>
         </motion.div>
 

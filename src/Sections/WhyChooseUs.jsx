@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Zap, Target, BarChart3 } from "lucide-react";
 import FloatingAsset from "../Components/FlotingAsset";
+import { Link } from "react-router-dom";
 
 const WhyChooseUs = () => {
   const features = [
@@ -66,17 +67,17 @@ const WhyChooseUs = () => {
       {/* Floating Assets (Decorations) */}
       <FloatingAsset 
         imgSrc="/image01.png" 
-        className="absolute -top-[10%] left-[5%] w-[150px] md:w-[300px] z-10 opacity-60 pointer-events-none" 
+        className="absolute -top-[30%] left-[5%] w-[400px] md:w-[500px] z-10 opacity-80 pointer-events-none" 
         flipX={true}
         duration={6}
       />
-{/* 
+
       <FloatingAsset 
-        imgSrc="/image02.png" 
-        className="absolute -bottom-[10%] right-[5%] w-[200px] md:w-[400px] z-10 opacity-60 pointer-events-none" 
-        flipX={true}
+        imgSrc="/secimg02.webp" 
+        className="absolute -bottom-[50%] right-[5%] w-[200px] md:w-[400px] z-10 opacity-60 pointer-events-none" 
+        flipX={false}
         duration={7}
-      /> */}
+      />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-20">
         
@@ -118,7 +119,9 @@ const WhyChooseUs = () => {
             whileTap={{ scale: 0.95 }}
             className="px-10 py-4 border-2 border-[#dbe11d] text-[#dbe11d] font-black uppercase tracking-widest text-xs rounded-full transition-all duration-300"
           >
+            <Link to={'/contact'}>
             Claim Your Strategy
+            </Link>
           </motion.button>
         </div>
 

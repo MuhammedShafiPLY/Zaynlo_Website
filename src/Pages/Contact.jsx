@@ -19,7 +19,7 @@ const Contact = () => {
           title="Let's"
           highlight="Talk."
           description="Ready to start your next big thing? We are currently accepting new partnerships for Q4. Let's build something legendary."
-          imageSrc="/about_banner.webp" // Ensure you have a relevant image here
+          imageSrc="/contact_banner.webp" // Ensure you have a relevant image here
           
           primaryBtn={{
             text: "Book a Call",
