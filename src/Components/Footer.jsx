@@ -7,7 +7,6 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Optimized Variants (Less staggering to reduce frame drops)
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,15 +26,13 @@ const Footer = () => {
 
   return (
     <footer className="bg-zinc-950 pt-20 pb-10 relative overflow-hidden">
-      {/* 1. OPTIMIZED BACKGROUND GLOWS (Replaced heavy shadows with GPU blurs) */}
+      {/* 1. OPTIMIZED BACKGROUND GLOWS */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Top Left Glow */}
         <div className="absolute top-0 -left-[10%] w-[500px] h-[500px] bg-[#cfcfcf]/5 rounded-full blur-[120px] will-change-transform transform-gpu" />
-        {/* Bottom Right Glow */}
         <div className="absolute bottom-0 -right-[10%] w-[500px] h-[500px] bg-[#dbe11d]/10 rounded-full blur-[120px] will-change-transform transform-gpu" />
       </div>
 
-      {/* Background Text - Optimized with lower opacity to avoid repaint */}
+      {/* Background Text */}
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none select-none z-0 opacity-[0.02]">
         <h1 className="text-[20vw] font-black uppercase text-white leading-none tracking-tighter whitespace-nowrap">
           ZAYNLO
@@ -47,7 +44,7 @@ const Footer = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }} // Triggers slightly before bottom
+          viewport={{ once: true, margin: "-100px" }}
           className="bg-zinc-900/50 backdrop-blur-sm border border-white/5 rounded-[40px] p-10 md:p-14 relative"
         >
           {/* Scroll To Top Button */}
@@ -74,26 +71,35 @@ const Footer = () => {
 
           {/* Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            
             {/* COLUMN 1: Logo & Description */}
             <motion.div variants={itemVariants} className="space-y-6">
               <div className="flex items-center gap-2">
-                {/* The Icon Box (Keep or remove if your logo image includes the icon) */}
-
-                {/* Image replacing the H2 text */}
                 <img
-                  src="/logo01.png" // Make sure this file is in your 'public' folder
+                  src="/logo.png"
                   alt="Zaynlo Logo"
-                  className="h-8 w-auto object-contain" // h-8 matches the icon size
+                  className="h-8 w-auto object-contain"
                 />
               </div>
               <p className="text-zinc-400 text-sm leading-relaxed pr-4">
                 We are a futuristic digital agency specializing in AI-driven
                 design, immersive web experiences, and next-gen branding.
               </p>
+              
+              {/* --- SOCIAL ICONS SECTION --- */}
               <div className="flex gap-4">
-                <SocialIcon icon="instagram" />
-                <SocialIcon icon="twitter" />
-                <SocialIcon icon="linkedin" />
+                <SocialIcon 
+                  icon="instagram" 
+                  link="https://www.instagram.com/__zaynlo?igsh=Y3kyMXIwZWk2NWJ3" 
+                />
+                <SocialIcon 
+                  icon="twitter" 
+                  link="https://twitter.com" // Add your Twitter link here
+                />
+                <SocialIcon 
+                  icon="linkedin" 
+                  link="https://www.linkedin.com/in/zaynlo-advertising-agency-16a13b3a3?utm_source=share_via&utm_content=profile&utm_medium=member_android" // Add your LinkedIn link here
+                />
               </div>
             </motion.div>
 
@@ -104,85 +110,25 @@ const Footer = () => {
                 Quick Links
               </h4>
               <ul className="space-y-3">
-                <Link
-                  className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300"
-                  to="/"
-                >
-                  Home
-                </Link>
-                <br />
-                <Link
-                  className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300"
-                  to="/about"
-                >
-                  About Us
-                </Link>
-                <br />
-                <Link
-                  className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300"
-                  to="/services"
-                >
-                  Services
-                </Link>
-                <br />
-                <Link
-                  className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300"
-                  to="/projects"
-                >
-                  Projects
-                </Link>
-                <br />
-                <Link
-                  className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300"
-                  to="/careers"
-                >
-                  Careers
-                </Link>
+                <Link className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300" to="/">Home</Link><br />
+                <Link className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300" to="/about">About Us</Link><br />
+                <Link className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300" to="/services">Services</Link><br />
+                <Link className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300" to="/projects">Projects</Link><br />
+                <Link className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300" to="/careers">Careers</Link>
               </ul>
             </motion.div>
 
             {/* COLUMN 3: Our Services */}
             <motion.div variants={itemVariants}>
               <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#dbe11d]"></span> Our
-                Services
+                <span className="w-2 h-2 rounded-full bg-[#dbe11d]"></span> Our Services
               </h4>
               <ul className="space-y-3">
-                <Link
-                  className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300"
-                  to="/services/web-development"
-                >
-                  Web Development
-                </Link>
-                <br />
-                <Link
-                  className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300"
-                  to="/services/google-ads"
-                >
-                  Google Ads
-                </Link>
-                <br />
-                <Link
-                  className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300"
-                  to="/services/social-media"
-                >
-                  SMM
-                </Link>
-                <br />
-                <Link
-                  className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300"
-                  to="/services/branding"
-                >
-                  Branding
-                </Link>
-                <br />
-                <Link
-                  className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300"
-                  to="/services/seo"
-                >
-                  SEO
-                </Link>
-                <br />
+                <Link className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300" to="/services/web-development">Web Development</Link><br />
+                <Link className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300" to="/services/google-ads">Google Ads</Link><br />
+                <Link className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300" to="/services/social-media">SMM</Link><br />
+                <Link className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300" to="/services/branding">Branding</Link><br />
+                <Link className="text-zinc-400 hover:text-[#dbe11d] transition-colors text-sm font-medium hover:translate-x-2 inline-block transition-transform duration-300" to="/services/seo">SEO</Link>
               </ul>
             </motion.div>
 
@@ -192,30 +138,14 @@ const Footer = () => {
                 <span className="w-2 h-2 rounded-full bg-[#dbe11d]"></span>{" "}
                 Contact Us
               </h4>
-
               <div className="space-y-4">
                 <div className="bg-black/40 p-4 rounded-xl border border-white/5 hover:border-[#dbe11d]/30 transition-colors">
-                  <p className="text-zinc-500 text-xs uppercase font-bold mb-1">
-                    Email Inquiry
-                  </p>
-                  <a
-                    href="mailto:hello@zaynlo.com"
-                    className="text-white font-medium hover:text-[#dbe11d] transition-colors"
-                  >
-                    hello@zaynlo.com
-                  </a>
+                  <p className="text-zinc-500 text-xs uppercase font-bold mb-1">Email Inquiry</p>
+                  <a href="mailto:hellozaynlo@gmail.com" className="text-white font-medium hover:text-[#dbe11d] transition-colors">hellozaynlo@gmail.com</a>
                 </div>
-
                 <div className="bg-black/40 p-4 rounded-xl border border-white/5 hover:border-[#dbe11d]/30 transition-colors">
-                  <p className="text-zinc-500 text-xs uppercase font-bold mb-1">
-                    Location
-                  </p>
-                  <p className="text-white font-medium">
-                    Dubai, UAE <br />{" "}
-                    <span className="text-zinc-500 text-xs font-normal">
-                      Cyber Tower, Level 42
-                    </span>
-                  </p>
+                  <p className="text-zinc-500 text-xs uppercase font-bold mb-1">Location</p>
+                  <p className="text-white font-medium">Perinthalmanna, Kerala <br /> <span className="text-zinc-500 text-xs font-normal">3rd Floor, Aysha Complex, By pass Jn</span></p>
                 </div>
               </div>
             </motion.div>
@@ -226,22 +156,10 @@ const Footer = () => {
             variants={itemVariants}
             className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-zinc-500 text-xs uppercase tracking-widest gap-4"
           >
-            <p>
-              © {new Date().getFullYear()} Zaynlo Agency. All rights reserved.
-            </p>
+            <p>© {new Date().getFullYear()} Zaynlo Agency. All rights reserved.</p>
             <div className="flex gap-6">
-              <Link
-                to="/privacy-policy"
-                className="hover:text-white transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                to="/terms-of-service"
-                className="hover:text-white transition-colors"
-              >
-                Terms of Service
-              </Link>
+              <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
             </div>
           </motion.div>
         </motion.div>
@@ -250,33 +168,23 @@ const Footer = () => {
   );
 };
 
-// --- Optimized Sub Components ---
+// --- Updated Sub Components ---
 
-const FooterLink = ({ children }) => (
-  <li>
-    <a
-      href="#"
-      className="text-zinc-400 text-sm hover:text-[#dbe11d] hover:translate-x-1 transition-all inline-block"
-    >
-      {children}
-    </a>
-  </li>
-);
-
-// Define paths outside to prevent re-render calculation
+// SVG Paths
 const SOCIAL_PATHS = {
-  instagram:
-    "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z",
-  twitter:
-    "M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z",
-  linkedin:
-    "M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z",
+  instagram: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z",
+  twitter: "M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z",
+  linkedin: "M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z",
 };
 
-const SocialIcon = ({ icon }) => {
+// --- UPDATED SocialIcon Component ---
+// Now accepts 'link' prop and passes it to href
+const SocialIcon = ({ icon, link }) => {
   return (
     <a
-      href="#"
+      href={link || "#"} // Uses link if provided, otherwise fallback to #
+      target="_blank"    // Opens link in new tab
+      rel="noopener noreferrer" // Security best practice for external links
       className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 hover:bg-[#dbe11d] hover:text-black hover:border-[#dbe11d] transition-all"
     >
       <svg

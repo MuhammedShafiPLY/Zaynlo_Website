@@ -24,7 +24,7 @@ const TermsOfService = () => {
         title="Terms of" 
         highlight="Service" 
         description="Please read these terms carefully before engaging with our digital solutions."
-        imageSrc="/secimg02.webp" // Use a relevant abstract image
+        imageSrc="/terms_banner.jpg" // Use a relevant abstract image
         overlayOpacity={0.8}
       />
 

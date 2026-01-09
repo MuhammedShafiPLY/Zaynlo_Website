@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
         title="Privacy" 
         highlight="Policy" 
         description="Transparency is the foundation of our partnership. Here is how we handle your data."
-        imageSrc="/secimg01.webp" // You can use a generic abstract image here
+        imageSrc="/privacy_banner.jpg" // You can use a generic abstract image here
         overlayOpacity={0.8}
       />
 

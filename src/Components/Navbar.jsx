@@ -100,7 +100,7 @@ const Navbar = () => {
             className="flex items-center gap-2 group z-[1001] relative"
           >
             <img
-              src="/logo01.png"
+              src="/logo.png"
               alt="Brand Logo"
               width={100}
               height={60}

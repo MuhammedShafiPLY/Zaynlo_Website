@@ -5,6 +5,8 @@ import { ArrowLeft, Check, MessageCircle } from "lucide-react";
 import { servicesData } from "../data/servicesData"; // Import your data
 import PageBanner from "../Components/PageBanner"; // Reusing your banner component
 import ParticleBackground from "../Components/ParticlesBackground";
+import Footer from "../Components/Footer";
+import Testimonials from "../Sections/Testimonials";
 
 const ServiceDetail = () => {
   const { id } = useParams(); // Get the ID from the URL (e.g., 'web-development')
@@ -52,7 +54,7 @@ const ServiceDetail = () => {
         title={service.title} 
         highlight="Services" 
         description={service.shortDesc}
-        imageSrc={service.introImage}
+        imageSrc={service.bgImg}
         overlayOpacity={0.7}
       />
 
@@ -193,6 +195,10 @@ const ServiceDetail = () => {
             </p>
         </div>
       </section>
+
+      <Testimonials />
+
+      <Footer />
 
     </div>
   );

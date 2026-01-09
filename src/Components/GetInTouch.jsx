@@ -159,14 +159,14 @@ const GetInTouch = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="relative w-full max-w-[400px] h-[400px] flex items-center justify-center mt-8 lg:mt-0"
+            className="relative w-full max-w-[400px] h-[400px] flex items-end justify-end mt-8 lg:mt-0"
           >
             <motion.img
-              src="/image02.png"
+              src="/cont_img.webp"
               alt="Future Tech"
-              animate={{ y: [0, -20, 0], rotate: [0, 2, 0] }}
+              animate={{ y: [1, -20, 1], rotate: [0, 0, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(219,225,29,0.2)]"
+              className="absolute -bottom-[100px] w-full h-full object-contain drop-shadow-[0_0_50px_rgba(219,225,29,0.2)]"
             />
           </motion.div>
         </motion.div>

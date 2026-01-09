@@ -90,7 +90,7 @@ const Careers = () => {
         highlight="Team."
         description="We are looking for passionate individuals to help us build the future of digital experiences."
         // Make sure you have a relevant image, or use a generic one
-        imageSrc="/about_banner.webp" 
+        imageSrc="/career_banner.jpg" 
         primaryBtn={{
           text: "View Openings",
           link: "#openings", // Anchor to the jobs list

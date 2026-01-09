@@ -25,7 +25,7 @@ const Contact = () => {
             text: "Book a Call",
             // Note: If using external links (https/mailto) inside react-router's Link component, 
             // ensure your PageBanner handles external URLs or stick to internal routes.
-            link: "/contact" 
+            link: "tel:+919526299568" 
           }}
 
           secondaryBtn={{
@@ -43,8 +43,7 @@ const Contact = () => {
         <ClientMarquee />
 
         {/* 4. FOOTER */}
-        <Footer />
-        
+        <Footer />       
       </main>
     </SmoothScroll>
   );

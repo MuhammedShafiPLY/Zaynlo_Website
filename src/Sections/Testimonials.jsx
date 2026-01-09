@@ -118,7 +118,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="bg-zinc-950 py-24 relative overflow-hidden min-h-[80vh]">
+    <section className="bg-zinc-950 py-14 relative overflow-hidden min-h-[80vh]">
       
       {/* Background Ambience */}
       <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
