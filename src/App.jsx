@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async' // 1. Import Helmet
 import Navbar from './Components/Navbar'
 import Home from './Pages/Home'
 import Projects from './Pages/Projects'
@@ -14,23 +15,22 @@ import NotFound from './Pages/NotFound'
 import Careers from './Pages/Careers'
 import WhatsAppButton from './Components/WhatsAppButton'
 
-// Placeholder components for other pages
-// You can move these into their own files later
-
 const App = () => {
   return (
     <div className="relative min-h-screen bg-zinc-950 overflow-x-hidden">
+      {/* 2. Define Global Default SEO Settings */}
+      <Helmet>
+        <title>Zaynlo - Best Advertising Agency in Kerala</title>
+        <meta name="description" content="Zaynlo is a premium advertising and digital marketing agency in Kerala providing branding, web development, and SEO services." />
+        <meta name="keywords" content="advertising agency, kerala, web design, digital marketing, zaynlo" />
+        <link rel="canonical" href="https://www.zaynlo.com/" />
+      </Helmet>
+
       <ScrollToTop />
-
-      {/* 2. Global Navbar (Stays on every page) */}
       <Navbar />
-
       <WhatsAppButton />
 
-      {/* 3. Page Routes */}
       <Routes>
-        
-
         <Route path='/' element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/services" element={<Services />} />
@@ -40,12 +40,8 @@ const App = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path='/careers' element={<Careers />} />
-
         <Route path="*" element={<NotFound />} />
-        
       </Routes>
-
-      {/* Footer can go here */}
     </div>
   )
 }

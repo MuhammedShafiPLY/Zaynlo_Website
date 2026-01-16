@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async"; // 1. Import Helmet
 
 // 1. Layout & Scroll Components
 import SmoothScroll from "../Components/SmoothScroll";
@@ -7,50 +8,66 @@ import PageBanner from "../Components/PageBanner";
 import GetInTouch from "../Components/GetInTouch";
 
 // 2. Sections
-// Ensure these paths match where you saved the files
-import ProjectGallery from "../Components/ProjectGallery"; // Changed to Sections for consistency
+import ProjectGallery from "../Components/ProjectGallery"; 
 import Testimonials from "../Sections/Testimonials";
 import ClientMarquee from "../Sections/ClientMarque";
 
 const Projects = () => {
   return (
-    <SmoothScroll>
-      <main className="w-full relative overflow-x-hidden bg-zinc-950">
-        
-        {/* 1. PAGE HEADER */}
-        <PageBanner 
-          title="Featured"
-          highlight="Work."
-          description="A showcase of our finest digital creations. See how we've helped ambitious brands redefine their digital presence."
-          imageSrc="/project_banner.webp" // Or a specific portfolio banner image
-          
-          primaryBtn={{
-            text: "Get Us Now",
-            link: "/contact" // Anchors to the ID below
-          }}
-          // No secondary button needed here, keeping it clean
+    <>
+      {/* 2. SEO Configuration for Projects Page */}
+      <Helmet>
+        <title>Our Recent Projects & Portfolio Works | Zaynlo</title>
+        <meta 
+          name="description" 
+          content="Browse our successful case studies. See how we helped Kerala businesses grow through stunning design and effective marketing campaigns. View our work." 
         />
-        
-        {/* 2. MAIN GALLERY */}
-        {/* Added id="gallery" so the banner button scrolls here */}
-        <div id="gallery">
-           <ProjectGallery />
-        </div>
+        <link rel="canonical" href="https://www.zaynlo.com/projects" />
 
-        {/* 3. SOCIAL PROOF */}
-        <Testimonials />
+        {/* Open Graph Tags for Social Media */}
+        <meta property="og:title" content="Our Recent Projects & Portfolio Works | Zaynlo" />
+        <meta property="og:description" content="Browse our successful case studies and see how we help businesses grow." />
+        <meta property="og:url" content="https://www.zaynlo.com/projects" />
+        {/* Ensures your banner image shows up when shared */}
+        <meta property="og:image" content="https://www.zaynlo.com/project_banner.webp" />
+      </Helmet>
 
-        {/* 4. TRUST SIGNALS */}
-        <ClientMarquee />
+      <SmoothScroll>
+        <main className="w-full relative overflow-x-hidden bg-zinc-950">
+          
+          {/* 1. PAGE HEADER */}
+          <PageBanner 
+            title="Featured"
+            highlight="Work."
+            description="A showcase of our finest digital creations. See how we've helped ambitious brands redefine their digital presence."
+            imageSrc="/project_banner.webp" 
+            
+            primaryBtn={{
+              text: "Get Us Now",
+              link: "/contact"
+            }}
+          />
+          
+          {/* 2. MAIN GALLERY */}
+          <div id="gallery">
+             <ProjectGallery />
+          </div>
 
-        {/* 5. FINAL CTA */}
-        <GetInTouch />
+          {/* 3. SOCIAL PROOF */}
+          <Testimonials />
 
-        {/* 6. FOOTER */}
-        <Footer />
-        
-      </main>
-    </SmoothScroll>
+          {/* 4. TRUST SIGNALS */}
+          <ClientMarquee />
+
+          {/* 5. FINAL CTA */}
+          <GetInTouch />
+
+          {/* 6. FOOTER */}
+          <Footer />
+          
+        </main>
+      </SmoothScroll>
+    </>
   );
 };
 

@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async"; // 1. Import Helmet
 import { ArrowLeft, Check, MessageCircle } from "lucide-react";
-import { servicesData } from "../data/servicesData"; // Import your data
-import PageBanner from "../Components/PageBanner"; // Reusing your banner component
-import ParticleBackground from "../Components/ParticlesBackground";
+import { servicesData } from "../data/servicesData"; 
+import PageBanner from "../Components/PageBanner"; 
+// import ParticleBackground from "../Components/ParticlesBackground";
 import Footer from "../Components/Footer";
 import Testimonials from "../Sections/Testimonials";
 
 const ServiceDetail = () => {
-  const { id } = useParams(); // Get the ID from the URL (e.g., 'web-development')
+  const { id } = useParams(); 
   const navigate = useNavigate();
 
   // Find the specific service data
@@ -40,7 +41,7 @@ const ServiceDetail = () => {
 
   // WhatsApp Handler
   const handleWhatsApp = (planName, price) => {
-    const phone = "919526299568"; // Your number from PDF [cite: 4]
+    const phone = "919526299568"; 
     const message = `Hello Zaynlo! I am interested in the ${planName} package for ${service.title} priced at ${price}. Could you please share more details?`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
@@ -49,6 +50,29 @@ const ServiceDetail = () => {
   return (
     <div className="bg-zinc-950 min-h-screen text-white pb-20">
       
+      {/* ------------------------------------------------------- */}
+      {/* 2. DYNAMIC SEO CONFIGURATION */}
+      {/* ------------------------------------------------------- */}
+      <Helmet>
+        {/* Dynamic Title: e.g. "Web Development Services in Kerala | Zaynlo" */}
+        <title>{`${service.title} Services in Kerala | Zaynlo Agency`}</title>
+        
+        {/* Dynamic Description: Uses your shortDesc + first sentence of intro */}
+        <meta 
+          name="description" 
+          content={`${service.shortDesc} ${service.introText.substring(0, 100)}... Click to view pricing.`} 
+        />
+        
+        <link rel="canonical" href={`https://www.zaynlo.com/services/${id}`} />
+
+        {/* Dynamic Open Graph (WhatsApp/Facebook) */}
+        <meta property="og:title" content={`${service.title} Services | Zaynlo`} />
+        <meta property="og:description" content={service.shortDesc} />
+        <meta property="og:url" content={`https://www.zaynlo.com/services/${id}`} />
+        <meta property="og:image" content={`https://www.zaynlo.com${service.bgImg}`} />
+      </Helmet>
+      {/* ------------------------------------------------------- */}
+
       {/* 1. HERO BANNER */}
       <PageBanner 
         title={service.title} 
@@ -65,7 +89,7 @@ const ServiceDetail = () => {
         </Link>
       </div>
 
-      {/* 2. INTRO SECTION (Left Text / Right Image) */}
+      {/* 2. INTRO SECTION */}
       <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
         <motion.div 
           initial="hidden" 
@@ -96,8 +120,7 @@ const ServiceDetail = () => {
             />
         </motion.div>
 
-
-         <div className="max-w-4xl mx-auto text-left">
+         <div className="max-w-4xl mx-auto text-left mt-16 md:col-span-2">
             <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -118,8 +141,6 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-    
-
       {/* 4. PRICING SECTION */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center mb-16">
@@ -130,7 +151,6 @@ const ServiceDetail = () => {
         </div>
 
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${service.pricing.length} justify-center gap-6`}>
-            {/* <ParticleBackground /> */}
             {service.pricing.map((tier, index) => (
                 <motion.div 
                     key={index}
@@ -155,7 +175,6 @@ const ServiceDetail = () => {
                     </h3>
                     <div className="text-3xl font-bold mb-6">{tier.price}<span className="text-sm font-normal text-zinc-500">/one-time</span></div>
 
-                    {/* Features List */}
                     <ul className="space-y-4 mb-8 flex-grow">
                         {tier.features.map((feature, i) => (
                             <li key={i} className="flex items-start gap-3 text-sm text-zinc-300">
@@ -165,7 +184,6 @@ const ServiceDetail = () => {
                         ))}
                     </ul>
 
-                    {/* Action Button */}
                     <button 
                         onClick={() => handleWhatsApp(tier.plan, tier.price)}
                         className={`w-full py-4 rounded-full font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-2 transition-all duration-300 ${
@@ -180,7 +198,6 @@ const ServiceDetail = () => {
             ))}
         </div>
         
-        {/* Pricing Note from PDF [cite: 50] */}
         <p className="text-center text-zinc-500 text-sm mt-8">
             Note: Additional pages beyond the package limit are charged at ₹1,000 per page.
         </p>
@@ -197,9 +214,7 @@ const ServiceDetail = () => {
       </section>
 
       <Testimonials />
-
       <Footer />
-
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async"; // 1. Import Helmet
 
 // 1. Layout & Scroll Components
 import SmoothScroll from "../Components/SmoothScroll";
@@ -7,49 +8,62 @@ import PageBanner from "../Components/PageBanner";
 import GetInTouch from "../Components/GetInTouch";
 
 // 2. Sections
-// Ensure these paths match where you saved the files (likely inside /Sections)
 import ServiceCards from "../Components/ServiceCards"; 
 import Testimonials from "../Sections/Testimonials";
 import ClientMarquee from "../Sections/ClientMarque"; 
 
 const Services = () => {
   return (
-    <SmoothScroll>
-      <main className="w-full relative overflow-x-hidden bg-zinc-950">
-        
-        {/* 1. PAGE HEADER */}
-        <PageBanner 
-          title="Our"
-          highlight="Services."
-          description="From AI-driven design systems to immersive 3D web experiences, we provide the full stack of future-ready digital solutions."
-          imageSrc="/service_banner.webp" // Or use a specific services banner image
-          primaryBtn={{
-            text: "Start a Project",
-            link: "/contact"
-          }}
-          // secondaryBtn={{
-          //   text: "View Pricing",
-          //   link: "/contact" // Or pricing if you have it
-          // }}
+    <>
+      {/* 2. SEO Configuration for Services Page */}
+      <Helmet>
+        <title>Digital Marketing & Branding Services | Zaynlo</title>
+        <meta 
+          name="description" 
+          content="Explore our premium services: SEO, Social Media Marketing, Web Development, and Branding. Elevate your business with expert strategies. Contact us!" 
         />
-
-        {/* 2. MAIN SERVICES LIST (The Detailed Cards) */}
-        <ServiceCards />
-
-        {/* 3. SOCIAL PROOF (Testimonials) */}
-        <Testimonials />
-
-        {/* 4. TRUST SIGNALS (Client Logos) */}
-        <ClientMarquee />
-
-        {/* 5. FINAL CTA */}
-        <GetInTouch />
-
-        {/* 6. FOOTER */}
-        <Footer />
+        <link rel="canonical" href="https://www.zaynlo.com/services" />
         
-      </main>
-    </SmoothScroll>
+        {/* Open Graph Tags for Social Media */}
+        <meta property="og:title" content="Digital Marketing & Branding Services | Zaynlo" />
+        <meta property="og:description" content="We provide the full stack of future-ready digital solutions: AI design, 3D web experiences, and growth marketing." />
+        <meta property="og:url" content="https://www.zaynlo.com/services" />
+        <meta property="og:image" content="https://www.zaynlo.com/service_banner.webp" /> 
+      </Helmet>
+
+      <SmoothScroll>
+        <main className="w-full relative overflow-x-hidden bg-zinc-950">
+          
+          {/* 1. PAGE HEADER */}
+          <PageBanner 
+            title="Our"
+            highlight="Services."
+            description="From AI-driven design systems to immersive 3D web experiences, we provide the full stack of future-ready digital solutions."
+            imageSrc="/service_banner.webp" 
+            primaryBtn={{
+              text: "Start a Project",
+              link: "/contact"
+            }}
+          />
+
+          {/* 2. MAIN SERVICES LIST */}
+          <ServiceCards />
+
+          {/* 3. SOCIAL PROOF */}
+          <Testimonials />
+
+          {/* 4. TRUST SIGNALS */}
+          <ClientMarquee />
+
+          {/* 5. FINAL CTA */}
+          <GetInTouch />
+
+          {/* 6. FOOTER */}
+          <Footer />
+          
+        </main>
+      </SmoothScroll>
+    </>
   );
 };
 
