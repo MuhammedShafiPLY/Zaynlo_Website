@@ -22,13 +22,13 @@ const Home = () => {
       <Helmet>
         <title>Best Advertising & Digital Agency in Kerala | Zaynlo</title>
         <meta name="description" content="Transform your brand with Zaynlo, Kerala's top advertising agency. We specialize in branding, web design, and digital marketing. Get a free quote today!" />
-        <link rel="canonical" href="https://www.zaynlo.com/" />
+        <link rel="canonical" href="https://zaynlo.muhammedshafik.com/" />
         
         {/* Optional: Open Graph for Facebook/WhatsApp sharing */}
         <meta property="og:title" content="Best Advertising & Digital Agency in Kerala | Zaynlo" />
         <meta property="og:description" content="Transform your brand with Zaynlo. We specialize in branding, web design, and digital marketing." />
-        <meta property="og:url" content="https://www.zaynlo.com/" />
-        <meta property="og:image" content="https://www.zaynlo.com/about_banner.webp" />
+        <meta property="og:url" content="https://zaynlo.muhammedshafik.com/" />
+        <meta property="og:image" content="https://zaynlo.muhammedshafik.com/about_banner.webp" />
       </Helmet>
 
       <SmoothScroll>

@@ -23,13 +23,13 @@ const About = () => {
           name="description" 
           content="Meet the experts behind Zaynlo. We are a passionate team of designers and developers dedicated to building premium brands in Kerala. Learn our story now." 
         />
-        <link rel="canonical" href="https://www.zaynlo.com/about" />
+        <link rel="canonical" href="https://zaynlo.muhammedshafik.com/about" />
         
         {/* Open Graph Tags for Social Media */}
         <meta property="og:title" content="About Zaynlo - Creative Agency in Kerala" />
         <meta property="og:description" content="Meet the team transforming brands with premium design and digital strategies." />
-        <meta property="og:url" content="https://www.zaynlo.com/about" />
-        <meta property="og:image" content="https://www.zaynlo.com/about_banner.webp" />
+        <meta property="og:url" content="https://zaynlo.muhammedshafik.com/about" />
+        <meta property="og:image" content="https://zaynlo.muhammedshafik.com/about_banner.webp" />
       </Helmet>
 
       <SmoothScroll>

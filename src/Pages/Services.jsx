@@ -22,13 +22,13 @@ const Services = () => {
           name="description" 
           content="Explore our premium services: SEO, Social Media Marketing, Web Development, and Branding. Elevate your business with expert strategies. Contact us!" 
         />
-        <link rel="canonical" href="https://www.zaynlo.com/services" />
+        <link rel="canonical" href="https://zaynlo.muhammedshafik.com/services" />
         
         {/* Open Graph Tags for Social Media */}
         <meta property="og:title" content="Digital Marketing & Branding Services | Zaynlo" />
         <meta property="og:description" content="We provide the full stack of future-ready digital solutions: AI design, 3D web experiences, and growth marketing." />
-        <meta property="og:url" content="https://www.zaynlo.com/services" />
-        <meta property="og:image" content="https://www.zaynlo.com/service_banner.webp" /> 
+        <meta property="og:url" content="https://zaynlo.muhammedshafik.com/services" />
+        <meta property="og:image" content="https://zaynlo.muhammedshafik.com/service_banner.webp" /> 
       </Helmet>
 
       <SmoothScroll>

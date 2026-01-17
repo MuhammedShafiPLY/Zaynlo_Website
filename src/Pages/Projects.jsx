@@ -22,14 +22,14 @@ const Projects = () => {
           name="description" 
           content="Browse our successful case studies. See how we helped Kerala businesses grow through stunning design and effective marketing campaigns. View our work." 
         />
-        <link rel="canonical" href="https://www.zaynlo.com/projects" />
+        <link rel="canonical" href="https://zaynlo.muhammedshafik.com/projects" />
 
         {/* Open Graph Tags for Social Media */}
         <meta property="og:title" content="Our Recent Projects & Portfolio Works | Zaynlo" />
         <meta property="og:description" content="Browse our successful case studies and see how we help businesses grow." />
-        <meta property="og:url" content="https://www.zaynlo.com/projects" />
+        <meta property="og:url" content="https://zaynlo.muhammedshafik.com/projects" />
         {/* Ensures your banner image shows up when shared */}
-        <meta property="og:image" content="https://www.zaynlo.com/project_banner.webp" />
+        <meta property="og:image" content="https://zaynlo.muhammedshafik.com/project_banner.webp" />
       </Helmet>
 
       <SmoothScroll>

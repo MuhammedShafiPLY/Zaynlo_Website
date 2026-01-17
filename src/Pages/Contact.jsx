@@ -20,13 +20,13 @@ const Contact = () => {
           name="description" 
           content="Ready to grow your brand? Connect with Zaynlo today for a consultation. Call us or visit our office in Kerala for premium digital solutions." 
         />
-        <link rel="canonical" href="https://www.zaynlo.com/contact" />
+        <link rel="canonical" href="https://zaynlo.muhammedshafik.com/contact" />
 
         {/* Open Graph Tags for Social Media */}
         <meta property="og:title" content="Contact Zaynlo - Start Your Project" />
         <meta property="og:description" content="Ready to start your next big thing? We are accepting new partnerships. Let's talk." />
-        <meta property="og:url" content="https://www.zaynlo.com/contact" />
-        <meta property="og:image" content="https://www.zaynlo.com/contact_banner.webp" />
+        <meta property="og:url" content="https://zaynlo.muhammedshafik.com/contact" />
+        <meta property="og:image" content="https://zaynlo.muhammedshafik.com/contact_banner.webp" />
       </Helmet>
 
       <SmoothScroll>
