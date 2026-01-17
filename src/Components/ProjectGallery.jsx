@@ -10,7 +10,7 @@ const ProjectGallery = () => {
   const filteredProjects =
     activeFilter === "All"
       ? projectsData
-      : projectsData.filter((project) => project.category === activeFilter);
+      : projectsData.filter((project) => project.Category === activeFilter);
 
   return (
     <section className="bg-zinc-950 py-24 px-6 relative min-h-screen">
@@ -76,8 +76,8 @@ const ProjectCard = ({ project }) => {
       className="group relative h-full w-full rounded-[30px] overflow-hidden cursor-pointer bg-zinc-900 border border-white/5 will-change-transform transform-gpu"
     >
       <img
-        src={project.image}
-        alt={project.title}
+        src={project.Image}
+        alt={project.Title}
         loading="lazy"
         className="h-[1350] w-[1080] object-cover transition-transform duration-700 group-hover:scale-110"
       />
@@ -88,14 +88,14 @@ const ProjectCard = ({ project }) => {
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
         <span className="text-[#dbe11d] text-[10px] font-bold uppercase tracking-[0.2em] mb-3 block">
-          {project.category}
+          {project.Category}
         </span>
         <h3 className="text-3xl font-black text-white uppercase italic tracking-tighter mb-8 leading-none">
-          {project.title}
+          {project.Title}
         </h3>
 
         <a
-          href={project.link}
+          href={project.Link}
           target="_blank"
           rel="noopener noreferrer"
           className="w-16 h-16 rounded-full bg-white text-black flex items-center justify-center hover:bg-[#dbe11d] transition-colors duration-300 shadow-lg hover:scale-110"
