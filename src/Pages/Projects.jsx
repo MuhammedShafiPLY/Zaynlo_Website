@@ -8,7 +8,7 @@ import PageBanner from "../Components/PageBanner";
 import GetInTouch from "../Components/GetInTouch";
 
 // 2. Sections
-import ProjectGallery from "../Components/ProjectGallery"; 
+import ProjectGallery from "../Components/ProjectGallery";
 import Testimonials from "../Sections/Testimonials";
 import ClientMarquee from "../Sections/ClientMarque";
 
@@ -18,39 +18,57 @@ const Projects = () => {
       {/* 2. SEO Configuration for Projects Page */}
       <Helmet>
         <title>Our Recent Projects & Portfolio Works | Zaynlo</title>
-        <meta 
-          name="description" 
-          content="Browse our successful case studies. See how we helped Kerala businesses grow through stunning design and effective marketing campaigns. View our work." 
+        <meta
+          name="description"
+          content="Browse our successful case studies. See how we helped Kerala businesses grow through stunning design and effective marketing campaigns. View our work."
         />
-        <link rel="canonical" href="https://zaynlo.muhammedshafik.com/projects" />
+        <link
+          rel="canonical"
+          href="https://zaynlo.muhammedshafik.com/projects"
+        />
+
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
 
         {/* Open Graph Tags for Social Media */}
-        <meta property="og:title" content="Our Recent Projects & Portfolio Works | Zaynlo" />
-        <meta property="og:description" content="Browse our successful case studies and see how we help businesses grow." />
-        <meta property="og:url" content="https://zaynlo.muhammedshafik.com/projects" />
+        <meta
+          property="og:title"
+          content="Our Recent Projects & Portfolio Works | Zaynlo"
+        />
+        <meta
+          property="og:description"
+          content="Browse our successful case studies and see how we help businesses grow."
+        />
+        <meta
+          property="og:url"
+          content="https://zaynlo.muhammedshafik.com/projects"
+        />
         {/* Ensures your banner image shows up when shared */}
-        <meta property="og:image" content="https://zaynlo.muhammedshafik.com/project_banner.webp" />
+        <meta
+          property="og:image"
+          content="https://zaynlo.muhammedshafik.com/project_banner.webp"
+        />
       </Helmet>
 
       <SmoothScroll>
         <main className="w-full relative overflow-x-hidden bg-zinc-950">
-          
           {/* 1. PAGE HEADER */}
-          <PageBanner 
+          <PageBanner
             title="Featured"
             highlight="Work."
             description="A showcase of our finest digital creations. See how we've helped ambitious brands redefine their digital presence."
-            imageSrc="/project_banner.webp" 
-            
+            imageSrc="/project_banner.webp"
             primaryBtn={{
               text: "Get Us Now",
-              link: "/contact"
+              link: "/contact",
             }}
           />
-          
+
           {/* 2. MAIN GALLERY */}
           <div id="gallery">
-             <ProjectGallery />
+            <ProjectGallery />
           </div>
 
           {/* 3. SOCIAL PROOF */}
@@ -64,7 +82,6 @@ const Projects = () => {
 
           {/* 6. FOOTER */}
           <Footer />
-          
         </main>
       </SmoothScroll>
     </>

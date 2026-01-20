@@ -14,6 +14,7 @@ import TermsOfService from './Pages/TermsOfService'
 import NotFound from './Pages/NotFound'
 import Careers from './Pages/Careers'
 import WhatsAppButton from './Components/WhatsAppButton'
+import SeoPage from './Pages/SEO_Pages/Best-Digital-Marketing-Agency-in-Kerala'
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path='/careers' element={<Careers />} />
+        <Route path='/best-digital-marketing-agency-in-kerala' element={<SeoPage/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

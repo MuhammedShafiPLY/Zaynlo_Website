@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const services = [
   {
     title: "Web & App Development",
-    desc: "We don't just build websites; we engineer high-performance digital ecosystems.",
+    desc: "We go beyond basic web design to architect scalable digital platforms that drive real business growth.",
     icon: <Globe2 size={40} />,
     color: "bg-[#edffcc]",
     text: "text-black",

@@ -33,7 +33,7 @@ const testimonials = [
     name: "Elena Vostok",
     role: "Art Curator",
     company: "Future Gallery",
-    text: "I was skeptical about AI art, but this platform gives me control I didn't think was possible.",
+    text: "I initially doubted the accuracy of AI tools, but the level of creative command this platform offers is genuinely surprising.",
     img: "https://randomuser.me/api/portraits/women/65.jpg",
   },
   {

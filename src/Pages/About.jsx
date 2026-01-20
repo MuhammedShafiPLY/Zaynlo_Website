@@ -7,10 +7,10 @@ import Footer from "../Components/Footer";
 import GetInTouch from "../Components/GetInTouch";
 import PageBanner from "../Components/PageBanner";
 // 2. Sections
-import ClientMarquee from "../Sections/ClientMarque"; 
+import ClientMarquee from "../Sections/ClientMarque";
 import SmallAbout from "../Sections/SmallAbout";
 import WhyChooseUs from "../Sections/WhyChooseUs";
-import MissionVision from "../Sections/MIssionVision"; 
+import MissionVision from "../Sections/MIssionVision";
 import Testimonials from "../Sections/Testimonials";
 
 const About = () => {
@@ -19,17 +19,34 @@ const About = () => {
       {/* 2. SEO Configuration for About Page */}
       <Helmet>
         <title>About Us - Top Creative Agency in Kerala | Zaynlo</title>
-        <meta 
-          name="description" 
-          content="Meet the experts behind Zaynlo. We are a passionate team of designers and developers dedicated to building premium brands in Kerala. Learn our story now." 
+        <meta
+          name="description"
+          content="Meet the experts behind Zaynlo. We are a passionate team of designers and developers dedicated to building premium brands in Kerala. Learn our story now."
         />
         <link rel="canonical" href="https://zaynlo.muhammedshafik.com/about" />
-        
+
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+
         {/* Open Graph Tags for Social Media */}
-        <meta property="og:title" content="About Zaynlo - Creative Agency in Kerala" />
-        <meta property="og:description" content="Meet the team transforming brands with premium design and digital strategies." />
-        <meta property="og:url" content="https://zaynlo.muhammedshafik.com/about" />
-        <meta property="og:image" content="https://zaynlo.muhammedshafik.com/about_banner.webp" />
+        <meta
+          property="og:title"
+          content="About Zaynlo - Creative Agency in Kerala"
+        />
+        <meta
+          property="og:description"
+          content="Meet the team transforming brands with premium design and digital strategies."
+        />
+        <meta
+          property="og:url"
+          content="https://zaynlo.muhammedshafik.com/about"
+        />
+        <meta
+          property="og:image"
+          content="https://zaynlo.muhammedshafik.com/about_banner.webp"
+        />
       </Helmet>
 
       <SmoothScroll>

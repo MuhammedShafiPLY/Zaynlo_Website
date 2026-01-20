@@ -75,7 +75,7 @@ const MissionVision = () => {
             icon={<Target size={32} />}
             title="Our Mission"
             subtitle="To democratize creativity."
-            desc="We exist to bridge the gap between human imagination and digital reality. By harnessing the power of AI and cutting-edge design, we empower brands to tell stories that were previously impossible."
+            desc="We are here to dismantle the barrier between what you can imagine and what technology can achieve. By harnessing the power of AI and cutting-edge design, we empower brands to tell stories that were previously impossible."
           />
 
           {/* 2. VISION CARD */}

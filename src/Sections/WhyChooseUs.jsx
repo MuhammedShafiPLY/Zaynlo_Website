@@ -8,7 +8,7 @@ const WhyChooseUs = () => {
   const features = [
     {
       title: "Future-Proof Tech",
-      desc: "We build using the latest stacks (React, Next.js, AI) to ensure your business stays ahead of the curve.",
+      desc: "Our stack is unapologetically modern. By integrating React, Next.js, and AI, we deliver speed and intelligence that competitors simply can't match.",
       icon: <Zap size={28} />,
     },
     {
@@ -109,9 +109,7 @@ const WhyChooseUs = () => {
             transition={{ delay: 0.3 }}
             className="text-zinc-500 text-lg md:text-xl max-w-md leading-relaxed border-l-4 border-[#dbe11d] pl-6"
           >
-            Because standard isn't in our vocabulary. We engineer
-            high-performance ecosystems that turn digital chaos into business
-            clarity.
+            Mediocrity has no place here. We architect high-impact digital systems that distill market noise into measurable growth.
           </motion.p>
 
           <motion.button
