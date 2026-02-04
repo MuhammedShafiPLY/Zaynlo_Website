@@ -16,6 +16,8 @@ import ContactForm from "../Sections/ContactForm";
 // import ContactUs from '../Components/ContactUs'
 
 const Home = () => {
+
+  const site_url = import.meta.env.VITE_SITE_URL;
   return (
     <>
       {/* 2. SEO Configuration for Home Page */}
@@ -25,7 +27,7 @@ const Home = () => {
           name="description"
           content="Transform your brand with Zaynlo, Kerala's top advertising agency. We specialize in branding, web design, and digital marketing. Get a free quote today!"
         />
-        <link rel="canonical" href="https://zaynlo.muhammedshafik.com/" />
+        <link rel="canonical" href={site_url} />
 
         <meta
           name="robots"
@@ -41,10 +43,10 @@ const Home = () => {
           property="og:description"
           content="Transform your brand with Zaynlo. We specialize in branding, web design, and digital marketing."
         />
-        <meta property="og:url" content="https://zaynlo.muhammedshafik.com/" />
+        <meta property="og:url" content={site_url} />
         <meta
           property="og:image"
-          content="https://zaynlo.muhammedshafik.com/about_banner.webp"
+          content={`${site_url}/about_banner.webp`}
         />
       </Helmet>
 

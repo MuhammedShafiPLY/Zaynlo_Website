@@ -13,18 +13,20 @@ import Testimonials from "../Sections/Testimonials";
 import ClientMarquee from "../Sections/ClientMarque";
 
 const Projects = () => {
+
+  const site_url = import.meta.env.VITE_SITE_URL;
   return (
     <>
       {/* 2. SEO Configuration for Projects Page */}
       <Helmet>
-        <title>Our Recent Projects & Portfolio Works | Zaynlo</title>
+        <title>Best Digital Marketing Agency In Kerala | Zaynlo</title>
         <meta
           name="description"
           content="Browse our successful case studies. See how we helped Kerala businesses grow through stunning design and effective marketing campaigns. View our work."
         />
         <link
           rel="canonical"
-          href="https://zaynlo.muhammedshafik.com/projects"
+          href={`${site_url}/projects`}
         />
 
         <meta
@@ -35,7 +37,7 @@ const Projects = () => {
         {/* Open Graph Tags for Social Media */}
         <meta
           property="og:title"
-          content="Our Recent Projects & Portfolio Works | Zaynlo"
+          content="Best Digital Marketing Agency In Kerala | Zaynlo"
         />
         <meta
           property="og:description"
@@ -43,12 +45,12 @@ const Projects = () => {
         />
         <meta
           property="og:url"
-          content="https://zaynlo.muhammedshafik.com/projects"
+          content={`${site_url}/projects`}
         />
         {/* Ensures your banner image shows up when shared */}
         <meta
           property="og:image"
-          content="https://zaynlo.muhammedshafik.com/project_banner.webp"
+          content={`${site_url}/project_banner.webp`}
         />
       </Helmet>
 

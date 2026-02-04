@@ -14,6 +14,9 @@ import MissionVision from "../Sections/MIssionVision";
 import Testimonials from "../Sections/Testimonials";
 
 const About = () => {
+
+  const site_url = import.meta.env.VITE_SITE_URL;
+
   return (
     <>
       {/* 2. SEO Configuration for About Page */}
@@ -23,7 +26,7 @@ const About = () => {
           name="description"
           content="Meet the experts behind Zaynlo. We are a passionate team of designers and developers dedicated to building premium brands in Kerala. Learn our story now."
         />
-        <link rel="canonical" href="https://zaynlo.muhammedshafik.com/about" />
+        <link rel="canonical" href={`${site_url}/about`} />
 
         <meta
           name="robots"
@@ -41,11 +44,11 @@ const About = () => {
         />
         <meta
           property="og:url"
-          content="https://zaynlo.muhammedshafik.com/about"
+          content={`${site_url}/about`}
         />
         <meta
           property="og:image"
-          content="https://zaynlo.muhammedshafik.com/about_banner.webp"
+          content={`${site_url}/about_banner.webp`}
         />
       </Helmet>
 

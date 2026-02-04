@@ -13,6 +13,8 @@ import Testimonials from "../Sections/Testimonials";
 import ClientMarquee from "../Sections/ClientMarque";
 
 const Services = () => {
+
+  const site_url = import.meta.env.VITE_SITE_URL;
   return (
     <>
       {/* 2. SEO Configuration for Services Page */}
@@ -24,7 +26,7 @@ const Services = () => {
         />
         <link
           rel="canonical"
-          href="https://zaynlo.muhammedshafik.com/services"
+          href={`${site_url}/services`}
         />
 
         <meta
@@ -43,11 +45,11 @@ const Services = () => {
         />
         <meta
           property="og:url"
-          content="https://zaynlo.muhammedshafik.com/services"
+          content={`${site_url}/services`}
         />
         <meta
           property="og:image"
-          content="https://zaynlo.muhammedshafik.com/service_banner.webp"
+          content={`${site_url}/service_banner.webp`}
         />
       </Helmet>
 

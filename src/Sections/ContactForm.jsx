@@ -4,7 +4,8 @@ import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Ensure this path is correct for your project structure
-import ParticleBackground from "../Components/ParticlesBackground"; 
+import ParticleBackground from "../Components/ParticlesBackground";
+import SEOMap from "../Components/Seo/SEOMap"
 
 const ContactForm = () => {
   const form = useRef();
@@ -51,7 +52,7 @@ const ContactForm = () => {
           theme: "dark",
         });
         setIsSubmitting(false);
-      }
+      },
     );
   };
 
