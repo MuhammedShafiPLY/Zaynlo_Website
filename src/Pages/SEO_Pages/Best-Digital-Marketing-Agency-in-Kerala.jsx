@@ -15,7 +15,7 @@ import SEOIndustries from "../../Components/Seo/SEOIndustries";
 import SEOLocations from "../../Components/Seo/SEOLocations";
 import SEOMap from "../../Components/Seo/SEOMap";
 
-const SeoPage = () => {
+const Best_Digital_Marketing_Agency_In_Kerala = () => {
   const site_url = import.meta.env.VITE_SITE_URL;
   // ===========================================================================
   // DATA SECTION: EDIT CONTENT HERE
@@ -623,4 +623,4 @@ const SeoPage = () => {
   );
 };
 
-export default SeoPage;
+export default Best_Digital_Marketing_Agency_In_Kerala;
