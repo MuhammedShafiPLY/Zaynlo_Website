@@ -14,6 +14,8 @@ import TermsOfService from './Pages/TermsOfService'
 import NotFound from './Pages/NotFound'
 import Careers from './Pages/Careers'
 import WhatsAppButton from './Components/WhatsAppButton'
+
+// Existing SEO Pages
 import Best_Digital_Marketing_Agency_In_Kerala from './Pages/SEO_Pages/Best-Digital-Marketing-Agency-in-Kerala'
 import Top_Digital_Marketing_Company_In_Kerala from './Pages/SEO_Pages/Top-Digital-Marketing-Comapny-In-Kerala'
 import Best_Digital_Marketing_Agency_In_Perinthalmanna from './Pages/SEO_Pages/Best-Digital-Marketing-Agency-In-Perinthalmanna'
@@ -21,6 +23,17 @@ import Best_Digital_Advertising_Agency_In_Kerala from './Pages/SEO_Pages/Best Di
 import BestBrandingAgencyKerala from './Pages/SEO_Pages/BestBrandingAgencyInKerala'
 import BestWebDevelopmentAgencyInKerala from './Pages/SEO_Pages/BestWebDevelopmentAgencyInKerala'
 import SeoServicesCompanyInKerala from './Pages/SEO_Pages/SEOServicesCompanyInKerala'
+
+// ✅ NEWLY ADDED SEO PAGES
+import Best_SEO_Company_In_Kerala from './Pages/SEO_Pages/Best_SEO_Company_In_Kerala'
+import Seo_Agency_In_Kerala from './Pages/SEO_Pages/Seo_Agency_In_Kerala'
+import Top_Digital_Marketing_Company_In_Perinthalmanna from './Pages/SEO_Pages/Top_Digital_Marketing_Company_In_Perinthalmanna'
+import Best_Digital_Advertising_Agency_In_Perinthalmanna from './Pages/SEO_Pages/Best_Digital_Advertising_Agency_In_Perinthalmanna'
+import Best_Branding_Agency_In_Perinthalmanna from './Pages/SEO_Pages/Best_Branding_Agency_In_Perinthalmanna'
+import Best_Web_Development_Agency_In_Perinthalmanna from './Pages/SEO_Pages/Best_Web_Development_Agency_In_Perinthalmanna'
+import SEO_Services_Company_In_Perinthalmanna from './Pages/SEO_Pages/SEO_Services_Company_In_Perinthalmanna'
+import Best_SEO_Company_Perinthalmanna from './Pages/SEO_Pages/Best_SEO_Company_Perinthalmanna'
+import Seo_Agency_In_Perinthalmanna from './Pages/SEO_Pages/Seo_Agency_In_Perinthalmanna'
 
 const App = () => {
 
@@ -50,8 +63,11 @@ const App = () => {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path='/careers' element={<Careers />} />
 
-        {/* SEO Pages Start Here */}
+        {/* ========================================= */}
+        {/* SEO Pages Routing */}
+        {/* ========================================= */}
 
+        {/* Existing Routes */}
         <Route path='/best-digital-marketing-agency-in-kerala' element={<Best_Digital_Marketing_Agency_In_Kerala/>} />
         <Route path='/top-digital-marketing-company-in-kerala' element={ <Top_Digital_Marketing_Company_In_Kerala />} />
         <Route path='/best-digital-marketing-agency-in-perinthalmanna' element={ <Best_Digital_Marketing_Agency_In_Perinthalmanna />} />
@@ -59,6 +75,17 @@ const App = () => {
         <Route path='/best-branding-agency-in-kerala' element={ <BestBrandingAgencyKerala/>} />
         <Route path='/best-web-development-agency-in-kerala' element={ <BestWebDevelopmentAgencyInKerala/>} />
         <Route path='/seo-services-company-in-kerala' element={ <SeoServicesCompanyInKerala/>} />
+
+        {/* ✅ NEWLY ADDED ROUTES */}
+        <Route path='/best-seo-company-in-kerala' element={<Best_SEO_Company_In_Kerala />} />
+        <Route path='/seo-agency-in-kerala' element={<Seo_Agency_In_Kerala />} />
+        <Route path='/top-digital-marketing-company-in-perinthalmanna' element={<Top_Digital_Marketing_Company_In_Perinthalmanna />} />
+        <Route path='/best-digital-advertising-agency-in-perinthalmanna' element={<Best_Digital_Advertising_Agency_In_Perinthalmanna />} />
+        <Route path='/best-branding-agency-in-perinthalmanna' element={<Best_Branding_Agency_In_Perinthalmanna />} />
+        <Route path='/best-web-development-agency-in-perinthalmanna' element={<Best_Web_Development_Agency_In_Perinthalmanna />} />
+        <Route path='/seo-services-company-in-perinthalmanna' element={<SEO_Services_Company_In_Perinthalmanna />} />
+        <Route path='/best-seo-company-perinthalmanna' element={<Best_SEO_Company_Perinthalmanna />} />
+        <Route path='/seo-agency-in-perinthalmanna' element={<Seo_Agency_In_Perinthalmanna />} />
 
         {/* Page Not Found */}
         <Route path="*" element={<NotFound />} />

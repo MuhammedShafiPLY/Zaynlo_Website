@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, DollarSign, Clock, Copyright, AlertTriangle, Scale } from "lucide-react";
-import PageBanner from "../Components/PageBanner"; // Reusing your banner
+import PageBanner from "../Components/PageBanner"; 
+import GetInTouch from "../Components/GetInTouch"; // Imported GetInTouch
+import Footer from "../Components/Footer"; // Imported Footer
 
 const TermsOfService = () => {
   
@@ -17,7 +19,7 @@ const TermsOfService = () => {
   };
 
   return (
-    <div className="bg-zinc-950 min-h-screen text-zinc-300">
+    <div className="bg-zinc-950 min-h-screen text-zinc-300 flex flex-col">
       
       {/* 1. Header Banner */}
       <PageBanner 
@@ -29,7 +31,7 @@ const TermsOfService = () => {
       />
 
       {/* 2. Content Container */}
-      <div className="max-w-5xl mx-auto px-6 py-20">
+      <div className="max-w-5xl mx-auto px-6 py-20 flex-grow">
         
         {/* Intro */}
         <div className="text-lg leading-relaxed border-b border-white/10 pb-10 mb-12">
@@ -37,7 +39,7 @@ const TermsOfService = () => {
             <strong>Effective Date: January 01, 2026</strong>
           </p>
           <p>
-            Welcome to <strong>Zaynlo Digital Solutions</strong>. By accessing our website, purchasing our services (Web Development, SEO, Branding, Social Media), or signing a service agreement with us, you agree to be bound by these Terms of Service ("Terms").
+            Welcome to <strong>Zaynlo Digital Solutions</strong>. By accessing our website, purchasing our services (Web Development, E-Commerce, SEO, Branding, Social Media), or signing a service agreement with us, you agree to be bound by these Terms of Service ("Terms").
           </p>
           <p className="mt-4 text-[#dbe11d]">
             If you do not agree with any part of these terms, you must not use our services.
@@ -56,12 +58,12 @@ const TermsOfService = () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-white">1. Scope of Services</h2>
             </div>
             <p className="mb-4">
-              Zaynlo provides digital services as described in your specific proposal or chosen package (Silver, Gold, Platinum, Diamond).
+              Zaynlo provides digital services as described in your specific proposal or chosen package.
             </p>
             <ul className="list-disc pl-6 space-y-3 marker:text-[#dbe11d]">
-              <li><strong>Web Development:</strong> We build websites based on the package selected. Changes to the scope after the project commences may incur additional charges.</li>
+              <li><strong>Web & E-Commerce Development:</strong> We build websites and stores based on the package selected. Changes to the scope after the project commences, or adding products/pages beyond the package limit, will incur additional charges.</li>
               <li><strong>SEO Services:</strong> We employ ethical (White Hat) strategies to improve rankings. However, we do not guarantee specific #1 rankings as search engines constantly update algorithms.</li>
-              <li><strong>Social Media:</strong> We manage content creation and posting schedules. We are not responsible for comments or user-generated content on your platforms.</li>
+              <li><strong>Social Media & Branding:</strong> We manage content creation, design, and posting schedules. Revisions beyond the included rounds will be billed extra.</li>
             </ul>
           </motion.section>
 
@@ -77,13 +79,13 @@ const TermsOfService = () => {
                 <div className="bg-zinc-900/50 p-6 rounded-2xl border border-white/5">
                     <h3 className="text-white font-bold text-lg mb-2">Payment Structure</h3>
                     <p className="text-sm leading-relaxed">
-                        A non-refundable advance deposit of <strong>50%</strong> is required to commence any project. The remaining <strong>50%</strong> balance is due upon project completion, prior to the final handover of credentials or source code.
+                        A non-refundable advance deposit of <strong>50%</strong> is required to commence any project. The remaining <strong>50%</strong> balance is due upon project completion, prior to the final handover of credentials or source code. Monthly retainer services (like SMM and SEO) must be paid in advance.
                     </p>
                 </div>
                 <div className="bg-zinc-900/50 p-6 rounded-2xl border border-white/5">
                     <h3 className="text-white font-bold text-lg mb-2">Refund Policy</h3>
                     <p className="text-sm leading-relaxed">
-                        Once design work or development has begun, the deposit is non-refundable. If a project is cancelled by the client midway, you agree to pay for all work completed up to that point.
+                        Once design work or development has begun, the deposit is non-refundable. If a project is cancelled by the client midway, you agree to pay for all work completed up to that point. Due to the nature of SEO work, SEO service fees are strictly non-refundable.
                     </p>
                 </div>
             </div>
@@ -101,8 +103,8 @@ const TermsOfService = () => {
               We strive to meet all deadlines outlined in your proposal. However, project timelines depend heavily on client cooperation.
             </p>
             <ul className="list-disc pl-6 space-y-3 marker:text-[#dbe11d]">
-              <li><strong>Client Delays:</strong> If you fail to provide content, images, or feedback on time, the project deadline will be extended accordingly.</li>
-              <li><strong>Revision Windows:</strong> Each package has a specific correction window (e.g., Silver: 3 Days, Gold: 10 Days, Platinum: 20 Days). Revisions requested after this window will be charged at our standard hourly rate.</li>
+              <li><strong>Client Delays:</strong> If you fail to provide content, images, approvals, or feedback on time, the project deadline will be extended accordingly.</li>
+              <li><strong>Revision Windows:</strong> Each package has a specific correction window. Revisions requested after this window will be charged at our standard rate.</li>
               <li><strong>Scope Creep:</strong> Any features requested outside the initial agreement will be treated as a new project or an add-on.</li>
             </ul>
           </motion.section>
@@ -116,7 +118,7 @@ const TermsOfService = () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-white">4. Intellectual Property</h2>
             </div>
             <p className="mb-4">
-              Upon full payment of all fees, Zaynlo grants you full ownership of the final website design and custom code.
+              Upon full payment of all fees, Zaynlo grants you full ownership of the final website design, creative assets, and custom code.
             </p>
             <div className="bg-[#dbe11d]/10 border-l-4 border-[#dbe11d] p-6 rounded-r-lg">
                 <p className="text-white font-medium">
@@ -137,7 +139,7 @@ const TermsOfService = () => {
               Zaynlo will not be liable for any indirect, special, or consequential damages arising out of:
             </p>
             <ul className="list-disc pl-6 space-y-2 marker:text-[#dbe11d]">
-              <li>Server downtime caused by third-party hosting providers (AWS, GoDaddy, Hostinger, etc.).</li>
+              <li>Server downtime caused by third-party hosting providers (AWS, Shopify, Hostinger, etc.).</li>
               <li>Loss of data due to client negligence or failure to maintain backups (unless maintenance is contracted).</li>
               <li>Changes in Search Engine algorithms that negatively impact SEO rankings.</li>
               <li>Hacking or malware attacks, provided we have implemented standard security measures upon delivery.</li>
@@ -162,7 +164,7 @@ const TermsOfService = () => {
             <h3 className="text-xl font-bold text-white mb-2">Questions regarding these terms?</h3>
             <p className="text-zinc-400 mb-6">We are happy to clarify any clause before we start our partnership.</p>
             <a 
-                href="mailto:contact@zaynlo.com" 
+                href="mailto:info@zaynlo.com" 
                 className="inline-block px-8 py-3 rounded-full border border-[#dbe11d] text-[#dbe11d] hover:bg-[#dbe11d] hover:text-black transition-all font-bold uppercase tracking-wider text-xs"
             >
                 Contact Legal Team
@@ -171,6 +173,11 @@ const TermsOfService = () => {
 
         </div>
       </div>
+
+      {/* 3. Get In Touch & Footer */}
+      <GetInTouch />
+      <Footer />
+      
     </div>
   );
 };

@@ -422,7 +422,7 @@ const BestWebDevelopmentAgencyInKerala = () => {
           <SEOHero
             h1={heroData.h1}
             introText={heroData.intro}
-            imageSrc="/about_banner.webp"
+            imageSrc="//seopage.webp"
           />
 
           {/* 2. WHY US SECTION */}

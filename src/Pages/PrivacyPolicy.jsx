@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-import PageBanner from "../Components/PageBanner"; // Reusing your banner
+import PageBanner from "../Components/PageBanner";
+import GetInTouch from "../Components/GetInTouch"; // Imported GetInTouch
+import Footer from "../Components/Footer"; // Imported Footer
 
 const PrivacyPolicy = () => {
   
@@ -9,7 +11,7 @@ const PrivacyPolicy = () => {
   }, []);
 
   return (
-    <div className="bg-zinc-950 min-h-screen text-zinc-300">
+    <div className="bg-zinc-950 min-h-screen text-zinc-300 flex flex-col">
       
       {/* 1. Simple Header Banner */}
       <PageBanner 
@@ -21,7 +23,7 @@ const PrivacyPolicy = () => {
       />
 
       {/* 2. Policy Content Container */}
-      <div className="max-w-4xl mx-auto px-6 py-20">
+      <div className="max-w-4xl mx-auto px-6 py-20 flex-grow">
         
         {/* Intro Section */}
         <div className="space-y-6 text-lg leading-relaxed border-b border-white/10 pb-10 mb-10">
@@ -67,7 +69,7 @@ const PrivacyPolicy = () => {
             <ul className="list-disc pl-6 space-y-2 marker:text-[#dbe11d]">
               <li><strong>Service Delivery:</strong> To build your website, optimize your SEO rankings, and manage your social media campaigns.</li>
               <li><strong>Communication:</strong> To provide project updates, respond to inquiries, and send invoices or proposals.</li>
-              <li><strong>Strategy Optimization:</strong> We analyze usage data to understand market trends and improve our digital packages (Silver, Gold, Platinum).</li>
+              <li><strong>Strategy Optimization:</strong> We analyze usage data to understand market trends and improve our digital packages.</li>
               <li><strong>Security:</strong> To detect and prevent fraudulent activities and ensure the security of our digital infrastructure.</li>
             </ul>
           </section>
@@ -130,16 +132,25 @@ const PrivacyPolicy = () => {
             <p className="mb-6">
               If you have any questions about this Privacy Policy, the practices of this site, or your dealings with us, please contact us at:
             </p>
-            <div className="bg-[#dbe11d] text-black p-8 rounded-3xl inline-block pr-20">
+            <div className="bg-[#dbe11d] text-black p-8 rounded-3xl inline-block pr-10 md:pr-20">
                 <h3 className="font-black text-2xl uppercase italic mb-2">Zaynlo Digital Solutions</h3>
-                <p className="font-medium">Phone: +91 95262 99568</p>
-                <p className="font-medium">Email: contact@zaynlo.com</p>
-                <p className="font-medium mt-4 opacity-80">Kozhikode, Kerala, India</p>
+                <p className="font-medium">Phone: +91 952 629 9568</p>
+                <p className="font-medium">Email: info@zaynlo.com</p>
+                <p className="font-medium mt-4 opacity-80">
+                  Aysha Commercial Complex, NH 966<br/>
+                  Perinthalmanna, Kerala 679322<br/>
+                  India
+                </p>
             </div>
           </section>
 
         </div>
       </div>
+
+      {/* 3. Get In Touch & Footer */}
+      <GetInTouch />
+      <Footer />
+      
     </div>
   );
 };

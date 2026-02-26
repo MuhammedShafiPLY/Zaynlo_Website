@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async"; // 1. Import Helmet
+import { Helmet } from "react-helmet-async"; 
 import { ArrowLeft, Check, MessageCircle } from "lucide-react";
 import { servicesData } from "../data/servicesData"; 
 import PageBanner from "../Components/PageBanner"; 
-// import ParticleBackground from "../Components/ParticlesBackground";
 import Footer from "../Components/Footer";
 import Testimonials from "../Sections/Testimonials";
 
@@ -54,18 +53,13 @@ const ServiceDetail = () => {
       {/* 2. DYNAMIC SEO CONFIGURATION */}
       {/* ------------------------------------------------------- */}
       <Helmet>
-        {/* Dynamic Title: e.g. "Web Development Services in Kerala | Zaynlo" */}
         <title>{`${service.title} Services in Kerala | Zaynlo Agency`}</title>
-        
-        {/* Dynamic Description: Uses your shortDesc + first sentence of intro */}
         <meta 
           name="description" 
           content={`${service.shortDesc} ${service.introText.substring(0, 100)}... Click to view pricing.`} 
         />
-        
         <link rel="canonical" href={`https://www.zaynlo.com/services/${id}`} />
 
-        {/* Dynamic Open Graph (WhatsApp/Facebook) */}
         <meta property="og:title" content={`${service.title} Services | Zaynlo`} />
         <meta property="og:description" content={service.shortDesc} />
         <meta property="og:url" content={`https://www.zaynlo.com/services/${id}`} />
@@ -198,9 +192,22 @@ const ServiceDetail = () => {
             ))}
         </div>
         
-        <p className="text-center text-zinc-500 text-sm mt-8">
-            Note: Additional pages beyond the package limit are charged at ₹1,000 per page.
-        </p>
+        {/* ✅ NB and TERMS SECTION ADDED HERE */}
+        
+        {/* Render NB only if it exists in the data */}
+        {service.nb && (
+          <p className="text-left text-zinc-500 text-sm mt-8 d-block">
+              <strong className="text-white mr-2">NB:</strong> {service.nb}
+          </p>
+        )}
+
+        {/* Render Terms and Conditions only if they exist in the data (Currently only on Web Dev) */}
+        {service.termsAndConditions && (
+          <div className="w-full mt-10">
+            {service.termsAndConditions}
+          </div>
+        )}
+        
       </section>
 
       {/* 5. OUTRO SECTION */}
