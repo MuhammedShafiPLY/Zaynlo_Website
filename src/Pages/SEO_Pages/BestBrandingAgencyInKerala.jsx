@@ -413,7 +413,7 @@ const BestBrandingAgencyKerala = () => {
           <SEOHero
             h1={heroData.h1}
             introText={heroData.intro}
-            imageSrc="//seopage.webp"
+            imageSrc="/seopage.webp"
           />
 
           {/* 2. WHY US SECTION */}
