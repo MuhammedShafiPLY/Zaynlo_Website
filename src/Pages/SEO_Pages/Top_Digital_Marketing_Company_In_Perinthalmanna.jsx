@@ -342,20 +342,45 @@ const Top_Digital_Marketing_Company_In_Perinthalmanna = () => {
   return (
     <>
       <Helmet>
-        <title>Top Digital Marketing Company In Perinthalmanna | Zaynlo</title>
-        <meta
-          name="description"
-          content="Grow your business with Zaynlo, the Top Digital Marketing Company In Perinthalmanna. Expert SEO, high-performance Web Development, and ROI-driven Ads."
-        />
-        <link
-          rel="canonical"
-          href={`${site_url}/top-digital-marketing-company-in-perinthalmanna`}
-        />
-        
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
+        {/* ── Primary SEO ── */}
+        <title>Top Digital Marketing Company in Perinthalmanna | Zaynlo</title>
+        <meta name="description" content="Grow with Zaynlo, the top digital marketing company in Perinthalmanna. Expert SEO, high-performance web development & ROI-driven Google Ads in Malappuram." />
+        <meta name="keywords" content="top digital marketing company Perinthalmanna, digital marketing agency Malappuram, SEO Perinthalmanna, web development Perinthalmanna, Google Ads Malappuram, Zaynlo" />
+        <link rel="canonical" href={`${site_url}/top-digital-marketing-company-in-perinthalmanna`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Top Digital Marketing Company in Perinthalmanna | Zaynlo" />
+        <meta property="og:description" content="Top digital marketing company in Perinthalmanna. Expert SEO, web development & Google Ads for Malappuram businesses by Zaynlo." />
+        <meta property="og:url" content={`${site_url}/top-digital-marketing-company-in-perinthalmanna`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Top Digital Marketing Company in Perinthalmanna | Zaynlo" />
+        <meta name="twitter:description" content="Top digital marketing company in Perinthalmanna. Expert SEO, web development & Google Ads by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What makes Zaynlo the top digital marketing company in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is the only full-service digital marketing company physically based in Perinthalmanna, offering in-house SEO, web development, branding, and paid ads — no outsourcing, no excuses." } },
+            { "@type": "Question", "name": "Does Zaynlo run Google Ads for Perinthalmanna businesses?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo designs and manages profitable Google Ads campaigns specifically targeting local customers in Perinthalmanna, Manjeri, Malappuram, and surrounding areas." } },
+            { "@type": "Question", "name": "How does Zaynlo help businesses in Malappuram grow online?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo uses a combination of Local SEO, social media marketing, Google Ads, and professional website development to help Malappuram businesses attract more customers and grow revenue online." } },
+            { "@type": "Question", "name": "What is the cost of digital marketing in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo offers flexible pricing based on your specific needs and goals. We have packages for local shops, mid-sized businesses, and enterprises. Contact us for a free consultation." } },
+            { "@type": "Question", "name": "Can I see results from digital marketing quickly in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Paid ads (Google, Meta) show results within days. Local SEO typically takes 2 to 4 months to show strong local rankings. Zaynlo provides clear progress updates throughout." } }
+          ]}`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "Top Digital Marketing Company in Perinthalmanna | Zaynlo", "description": "Grow your business with Zaynlo, the top digital marketing company in Perinthalmanna. Expert SEO, web development & Google Ads.", "url": "${site_url}/top-digital-marketing-company-in-perinthalmanna", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup for Local Business mapped to Perinthalmanna */}
         <script type="application/ld+json">

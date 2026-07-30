@@ -13,10 +13,74 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Best Advertising Agency In Kerala | Zaynlo</title>
-        <meta name="description" content="Ready to grow your brand? Connect with Zaynlo today." />
+        {/* ── Primary SEO ── */}
+        <title>Contact Zaynlo | Digital Agency in Perinthalmanna, Kerala</title>
+        <meta
+          name="description"
+          content="Contact Zaynlo, a top digital marketing agency in Perinthalmanna, Kerala. Call, email or visit us. We reply within 24 hours. Start your project today!"
+        />
+        <meta
+          name="keywords"
+          content="contact Zaynlo, digital agency Perinthalmanna, advertising agency Kerala contact, digital marketing agency Kerala, Zaynlo contact"
+        />
         <link rel="canonical" href={`${site_url}/contact`} />
-        {/* ... keep your other meta tags ... */}
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+
+        {/* ── Open Graph (Facebook / WhatsApp) ── */}
+        <meta property="og:title" content="Contact Zaynlo | Digital Agency in Perinthalmanna, Kerala" />
+        <meta property="og:description" content="Reach out to Zaynlo — Kerala's top advertising & digital marketing agency. We respond within 24 hours. Let's build something great together!" />
+        <meta property="og:url" content={`${site_url}/contact`} />
+        <meta property="og:image" content={`${site_url}/contact_banner.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter / X Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Zaynlo | Digital Agency in Perinthalmanna, Kerala" />
+        <meta name="twitter:description" content="Reach out to Kerala's top advertising & digital marketing agency. We respond within 24 hours." />
+        <meta name="twitter:image" content={`${site_url}/contact_banner.webp`} />
+
+        {/* ── LocalBusiness Schema ── */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Zaynlo Digital Agency",
+              "url": "${site_url}/contact",
+              "image": "${site_url}/about_banner.webp",
+              "logo": "${site_url}/logo.png",
+              "description": "Zaynlo is a top digital marketing and advertising agency in Perinthalmanna, Kerala offering SEO, web design, branding and social media marketing services.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Aysha Commercial Complex, NH 966",
+                "addressLocality": "Perinthalmanna",
+                "addressRegion": "Kerala",
+                "postalCode": "679322",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 10.9768,
+                "longitude": 76.2224
+              },
+              "telephone": "+919526299568",
+              "email": "info@zaynlo.com",
+              "openingHours": "Mo-Sa 09:00-18:00",
+              "priceRange": "$$",
+              "sameAs": [
+                "https://www.instagram.com/__zaynlo",
+                "https://www.linkedin.com/in/zaynlo-advertising-agency-16a13b3a3"
+              ]
+            }
+          `}
+        </script>
       </Helmet>
 
       <SmoothScroll>

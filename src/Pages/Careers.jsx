@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import {
   Briefcase,
   CheckCircle2,
@@ -62,6 +63,8 @@ const JOBS = [
 ];
 
 const Careers = () => {
+  const site_url = import.meta.env.VITE_SITE_URL;
+
   const handleApply = (jobTitle) => {
     const message = `Hello, I am interested in applying for the *${jobTitle}* position. I saw the job description and would like to discuss my qualifications.`;
     const url = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -83,7 +86,122 @@ const Careers = () => {
 
   return (
     <section className="bg-zinc-950 min-h-screen relative overflow-hidden">
-      
+
+      {/* ── SEO: Helmet ── */}
+      <Helmet>
+        {/* Primary SEO */}
+        <title>Careers at Zaynlo | Digital Agency Jobs in Kerala</title>
+        <meta
+          name="description"
+          content="Join Zaynlo's creative team in Perinthalmanna, Kerala. We're hiring React developers, UI/UX designers & backend engineers. Apply via WhatsApp today!"
+        />
+        <meta
+          name="keywords"
+          content="digital agency jobs Kerala, Zaynlo careers, React developer job Kerala, UI UX designer job Perinthalmanna, backend engineer job Kerala"
+        />
+        <link rel="canonical" href={`${site_url}/careers`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Careers at Zaynlo | Digital Agency Jobs in Kerala" />
+        <meta property="og:description" content="Join Kerala's top digital marketing agency. Open roles for developers, designers & marketers in Perinthalmanna." />
+        <meta property="og:url" content={`${site_url}/careers`} />
+        <meta property="og:image" content={`${site_url}/career_banner.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Careers at Zaynlo | Digital Agency Jobs in Kerala" />
+        <meta name="twitter:description" content="Join Kerala's top digital agency. We're hiring React developers, UI/UX designers & backend engineers in Perinthalmanna." />
+        <meta name="twitter:image" content={`${site_url}/career_banner.jpg`} />
+
+        {/* JobPosting Schema */}
+        <script type="application/ld+json">
+          {`[
+            {
+              "@context": "https://schema.org",
+              "@type": "JobPosting",
+              "title": "Senior React Developer",
+              "description": "We are looking for an experienced React developer to lead our frontend team and build scalable web applications for our digital agency clients.",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Zaynlo",
+                "sameAs": "${site_url}",
+                "logo": "${site_url}/logo.png"
+              },
+              "jobLocation": {
+                "@type": "Place",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Perinthalmanna",
+                  "addressRegion": "Kerala",
+                  "postalCode": "679322",
+                  "addressCountry": "IN"
+                }
+              },
+              "datePosted": "2026-01-01",
+              "validThrough": "2026-12-31",
+              "employmentType": "FULL_TIME",
+              "baseSalary": {
+                "@type": "MonetaryAmount",
+                "currency": "INR",
+                "value": { "@type": "QuantitativeValue", "unitText": "MONTH" }
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "JobPosting",
+              "title": "UI/UX Designer",
+              "description": "Creative designer needed to craft intuitive and visually stunning user interfaces for digital products at a leading Kerala creative agency.",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Zaynlo",
+                "sameAs": "${site_url}"
+              },
+              "jobLocation": {
+                "@type": "Place",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Perinthalmanna",
+                  "addressRegion": "Kerala",
+                  "addressCountry": "IN"
+                }
+              },
+              "datePosted": "2026-01-01",
+              "validThrough": "2026-12-31",
+              "employmentType": "FULL_TIME"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "JobPosting",
+              "title": "Backend Engineer",
+              "description": "Join our backend team to design robust APIs and manage database architecture for high-traffic digital systems.",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Zaynlo",
+                "sameAs": "${site_url}"
+              },
+              "jobLocation": {
+                "@type": "Place",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Perinthalmanna",
+                  "addressRegion": "Kerala",
+                  "addressCountry": "IN"
+                }
+              },
+              "datePosted": "2026-01-01",
+              "validThrough": "2026-12-31",
+              "employmentType": "FULL_TIME"
+            }
+          ]`}
+        </script>
+      </Helmet>
+
       {/* 1. Fixed PageBanner Props for Careers Context */}
       <PageBanner
         title="Join Our"

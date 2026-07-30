@@ -343,20 +343,45 @@ const Best_Branding_Agency_In_Perinthalmanna = () => {
   return (
     <>
       <Helmet>
-        <title>Best Branding Agency In Perinthalmanna | Zaynlo</title>
-        <meta
-          name="description"
-          content="Elevate your business with Zaynlo, the Best Branding Agency In Perinthalmanna. We craft premium logo designs, packaging, and complete brand identities."
-        />
-        <link
-          rel="canonical"
-          href={`${site_url}/best-branding-agency-in-perinthalmanna`}
-        />
-        
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
+        {/* ── Primary SEO ── */}
+        <title>Best Branding Agency in Perinthalmanna | Zaynlo</title>
+        <meta name="description" content="Elevate your business with Zaynlo, the best branding agency in Perinthalmanna. Premium logo design, brand identity & packaging for Malappuram businesses." />
+        <meta name="keywords" content="best branding agency Perinthalmanna, logo design Perinthalmanna, brand identity Malappuram, creative agency Perinthalmanna, packaging design Malappuram, Zaynlo" />
+        <link rel="canonical" href={`${site_url}/best-branding-agency-in-perinthalmanna`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Best Branding Agency in Perinthalmanna | Zaynlo" />
+        <meta property="og:description" content="Perinthalmanna's best branding agency. Premium logo design, brand identity & packaging for Malappuram businesses by Zaynlo." />
+        <meta property="og:url" content={`${site_url}/best-branding-agency-in-perinthalmanna`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best Branding Agency in Perinthalmanna | Zaynlo" />
+        <meta name="twitter:description" content="Best branding agency in Perinthalmanna. Logo design, brand identity & packaging by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What is the best branding agency in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is the best branding agency in Perinthalmanna, offering premium logo design, brand identity systems, packaging design, and creative strategy for local and regional businesses." } },
+            { "@type": "Question", "name": "Can Zaynlo design a logo for my Perinthalmanna business?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo has created logos for dozens of businesses in Perinthalmanna and Malappuram — from small retail shops to hospitals and restaurants. We tailor every design to your brand's personality." } },
+            { "@type": "Question", "name": "What is included in Zaynlo's branding package?", "acceptedAnswer": { "@type": "Answer", "text": "A Zaynlo branding package includes logo design, colour palette, typography, brand guidelines, and optionally packaging design and brand photography." } },
+            { "@type": "Question", "name": "How long does branding take with Zaynlo in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "A standard branding project takes 2 to 3 weeks. For businesses in Perinthalmanna, we can also offer in-person consultations at our office on NH 966." } },
+            { "@type": "Question", "name": "Does Zaynlo design product packaging for local businesses?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo specialises in premium product packaging design for local Malappuram brands, helping them stand out on shelves and compete with national and international products." } }
+          ]}`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "Best Branding Agency in Perinthalmanna | Zaynlo", "description": "Elevate your business with Zaynlo, the best branding agency in Perinthalmanna. Logo design, brand identity & packaging in Malappuram.", "url": "${site_url}/best-branding-agency-in-perinthalmanna", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup for Local Branding Agency */}
         <script type="application/ld+json">

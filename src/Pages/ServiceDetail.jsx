@@ -53,17 +53,56 @@ const ServiceDetail = () => {
       {/* 2. DYNAMIC SEO CONFIGURATION */}
       {/* ------------------------------------------------------- */}
       <Helmet>
-        <title>{`${service.title} Services in Kerala | Zaynlo Agency`}</title>
+        <title>{service.metaTitle || `${service.title} Services in Kerala | Zaynlo Agency`}</title>
         <meta 
           name="description" 
-          content={`${service.shortDesc} ${service.introText.substring(0, 100)}... Click to view pricing.`} 
+          content={service.metaDescription || `${service.shortDesc} Expert ${service.title.toLowerCase()} services in Kerala by Zaynlo.`} 
+        />
+        <meta
+          name="keywords"
+          content={`${service.title} Kerala, ${service.title.toLowerCase()} agency Kerala, ${service.title.toLowerCase()} services Perinthalmanna, Zaynlo ${service.title.toLowerCase()}`}
         />
         <link rel="canonical" href={`https://www.zaynlo.com/services/${id}`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-        <meta property="og:title" content={`${service.title} Services | Zaynlo`} />
-        <meta property="og:description" content={service.shortDesc} />
+        {/* Open Graph */}
+        <meta property="og:title" content={service.metaTitle || `${service.title} Services in Kerala | Zaynlo`} />
+        <meta property="og:description" content={service.metaDescription || service.shortDesc} />
         <meta property="og:url" content={`https://www.zaynlo.com/services/${id}`} />
         <meta property="og:image" content={`https://www.zaynlo.com${service.bgImg}`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* Twitter / X Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={service.metaTitle || `${service.title} Services in Kerala | Zaynlo`} />
+        <meta name="twitter:description" content={service.metaDescription || service.shortDesc} />
+        <meta name="twitter:image" content={`https://www.zaynlo.com${service.bgImg}`} />
+
+        {/* Service Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": service.title,
+            "description": service.metaDescription || service.shortDesc,
+            "provider": {
+              "@type": "Organization",
+              "name": "Zaynlo",
+              "url": "https://www.zaynlo.com",
+              "logo": "https://www.zaynlo.com/logo.png"
+            },
+            "areaServed": {
+              "@type": "State",
+              "name": "Kerala",
+              "addressCountry": "IN"
+            },
+            "url": `https://www.zaynlo.com/services/${id}`
+          })}
+        </script>
       </Helmet>
       {/* ------------------------------------------------------- */}
 
@@ -109,7 +148,7 @@ const ServiceDetail = () => {
             <div className="absolute inset-0 bg-[#dbe11d] rounded-2xl rotate-3 opacity-20 blur-xl"></div>
             <img 
                 src={service.introImage} 
-                alt={service.title} 
+                alt={`${service.title} services in Kerala – Zaynlo digital agency`} 
                 className="relative z-10 w-full rounded-2xl shadow-2xl border border-white/10"
             />
         </motion.div>

@@ -353,20 +353,55 @@ const BestBrandingAgencyKerala = () => {
   return (
     <>
       <Helmet>
-        <title>Best Branding Agency In Kerala | Zaynlo</title>
+        {/* ── Primary SEO ── */}
+        <title>Best Branding Agency in Kerala | Zaynlo</title>
         <meta
           name="description"
-          content="Transform your identity with Zaynlo, the Best Branding Agency In Kerala. We specialize in Logo Design, Packaging, and Strategy for growth-driven brands."
+          content="Transform your brand with Zaynlo, the best branding agency in Kerala. Expert logo design, brand identity, packaging & creative strategy for Kerala businesses."
         />
-        <link
-          rel="canonical"
-          href={`${site_url}/best-branding-agency-in-kerala`}
-        />
-        
         <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+          name="keywords"
+          content="best branding agency Kerala, logo design Kerala, brand identity Kerala, creative agency Kerala, packaging design Kerala, visual identity Kerala, Zaynlo"
         />
+        <link rel="canonical" href={`${site_url}/best-branding-agency-in-kerala`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Best Branding Agency in Kerala | Zaynlo" />
+        <meta property="og:description" content="Kerala's best branding agency. Expert logo design, brand identity, packaging & creative strategy by Zaynlo." />
+        <meta property="og:url" content={`${site_url}/best-branding-agency-in-kerala`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best Branding Agency in Kerala | Zaynlo" />
+        <meta name="twitter:description" content="Kerala's best branding agency. Logo design, brand identity & packaging by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "What is the best branding agency in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is recognised as the best branding agency in Kerala, specialising in logo design, brand identity systems, packaging design, and strategic brand positioning." } },
+              { "@type": "Question", "name": "What does a branding package from Zaynlo include?", "acceptedAnswer": { "@type": "Answer", "text": "A Zaynlo branding package typically includes a logo design, colour palette, typography system, brand guidelines document, and optionally product packaging — all tailored to your business personality." } },
+              { "@type": "Question", "name": "How long does a branding project take?", "acceptedAnswer": { "@type": "Answer", "text": "A standard branding project at Zaynlo takes 2 to 4 weeks, depending on the scope. Rush options are available for urgent timelines." } },
+              { "@type": "Question", "name": "Can Zaynlo rebrand an existing business?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Zaynlo has extensive experience in rebranding established Kerala businesses. We conduct a brand audit first, then craft a refreshed identity that preserves your legacy while modernising your image." } },
+              { "@type": "Question", "name": "Does branding really make a difference for small businesses?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Strong branding builds trust and recognition — key factors that convert browsers into buyers. Even small businesses in Kerala benefit dramatically from a professional brand identity." } }
+            ]
+          }`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "Best Branding Agency in Kerala | Zaynlo", "description": "Transform your brand with Zaynlo, the best branding agency in Kerala. Expert logo design, brand identity & packaging.", "url": "${site_url}/best-branding-agency-in-kerala", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup: Adjusted for Branding focus */}
         <script type="application/ld+json">

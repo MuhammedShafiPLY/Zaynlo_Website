@@ -58,6 +58,7 @@ const Hero = () => {
               Boring is a choice.
               <br />
               <span className="text-[#dbe11d]">Don't make it.</span>
+              <span className="sr-only"> Advertising & Digital Agency Kerala</span>
             </motion.h1>
 
             {/* Subtext */}
@@ -80,7 +81,7 @@ const Hero = () => {
             >
               <img
                 src="/frotimg.webp"
-                alt="Hero Visual"
+                alt="Zaynlo - Creative Advertising & Digital Agency Kerala workspace image"
                 // --- CHANGED HERE ---
                 // 1. Kept 'absolute bottom-10' (your gap)
                 // 2. Changed 'h-full' to 'h-[85%]' (decreased size)

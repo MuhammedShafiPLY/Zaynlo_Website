@@ -51,7 +51,7 @@ const MissionVision = () => {
           <motion.div variants={itemVariants} className="flex items-center gap-4 mb-4">
              <span className="w-12 h-[2px] bg-[#dbe11d]"></span>
              <h6 className="text-[#dbe11d] font-black uppercase tracking-[0.3em] text-xs">
-               Core Values
+               Core Values of our Digital Agency Team
              </h6>
           </motion.div>
           <motion.h2 variants={itemVariants} className="text-5xl md:text-7xl font-black text-white italic uppercase tracking-tighter leading-none">
@@ -73,7 +73,7 @@ const MissionVision = () => {
           <Card 
             variants={itemVariants}
             icon={<Target size={32} />}
-            title="Our Mission"
+            title="Our Mission | Branding Team Kerala"
             subtitle="To democratize creativity."
             desc="We are here to dismantle the barrier between what you can imagine and what technology can achieve. By harnessing the power of AI and cutting-edge design, we empower brands to tell stories that were previously impossible."
           />
@@ -82,7 +82,7 @@ const MissionVision = () => {
           <Card 
             variants={itemVariants}
             icon={<Eye size={32} />}
-            title="Our Vision"
+            title="Our Vision | Top Design Agency Kerala"
             subtitle="A world without boundaries."
             desc="We envision a future where technology doesn't replace artists, but amplifies them. A digital ecosystem where every idea, no matter how complex, can be visualized instantly and beautifully."
           />

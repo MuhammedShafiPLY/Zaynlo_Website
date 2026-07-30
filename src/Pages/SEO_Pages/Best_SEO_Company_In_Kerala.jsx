@@ -345,20 +345,45 @@ const Best_SEO_Company_In_Kerala = () => {
   return (
     <>
       <Helmet>
-        <title>Best SEO Company In Kerala | Zaynlo</title>
-        <meta
-          name="description"
-          content="Rank higher and drive real revenue with Zaynlo, the Best SEO Company In Kerala. We specialize in Technical SEO, Local Search, and Organic Growth."
-        />
-        <link
-          rel="canonical"
-          href={`${site_url}/best-seo-company-in-kerala`}
-        />
-        
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
+        {/* ── Primary SEO ── */}
+        <title>Best SEO Company in Kerala | Zaynlo</title>
+        <meta name="description" content="Rank higher and drive real revenue with Zaynlo, the best SEO company in Kerala. Technical SEO, local search & organic growth strategies for Kerala businesses." />
+        <meta name="keywords" content="best SEO company Kerala, SEO company Kerala, SEO services Kerala, organic search Kerala, Google ranking Kerala, search engine optimisation Kerala, Zaynlo" />
+        <link rel="canonical" href={`${site_url}/best-seo-company-in-kerala`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Best SEO Company in Kerala | Zaynlo" />
+        <meta property="og:description" content="Kerala's best SEO company. Technical SEO, local search & organic growth for Kerala businesses by Zaynlo." />
+        <meta property="og:url" content={`${site_url}/best-seo-company-in-kerala`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best SEO Company in Kerala | Zaynlo" />
+        <meta name="twitter:description" content="Kerala's best SEO company. Technical SEO, local search & organic growth by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What is the best SEO company in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is the best SEO company in Kerala, combining technical expertise with creative content strategy to deliver sustainable organic rankings and qualified traffic for businesses." } },
+            { "@type": "Question", "name": "How does Zaynlo's SEO process work?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo begins with a comprehensive SEO audit, followed by keyword strategy development, on-page optimisation, technical fixes, link building, and monthly progress reporting." } },
+            { "@type": "Question", "name": "Is SEO worth it for small businesses in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. SEO is often the highest-ROI digital marketing channel for small businesses. Ranking locally in Kerala means capturing customers actively searching for your service." } },
+            { "@type": "Question", "name": "Does Zaynlo provide monthly SEO reports?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every Zaynlo SEO client receives clear monthly reports showing keyword rankings, organic traffic growth, backlinks acquired, and actionable next steps." } },
+            { "@type": "Question", "name": "Can Zaynlo recover a penalised website?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo's technical SEO team can diagnose and recover websites from Google algorithm penalties and manual actions through a comprehensive link audit and disavow strategy." } }
+          ]}`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "Best SEO Company in Kerala | Zaynlo", "description": "Rank higher and drive real revenue with Zaynlo, the best SEO company in Kerala. Technical SEO, local search & organic growth.", "url": "${site_url}/best-seo-company-in-kerala", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup */}
         <script type="application/ld+json">

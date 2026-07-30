@@ -343,20 +343,45 @@ const Best_Web_Development_Agency_In_Perinthalmanna = () => {
   return (
     <>
       <Helmet>
-        <title>Best Web Development Agency In Perinthalmanna | Zaynlo</title>
-        <meta
-          name="description"
-          content="Upgrade your digital presence with Zaynlo, the Best Web Development Agency In Perinthalmanna. We build fast, secure, and highly converting websites and E-commerce stores."
-        />
-        <link
-          rel="canonical"
-          href={`${site_url}/best-web-development-agency-in-perinthalmanna`}
-        />
-        
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
+        {/* ── Primary SEO ── */}
+        <title>Best Web Development Agency in Perinthalmanna | Zaynlo</title>
+        <meta name="description" content="Upgrade with Zaynlo, the best web development agency in Perinthalmanna. We build fast, secure & converting websites & e-commerce stores in Malappuram." />
+        <meta name="keywords" content="best web development agency Perinthalmanna, website design Perinthalmanna, e-commerce Malappuram, React developer Perinthalmanna, web design Malappuram, Zaynlo" />
+        <link rel="canonical" href={`${site_url}/best-web-development-agency-in-perinthalmanna`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Best Web Development Agency in Perinthalmanna | Zaynlo" />
+        <meta property="og:description" content="Best web development agency in Perinthalmanna. Fast, secure & converting websites for Malappuram businesses by Zaynlo." />
+        <meta property="og:url" content={`${site_url}/best-web-development-agency-in-perinthalmanna`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best Web Development Agency in Perinthalmanna | Zaynlo" />
+        <meta name="twitter:description" content="Best web development agency in Perinthalmanna. Fast, secure & converting websites by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What is the best web development agency in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is the best web development agency in Perinthalmanna, building fast, mobile-friendly, and SEO-optimised websites for local businesses in Malappuram." } },
+            { "@type": "Question", "name": "Does Zaynlo build websites for local businesses in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo specialises in building professional websites for businesses of all sizes in Perinthalmanna — from small shops to hospitals, restaurants, and textile showrooms." } },
+            { "@type": "Question", "name": "How much does a website cost in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Website pricing depends on your requirements. Zaynlo offers packages starting from basic business websites to full-featured e-commerce stores. Contact us for a free quote." } },
+            { "@type": "Question", "name": "Will my website rank on Google?", "acceptedAnswer": { "@type": "Answer", "text": "Every Zaynlo website is built with SEO fundamentals — fast load times, mobile-first design, proper meta tags, and structured data. We can also add an ongoing SEO plan to drive organic traffic." } },
+            { "@type": "Question", "name": "Can Zaynlo build an e-commerce store for my Perinthalmanna business?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Zaynlo builds e-commerce stores with secure payment gateways, inventory management, and mobile-optimised designs — ideal for Perinthalmanna and Malappuram retailers going online." } }
+          ]}`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "Best Web Development Agency in Perinthalmanna | Zaynlo", "description": "Upgrade your digital presence with Zaynlo, the best web development agency in Perinthalmanna. Fast websites & e-commerce for Malappuram.", "url": "${site_url}/best-web-development-agency-in-perinthalmanna", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup for Web Design/Development Agency */}
         <script type="application/ld+json">

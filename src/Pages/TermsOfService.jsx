@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ShieldCheck, DollarSign, Clock, Copyright, AlertTriangle, Scale } from "lucide-react";
-import PageBanner from "../Components/PageBanner"; 
-import GetInTouch from "../Components/GetInTouch"; // Imported GetInTouch
-import Footer from "../Components/Footer"; // Imported Footer
+import PageBanner from "../Components/PageBanner";
+import GetInTouch from "../Components/GetInTouch";
+import Footer from "../Components/Footer";
 
 const TermsOfService = () => {
+  const site_url = import.meta.env.VITE_SITE_URL;
   
   // Scroll to top on load
   useEffect(() => {
@@ -20,8 +22,17 @@ const TermsOfService = () => {
 
   return (
     <div className="bg-zinc-950 min-h-screen text-zinc-300 flex flex-col">
-      
-      {/* 1. Header Banner */}
+
+      {/* ── SEO ── */}
+      <Helmet>
+        <title>Terms of Service | Zaynlo Digital Agency Kerala</title>
+        <meta
+          name="description"
+          content="Read Zaynlo's terms of service. Understand our policies on payments, revisions, intellectual property, and digital marketing service delivery in Kerala."
+        />
+        <link rel="canonical" href={`${site_url}/terms-of-service`} />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <PageBanner 
         title="Terms of" 
         highlight="Service" 

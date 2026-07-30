@@ -14,6 +14,8 @@ export const servicesData = [
   {
     id: "web-development",
     title: "Web Development",
+    metaTitle: "Web Development Services in Kerala | Zaynlo Agency",
+    metaDescription: "Upgrade your digital presence with Zaynlo's expert web development services in Kerala. We build fast, secure, and high-converting websites.",
     shortDesc: "High-performance digital ecosystems.",
     icon: Code,
     bgImg: "/web_banner.jpg",
@@ -218,6 +220,8 @@ export const servicesData = [
   {
     id: "google-ads",
     title: "Google Ads",
+    metaTitle: "Google Ads Management Services in Kerala | Zaynlo",
+    metaDescription: "Maximize your ROI with Zaynlo's expert Google Ads management services in Kerala. We drive high-intent traffic and generate qualified leads.",
     shortDesc: "Reach customers the moment they search.",
     icon: Target,
     bgImg: "/googleads_banner.jpg",
@@ -275,6 +279,8 @@ export const servicesData = [
   {
     id: "sem",
     title: "SEM Strategy",
+    metaTitle: "SEM & Paid Search Strategy Agency in Kerala | Zaynlo",
+    metaDescription: "Dominate search engines with Zaynlo's Search Engine Marketing (SEM) strategy. We manage your paid ad spend across Google and Bing for maximum ROI.",
     shortDesc: "Holistic paid search dominance.",
     icon: Megaphone,
     bgImg: "/seo_banner.jpg",
@@ -332,6 +338,8 @@ export const servicesData = [
   {
     id: "social-media",
     title: "Social Media Marketing",
+    metaTitle: "Social Media Marketing Services in Kerala | Zaynlo",
+    metaDescription: "Spark conversations and build brand loyalty with Zaynlo's social media marketing services in Kerala. Expert management for Instagram, Facebook & LinkedIn.",
     shortDesc: "Spark conversations, build loyalty.",
     icon: Share2,
     bgImg: "/social_banner.jpg",
@@ -484,6 +492,8 @@ export const servicesData = [
   {
     id: "ecommerce",
     title: "Shopify E-Commerce",
+    metaTitle: "Shopify E-Commerce Development in Kerala | Zaynlo",
+    metaDescription: "Launch a high-converting digital storefront with Zaynlo's Shopify e-commerce development services in Kerala. Drive online retail sales and growth.",
     shortDesc: "High-converting digital storefronts.",
     icon: ShoppingCart,
     bgImg: "/ecom_banner.jpg",
@@ -664,6 +674,8 @@ export const servicesData = [
   {
     id: "seo",
     title: "SEO Optimization",
+    metaTitle: "SEO Optimization Services in Kerala | Zaynlo Agency",
+    metaDescription: "Rank higher and grow organically with Zaynlo's expert SEO optimization services in Kerala. We specialize in technical SEO and local maps ranking.",
     shortDesc: "Rank higher, grow organically.",
     icon: Search,
     bgImg: "/seo_banner.jpg",
@@ -845,6 +857,8 @@ export const servicesData = [
   {
     id: "branding",
     title: "Brand Identity",
+    metaTitle: "Premium Brand Identity & Logo Design in Kerala | Zaynlo",
+    metaDescription: "Define your DNA and stand out. Zaynlo crafts premium brand identities, logo designs, and visual guidelines for ambitious businesses in Kerala.",
     shortDesc: "Define your DNA. Stand out.",
     icon: PenTool,
     bgImg: "/branding_banner.jpg",

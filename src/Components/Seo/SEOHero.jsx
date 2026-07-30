@@ -5,7 +5,8 @@ import { Link } from "react-router-dom"
 const SEOHero = ({ 
   h1, 
   introText, 
-  imageSrc// Default set to your requested image
+  imageSrc,
+  imageAlt = "Zaynlo – Digital marketing agency in Kerala"
 }) => {
 
   // Stagger Animation Variants (Matched to PageBanner)
@@ -44,7 +45,7 @@ const SEOHero = ({
         
         <img
           src={imageSrc}
-          alt="Digital Marketing Agency Kerala"
+          alt={imageAlt}
           className="w-full h-full object-cover will-change-transform"
         />
       </motion.div>

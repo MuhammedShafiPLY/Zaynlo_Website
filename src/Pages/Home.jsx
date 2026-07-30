@@ -20,11 +20,15 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        {/* Basic SEO */}
-        <title>Best Advertising & Digital Agency in Kerala | Zaynlo</title>
+        {/* ── Primary SEO ── */}
+        <title>Zaynlo | Digital Marketing Agency in Kerala</title>
         <meta
           name="description"
-          content="Transform your brand with Zaynlo, Kerala's top advertising agency. We specialize in branding, web design, and digital marketing. Get a free quote today!"
+          content="Zaynlo is Kerala's leading advertising & digital marketing agency. We offer expert branding, web design, SEO, and social media marketing. Get a free quote!"
+        />
+        <meta
+          name="keywords"
+          content="digital marketing agency Kerala, advertising agency Kerala, branding agency Kerala, web design Kerala, SEO services Kerala, social media marketing Kerala, Zaynlo, digital agency Perinthalmanna"
         />
         <link rel="canonical" href={site_url} />
         <meta
@@ -32,12 +36,22 @@ const Home = () => {
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
 
-        {/* Social Media / WhatsApp Tags */}
-        <meta property="og:title" content="Best Advertising & Digital Agency in Kerala | Zaynlo" />
-        <meta property="og:description" content="Transform your brand with Zaynlo. We specialize in branding, web design, and digital marketing." />
+        {/* ── Open Graph (Facebook / WhatsApp) ── */}
+        <meta property="og:title" content="Zaynlo | Digital Marketing Agency in Kerala" />
+        <meta property="og:description" content="Kerala's top advertising & digital agency. Expert branding, web design, SEO & social media marketing solutions tailored for your business." />
         <meta property="og:url" content={site_url} />
         <meta property="og:image" content={`${site_url}/about_banner.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter / X Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zaynlo | Digital Marketing Agency in Kerala" />
+        <meta name="twitter:description" content="Kerala's top advertising & digital agency. Expert branding, web design, SEO & social media marketing." />
+        <meta name="twitter:image" content={`${site_url}/about_banner.webp`} />
 
         {/* ✅ NEW: Schema Markup for the Homepage (Organization) */}
         <script type="application/ld+json">

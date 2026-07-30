@@ -7,8 +7,21 @@ import { Link } from "react-router-dom";
 const WhyChooseUs = () => {
   const features = [
     {
-      title: "Future-Proof Tech",
-      desc: "Our stack is unapologetically modern. By integrating React, Next.js, and AI, we deliver speed and intelligence that competitors simply can't match.",
+      title: "Web Design Kerala Tech",
+      desc: (
+        <span>
+          Our stack is unapologetically modern. We leverage official{" "}
+          <a
+            href="https://react.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white underline hover:text-[#dbe11d] transition-colors"
+          >
+            React
+          </a>{" "}
+          standards to deliver custom web design Kerala solutions that outperform competitors.
+        </span>
+      ),
       icon: <Zap size={28} />,
     },
     {
@@ -17,8 +30,8 @@ const WhyChooseUs = () => {
       icon: <ShieldCheck size={28} />,
     },
     {
-      title: "Strategic Growth",
-      desc: "We don't just launch apps; we scale them. Our data-driven approach ensures measurable ROI.",
+      title: "Digital Marketing Perinthalmanna",
+      desc: "We don't just launch apps; we scale them. Our data-driven digital marketing Perinthalmanna strategies ensure measurable growth and ROI.",
       icon: <BarChart3 size={28} />,
     },
     {
@@ -67,6 +80,7 @@ const WhyChooseUs = () => {
       {/* Floating Assets (Decorations) */}
       <FloatingAsset 
         imgSrc="/image01.png" 
+        alt="Zaynlo branding agency strategic planning visual"
         className="absolute -top-[30%] left-[5%] w-[400px] md:w-[500px] z-10 opacity-80 pointer-events-none" 
         flipX={true}
         duration={6}
@@ -74,6 +88,7 @@ const WhyChooseUs = () => {
 
       <FloatingAsset 
         imgSrc="/secimg02.webp" 
+        alt="Zaynlo digital marketing Perinthalmanna analytics visual"
         className="absolute -bottom-[50%] right-[5%] w-[200px] md:w-[400px] z-10 opacity-60 pointer-events-none" 
         flipX={false}
         duration={7}
@@ -118,7 +133,7 @@ const WhyChooseUs = () => {
             className="px-10 py-4 border-2 border-[#dbe11d] text-[#dbe11d] font-black uppercase tracking-widest text-xs rounded-full transition-all duration-300"
           >
             <Link to={'/contact'}>
-            Claim Your Strategy
+            Claim Your Custom Branding Strategy
             </Link>
           </motion.button>
         </div>
@@ -146,9 +161,9 @@ const WhyChooseUs = () => {
               </div>
 
               <div className="space-y-2">
-                <h4 className="text-xl md:text-2xl font-black uppercase italic tracking-tight text-white group-hover:text-[#dbe11d] transition-colors">
+                <h3 className="text-xl md:text-2xl font-black uppercase italic tracking-tight text-white group-hover:text-[#dbe11d] transition-colors">
                   {item.title}
-                </h4>
+                </h3>
                 <p className="text-zinc-500 text-sm md:text-base leading-relaxed group-hover:text-zinc-300 transition-colors">
                   {item.desc}
                 </p>

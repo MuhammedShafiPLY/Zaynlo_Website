@@ -100,6 +100,7 @@ const SmallProjects = () => {
       {/* Background Decor */}
       <FloatingAsset
         imgSrc="/image02.png"
+        alt="Zaynlo web design Kerala portfolio backdrop design"
         className="absolute -top-[5%] right-[5%] w-[300px] md:w-[600px] z-10 pointer-events-none opacity-50"
         flipX={true}
         duration={6}
@@ -126,8 +127,7 @@ const SmallProjects = () => {
           </span>
         </h2>
         <p className="text-zinc-500 max-w-2xl mt-6 text-lg md:text-xl font-medium leading-relaxed">
-          We transform complex ideas into high-fidelity digital realities.
-          Explore our neural interfaces.
+          We transform complex ideas into high-fidelity digital realities. As a premier branding agency and web design Kerala studio, we build projects that dominate.
         </p>
       </motion.div>
 
@@ -171,7 +171,7 @@ const SmallProjects = () => {
                 {/* Image */}
                 <img
                   src={item.img}
-                  alt={item.title}
+                  alt={`${item.title} - Creative web design Kerala by Zaynlo`}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   loading="lazy"
                 />
@@ -210,7 +210,7 @@ const SmallProjects = () => {
         className="flex gap-4 mt-16 z-20"
       >
         <Link to={'/projects'} className="group px-8 py-4 rounded-full border border-white/20 text-white hover:bg-[#dbe11d] hover:text-black hover:border-[#dbe11d] transition-all duration-300 flex items-center gap-3">
-          <span className="text-xs font-black tracking-[0.2em] uppercase">Go To Showcase</span>
+          <span className="text-xs font-black tracking-[0.2em] uppercase">Browse Web Design & Branding Showcase</span>
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </Link>
       </motion.div>

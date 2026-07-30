@@ -80,12 +80,29 @@ const About = () => {
               whileHover={{ x: 10 }}
               className="flex items-center gap-4 text-[#dbe11d] font-bold cursor-pointer group w-fit"
             >
-              
               <span className="h-[2px] w-12 bg-[#dbe11d] group-hover:w-20 transition-all duration-300 shadow-[0_0_10px_#dbe11d]"></span>
               <Link to={'/projects'}>
-              VIEW OUR WORKS
+              Explore Our Branding & Design Projects
               </Link>
             </motion.div>
+
+            {/* ✅ FIXED IMAGE PLACEMENT */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="pt-10 w-full max-w-[250px] md:max-w-[300px]"
+            >
+              {/* Ensure your image is inside the 'public' folder (e.g., public/zaynlo-asset.png) */}
+              <img 
+                src="/image01.webp" 
+                alt="Zaynlo - Leading branding agency and web design Kerala solutions" 
+                className="w-full h-auto object-contain drop-shadow-[0_0_20px_rgba(219,225,29,0.15)]"
+                // Remove any -scale-x-100 classes to fix the mirroring
+              />
+            </motion.div>
+
           </div>
         </div>
 
@@ -111,7 +128,7 @@ const About = () => {
               <div className="w-12 h-12 bg-[#dbe11d] rounded-xl flex items-center justify-center text-black shadow-[0_0_20px_rgba(219,225,29,0.4)]">
                  <Zap size={24} fill="black" />
               </div>
-              <h3 className="text-3xl md:text-4xl font-black italic uppercase">The Zaynlo Edge</h3>
+              <h3 className="text-3xl md:text-4xl font-black italic uppercase">The Zaynlo Edge: Branding Agency</h3>
               <p className="text-zinc-400 max-w-md text-lg leading-relaxed">
                 We bridge the gap between business logic and creative chaos. 
                 Our solutions are scalable, secure, and built to dominate 
@@ -142,7 +159,6 @@ const About = () => {
           ))}
 
           {/* Card 4: Action Card (High Visibility) */}
-          
           <motion.div 
             variants={itemVariants}
             whileHover={{ scale: 0.98 }}
@@ -152,7 +168,7 @@ const About = () => {
           >
             <div className="space-y-2">
               <h3 className="text-zinc-950 text-3xl md:text-4xl font-black uppercase italic leading-none">
-                Transform <br /> Your Assets
+                Transform <br /> Web Design Kerala
               </h3>
               <p className="text-black/60 font-bold text-sm uppercase tracking-wider">Get a custom solution now</p>
             </div>

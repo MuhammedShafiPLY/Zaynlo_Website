@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 const FloatingAsset = ({ 
   imgSrc, 
+  alt = "Zaynlo Asset",
   className = "", 
   flipX = false, 
   flipY = false,
@@ -13,7 +14,7 @@ const FloatingAsset = ({
     <div className={`pointer-events-none z-0 hidden md:block ${className}`}>
       <motion.img
         src={imgSrc}
-        alt="Zaynlo Asset"
+        alt={alt}
         // Flip and Floating Logic
         style={{ 
           scaleX: flipX ? -1 : 1, 

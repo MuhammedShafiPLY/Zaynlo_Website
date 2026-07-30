@@ -19,38 +19,41 @@ const Services = () => {
     <>
       {/* 2. SEO Configuration for Services Page */}
       <Helmet>
-        <title>Digital Marketing & Branding Services | Zaynlo</title>
+        {/* ── Primary SEO ── */}
+        <title>Digital Marketing Services in Kerala | Zaynlo</title>
         <meta
           name="description"
-          content="Explore our premium services: SEO, Social Media Marketing, Web Development, and Branding. Elevate your business with expert strategies. Contact us!"
+          content="Zaynlo offers expert digital marketing services in Kerala: SEO, web design, branding, Google Ads & social media marketing. Get results-driven solutions today."
+        />
+        <meta
+          name="keywords"
+          content="digital marketing services Kerala, SEO services Kerala, web design Kerala, branding agency Kerala, Google Ads agency Kerala, social media marketing Kerala, e-commerce development Kerala"
         />
         <link
           rel="canonical"
           href={`${site_url}/services`}
         />
-
         <meta
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
 
-        {/* Open Graph Tags for Social Media */}
-        <meta
-          property="og:title"
-          content="Digital Marketing & Branding Services | Zaynlo"
-        />
-        <meta
-          property="og:description"
-          content="We provide the full stack of future-ready digital solutions: AI design, 3D web experiences, and growth marketing."
-        />
-        <meta
-          property="og:url"
-          content={`${site_url}/services`}
-        />
-        <meta
-          property="og:image"
-          content={`${site_url}/service_banner.webp`}
-        />
+        {/* ── Open Graph (Facebook / WhatsApp) ── */}
+        <meta property="og:title" content="Digital Marketing Services in Kerala | Zaynlo" />
+        <meta property="og:description" content="SEO, web design, branding, Google Ads & social media marketing services in Kerala. Partner with Zaynlo for measurable digital growth." />
+        <meta property="og:url" content={`${site_url}/services`} />
+        <meta property="og:image" content={`${site_url}/service_banner.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter / X Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Digital Marketing Services in Kerala | Zaynlo" />
+        <meta name="twitter:description" content="SEO, web design, branding, Google Ads & social media marketing in Kerala by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/service_banner.webp`} />
       </Helmet>
 
       <SmoothScroll>

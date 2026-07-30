@@ -10,7 +10,9 @@ const SEOFeatureGrid = ({
   columns = 3,
   imageSrc,
   imageLink = "#",
-  imagePosition = "right", // New Prop: "left" or "right" (Default is right)
+  imagePosition = "right",
+  imageAlt = "Zaynlo digital marketing services Kerala",
+  imageTitle = "Zaynlo – Digital Agency Kerala",
 }) => {
   return (
     <section className="w-full py-16 px-6 bg-zinc-950">
@@ -90,8 +92,8 @@ const SEOFeatureGrid = ({
                 <div className="absolute inset-0 bg-[#dbe11d]/0 transition-colors duration-300 group-hover:bg-[#dbe11d]/10 z-10" />
                 <img
                   src={imageSrc}
-                  alt={h2}
-                  title="Best Digital Marketing Agency"
+                  alt={imageAlt}
+                  title={imageTitle}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </Link>

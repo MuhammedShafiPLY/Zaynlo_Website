@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import PageBanner from "../Components/PageBanner";
-import GetInTouch from "../Components/GetInTouch"; // Imported GetInTouch
-import Footer from "../Components/Footer"; // Imported Footer
+import GetInTouch from "../Components/GetInTouch";
+import Footer from "../Components/Footer";
 
 const PrivacyPolicy = () => {
+  const site_url = import.meta.env.VITE_SITE_URL;
   
   // Scroll to top on load
   useEffect(() => {
@@ -12,6 +14,17 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="bg-zinc-950 min-h-screen text-zinc-300 flex flex-col">
+
+      {/* ── SEO ── */}
+      <Helmet>
+        <title>Privacy Policy | Zaynlo Digital Agency Kerala</title>
+        <meta
+          name="description"
+          content="Read Zaynlo's privacy policy. Learn how we collect, use, and protect your personal data across our digital marketing and web development services in Kerala."
+        />
+        <link rel="canonical" href={`${site_url}/privacy-policy`} />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       
       {/* 1. Simple Header Banner */}
       <PageBanner 

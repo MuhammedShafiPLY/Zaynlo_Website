@@ -343,20 +343,45 @@ const Best_SEO_Company_Perinthalmanna = () => {
   return (
     <>
       <Helmet>
-        <title>Best SEO Company Perinthalmanna | Zaynlo Digital</title>
-        <meta
-          name="description"
-          content="Rank #1 on Google with Zaynlo, the best SEO company Perinthalmanna has to offer. We specialize in Local Google Maps, Technical SEO, and organic lead generation."
-        />
-        <link
-          rel="canonical"
-          href={`${site_url}/best-seo-company-perinthalmanna`}
-        />
-        
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
+        {/* ── Primary SEO ── */}
+        <title>Best SEO Company in Perinthalmanna | Zaynlo Digital</title>
+        <meta name="description" content="Rank #1 on Google with Zaynlo, the best SEO company in Perinthalmanna. Local Google Maps SEO, technical SEO & organic lead generation for Malappuram businesses." />
+        <meta name="keywords" content="best SEO company Perinthalmanna, SEO Perinthalmanna, local SEO Malappuram, Google ranking Perinthalmanna, SEO services Malappuram, Google Maps SEO Perinthalmanna, Zaynlo" />
+        <link rel="canonical" href={`${site_url}/best-seo-company-perinthalmanna`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Best SEO Company in Perinthalmanna | Zaynlo Digital" />
+        <meta property="og:description" content="Best SEO company in Perinthalmanna. Local Google Maps SEO, technical SEO & organic lead generation for Malappuram by Zaynlo." />
+        <meta property="og:url" content={`${site_url}/best-seo-company-perinthalmanna`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best SEO Company in Perinthalmanna | Zaynlo Digital" />
+        <meta name="twitter:description" content="Best SEO company in Perinthalmanna. Google Maps SEO, technical SEO & lead generation by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What is the best SEO company in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is the best SEO company in Perinthalmanna, specialising in Local Google Maps ranking, technical SEO, and organic lead generation for businesses in Malappuram." } },
+            { "@type": "Question", "name": "How can Zaynlo help my Perinthalmanna business rank on Google?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo improves your Google Business Profile, builds local backlinks, fixes technical issues on your website, and creates location-targeted content so you appear at the top when customers search near you." } },
+            { "@type": "Question", "name": "What is Google Maps SEO and why do I need it?", "acceptedAnswer": { "@type": "Answer", "text": "Google Maps SEO optimises your business listing to appear in the local 3-pack results. For Perinthalmanna businesses, this is crucial because most customers search for local services on their phones." } },
+            { "@type": "Question", "name": "Does Zaynlo provide local SEO for small businesses in Malappuram?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo has affordable SEO packages specifically designed for small shops, clinics, and local service providers in Perinthalmanna and across Malappuram district." } },
+            { "@type": "Question", "name": "How do I get started with SEO in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Simply contact Zaynlo at our Perinthalmanna office or call us to schedule a free SEO audit. We will analyse your current position and create a clear roadmap to improve your rankings." } }
+          ]}`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "Best SEO Company in Perinthalmanna | Zaynlo Digital", "description": "Rank #1 on Google with Zaynlo, the best SEO company in Perinthalmanna. Local Maps SEO, technical SEO & lead generation.", "url": "${site_url}/best-seo-company-perinthalmanna", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup for Local SEO Company */}
         <script type="application/ld+json">

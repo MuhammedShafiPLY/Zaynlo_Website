@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 const PageBanner = ({ 
   title = "Page", 
   highlight = "Title", 
+  keyword = "",
+  alt = "",
   description, 
   imageSrc, 
   primaryBtn,   // { text: "Click Me", link: "/path" or "tel:..." }
@@ -79,7 +81,7 @@ const PageBanner = ({
           <div className="absolute inset-0 bg-black/70 z-10" />
           <img
             src={imageSrc}
-            alt={title} // Better Alt text for SEO
+            alt={alt || `${title} ${highlight} - Zaynlo`} 
             className="w-full h-full object-cover will-change-transform"
           />
         </motion.div>
@@ -105,6 +107,7 @@ const PageBanner = ({
           className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-black leading-[0.9] text-white uppercase italic tracking-tighter drop-shadow-lg"
         >
           {title} <br className="md:hidden"/> <span className="text-[#dbe11d]">{highlight}</span>
+          {keyword && <span className="sr-only"> {keyword}</span>}
         </motion.h1>
 
         {/* Description */}

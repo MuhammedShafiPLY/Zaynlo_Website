@@ -6,22 +6,22 @@ import { Link } from "react-router-dom";
 
 const services = [
   {
-    title: "Web & App Development",
-    desc: "We go beyond basic web design to architect scalable digital platforms that drive real business growth.",
+    title: "Web Design Kerala & Development",
+    desc: "We go beyond basic web design in Kerala to architect scalable digital platforms that drive real business growth.",
     icon: <Globe2 size={40} />,
     color: "bg-[#edffcc]",
     text: "text-black",
   },
   {
-    title: "Digital Marketing & SEO",
-    desc: "Data-driven growth strategies that dominate search engines and social landscapes.",
+    title: "Digital Marketing & SEO Perinthalmanna",
+    desc: "Data-driven growth strategies and digital marketing in Perinthalmanna that dominate search engines.",
     icon: <Cpu size={40} />,
     color: "bg-black/80",
     text: "text-white",
   },
   {
-    title: "Brand Identity & UI/UX",
-    desc: "Visual storytelling for the digital age. We strip brands to their core and rebuild.",
+    title: "Branding Agency & UI/UX",
+    desc: "Visual storytelling by our branding agency. We strip brands to their core and rebuild for maximum impact.",
     icon: <Smartphone size={40} />,
     color: "bg-[#dbe11d]",
     text: "text-black",
@@ -197,9 +197,9 @@ const ServicesStack = () => {
                 </div>
 
                 <div className="mt-16 md:mt-20 space-y-4 md:space-y-6">
-                    <h4 className={`text-3xl md:text-4xl font-black uppercase italic tracking-tighter leading-tight ${service.text}`}>
+                    <h3 className={`text-3xl md:text-4xl font-black uppercase italic tracking-tighter leading-tight ${service.text}`}>
                         {service.title}
-                    </h4>
+                    </h3>
                     <p className={`text-base md:text-lg font-medium opacity-70 leading-relaxed ${service.text}`}>
                         {service.desc}
                     </p>
@@ -225,7 +225,7 @@ const ServicesStack = () => {
             className="px-8 py-4 md:px-10 md:py-5 border-2 border-[#dbe11d] text-[#dbe11d] font-black uppercase tracking-widest text-xs rounded-full transition-all duration-300"
           >
             <Link to={'/services'}>
-            Find Our Services
+            Explore our advertising & digital marketing services
             </Link>
           </motion.button>
         </div>

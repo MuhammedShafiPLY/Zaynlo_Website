@@ -35,6 +35,14 @@ import SEO_Services_Company_In_Perinthalmanna from './Pages/SEO_Pages/SEO_Servic
 import Best_SEO_Company_Perinthalmanna from './Pages/SEO_Pages/Best_SEO_Company_Perinthalmanna'
 import Seo_Agency_In_Perinthalmanna from './Pages/SEO_Pages/Seo_Agency_In_Perinthalmanna'
 
+// UAE SEO Pages
+import BestDigitalMarketingAgencyInUAE from './Pages/SEO_Pages/BestDigitalMarketingAgencyInUAE'
+import TopDigitalMarketingCompanyInUAE from './Pages/SEO_Pages/TopDigitalMarketingCompanyInUAE'
+import BestDigitalAdvertisingAgencyInUAE from './Pages/SEO_Pages/BestDigitalAdvertisingAgencyInUAE'
+import BestBrandingAgencyInUAE from './Pages/SEO_Pages/BestBrandingAgencyInUAE'
+import BestWebDevelopmentAgencyInUAE from './Pages/SEO_Pages/BestWebDevelopmentAgencyInUAE'
+import SEOServicesCompanyInUAE from './Pages/SEO_Pages/SEOServicesCompanyInUAE'
+
 const App = () => {
 
   const site_url = import.meta.env.VITE_SITE_URL;
@@ -86,6 +94,14 @@ const App = () => {
         <Route path='/seo-services-company-in-perinthalmanna' element={<SEO_Services_Company_In_Perinthalmanna />} />
         <Route path='/best-seo-company-perinthalmanna' element={<Best_SEO_Company_Perinthalmanna />} />
         <Route path='/seo-agency-in-perinthalmanna' element={<Seo_Agency_In_Perinthalmanna />} />
+
+        {/* UAE SEO Pages */}
+        <Route path='/best-digital-marketing-agency-in-uae' element={<BestDigitalMarketingAgencyInUAE />} />
+        <Route path='/top-digital-marketing-company-in-uae' element={<TopDigitalMarketingCompanyInUAE />} />
+        <Route path='/best-digital-advertising-agency-in-uae' element={<BestDigitalAdvertisingAgencyInUAE />} />
+        <Route path='/best-branding-agency-in-uae' element={<BestBrandingAgencyInUAE />} />
+        <Route path='/best-web-development-agency-in-uae' element={<BestWebDevelopmentAgencyInUAE />} />
+        <Route path='/seo-services-company-in-uae' element={<SEOServicesCompanyInUAE />} />
 
         {/* Page Not Found */}
         <Route path="*" element={<NotFound />} />

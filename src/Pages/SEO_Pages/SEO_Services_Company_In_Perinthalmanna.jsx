@@ -342,20 +342,45 @@ const SEO_Services_Company_In_Perinthalmanna = () => {
   return (
     <>
       <Helmet>
-        <title>SEO Services Company In Perinthalmanna | Zaynlo</title>
-        <meta
-          name="description"
-          content="Dominate Google rankings with Zaynlo, the premier SEO Services Company In Perinthalmanna. We specialize in Local Maps SEO, Technical Fixes, and Organic Lead Generation."
-        />
-        <link
-          rel="canonical"
-          href={`${site_url}/seo-services-company-in-perinthalmanna`}
-        />
-        
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
+        {/* ── Primary SEO ── */}
+        <title>SEO Services Company in Perinthalmanna | Zaynlo</title>
+        <meta name="description" content="Dominate Google with Zaynlo, the top SEO services company in Perinthalmanna. We offer local Maps SEO, technical fixes & organic lead generation." />
+        <meta name="keywords" content="SEO services company Perinthalmanna, SEO agency Perinthalmanna, local SEO Malappuram, Google Maps SEO Perinthalmanna, organic search Malappuram, Zaynlo" />
+        <link rel="canonical" href={`${site_url}/seo-services-company-in-perinthalmanna`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="SEO Services Company in Perinthalmanna | Zaynlo" />
+        <meta property="og:description" content="Premier SEO services company in Perinthalmanna. Local Maps SEO, technical fixes & lead generation for Malappuram businesses by Zaynlo." />
+        <meta property="og:url" content={`${site_url}/seo-services-company-in-perinthalmanna`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SEO Services Company in Perinthalmanna | Zaynlo" />
+        <meta name="twitter:description" content="Premier SEO services in Perinthalmanna. Local Maps SEO, technical SEO & lead generation by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What is the best SEO services company in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is the premier SEO services company in Perinthalmanna, providing local Google Maps SEO, technical fixes, and organic lead generation for businesses in Malappuram." } },
+            { "@type": "Question", "name": "How does Zaynlo's local SEO work for Perinthalmanna businesses?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo optimises your Google Business Profile, builds local citations, and creates location-specific content so your business appears when customers search for your service in Perinthalmanna and nearby areas." } },
+            { "@type": "Question", "name": "How long does SEO take to show results in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "For local Perinthalmanna businesses, Google Maps rankings can improve within 4 to 8 weeks. Organic search rankings typically take 3 to 6 months for significant improvement." } },
+            { "@type": "Question", "name": "Does SEO help medical and retail businesses in Malappuram?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Zaynlo has helped clinics, hospitals, textile showrooms, and retail stores in Malappuram rank higher on Google, attracting more local walk-in and online customers." } },
+            { "@type": "Question", "name": "What does an SEO audit from Zaynlo in Perinthalmanna include?", "acceptedAnswer": { "@type": "Answer", "text": "A Zaynlo SEO audit covers your website's technical health, keyword opportunities, competitor analysis, Google Business Profile review, and a clear action plan to improve your rankings." } }
+          ]}`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "SEO Services Company in Perinthalmanna | Zaynlo", "description": "Premier SEO services in Perinthalmanna. Local Maps SEO, technical fixes & organic lead generation for Malappuram businesses.", "url": "${site_url}/seo-services-company-in-perinthalmanna", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup for Local SEO Company */}
         <script type="application/ld+json">

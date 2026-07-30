@@ -353,20 +353,45 @@ const SeoServicesCompanyInKerala = () => {
   return (
     <>
       <Helmet>
-        <title>Best SEO Services Company In Kerala | Zaynlo</title>
-        <meta
-          name="description"
-          content="Rank #1 with Zaynlo, the Best SEO Services Company In Kerala. We provide Technical SEO, Link Building, and Local SEO strategies for long-term growth."
-        />
-        <link
-          rel="canonical"
-          href={`${site_url}/seo-services-company-in-kerala`}
-        />
-        
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
+        {/* ── Primary SEO ── */}
+        <title>Best SEO Services Company in Kerala | Zaynlo</title>
+        <meta name="description" content="Rank #1 with Zaynlo, the best SEO services company in Kerala. Expert technical SEO, local search, link building & content strategy for long-term organic growth." />
+        <meta name="keywords" content="SEO services company Kerala, best SEO company Kerala, SEO agency Kerala, local SEO Kerala, technical SEO Kerala, link building Kerala, organic search Kerala, Zaynlo" />
+        <link rel="canonical" href={`${site_url}/seo-services-company-in-kerala`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Best SEO Services Company in Kerala | Zaynlo" />
+        <meta property="og:description" content="Kerala's best SEO services company. Technical SEO, local search, link building & content strategy for long-term rankings by Zaynlo." />
+        <meta property="og:url" content={`${site_url}/seo-services-company-in-kerala`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best SEO Services Company in Kerala | Zaynlo" />
+        <meta name="twitter:description" content="Kerala's best SEO services company. Technical SEO, local search & link building by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What is the best SEO services company in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is recognised as the best SEO services company in Kerala, providing technical SEO, local search optimisation, link building, and content strategy that drives sustainable organic growth." } },
+            { "@type": "Question", "name": "What SEO services does Zaynlo offer in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo offers a full range of SEO services including technical SEO audits, on-page optimisation, local SEO & Google Maps optimisation, link building, content strategy, and monthly performance reporting." } },
+            { "@type": "Question", "name": "How long does SEO take to show results?", "acceptedAnswer": { "@type": "Answer", "text": "Most clients start seeing measurable improvements in rankings and traffic within 3 to 6 months. Long-tail keywords and local searches often show results faster." } },
+            { "@type": "Question", "name": "Does Zaynlo use white-hat SEO techniques?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo exclusively uses white-hat, Google-compliant SEO strategies. We never use black-hat tactics that could result in penalties or ranking drops for your website." } },
+            { "@type": "Question", "name": "Can Zaynlo improve my Google Maps ranking?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo specialises in Local SEO and Google Business Profile optimisation, which directly improves your ranking in the local 3-pack and Google Maps search results." } }
+          ]}`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "Best SEO Services Company in Kerala | Zaynlo", "description": "Rank #1 with Zaynlo, the best SEO services company in Kerala. Technical SEO, local search & link building.", "url": "${site_url}/seo-services-company-in-kerala", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup: Adjusted for SEO Service focus */}
         <script type="application/ld+json">

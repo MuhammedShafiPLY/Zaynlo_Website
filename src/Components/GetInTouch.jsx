@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, X, Loader2, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
@@ -140,7 +141,15 @@ const GetInTouch = () => {
               className="text-zinc-400 text-lg max-w-md mb-10 leading-relaxed font-light"
             >
               We are currently accepting new projects. Click below to start the
-              conversation.
+              conversation. Or view our{" "}
+              <Link to="/services" className="text-[#dbe11d] hover:underline font-medium">
+                digital marketing services
+              </Link>{" "}
+              and{" "}
+              <Link to="/projects" className="text-[#dbe11d] hover:underline font-medium">
+                creative portfolio
+              </Link>{" "}
+              first.
             </motion.p>
 
             <motion.button
@@ -163,7 +172,7 @@ const GetInTouch = () => {
           >
             <motion.img
               src="/cont_img.webp"
-              alt="Future Tech"
+              alt="Zaynlo digital marketing agency Kerala team collaborating on a creative project"
               animate={{ y: [1, -20, 1], rotate: [0, 0, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -bottom-[100px] w-full h-full object-contain drop-shadow-[0_0_50px_rgba(219,225,29,0.2)]"

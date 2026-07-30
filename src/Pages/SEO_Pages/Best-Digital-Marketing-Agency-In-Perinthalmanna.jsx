@@ -354,20 +354,45 @@ const Best_Digital_Marketing_Agency_In_Perinthalmanna = () => {
   return (
     <>
       <Helmet>
-        <title>Best Digital Marketing Agency In Perinthalmanna | Zaynlo</title>
-        <meta
-          name="description"
-          content="Zaynlo is the Best Digital Marketing Agency In Perinthalmanna. We offer top-tier SEO, Branding, and Web Development services right here in Malappuram."
-        />
-        <link
-          rel="canonical"
-          href={`${site_url}/best-digital-marketing-agency-in-perinthalmanna`}
-        />
-        
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
+        {/* ── Primary SEO ── */}
+        <title>Best Digital Marketing Agency in Perinthalmanna | Zaynlo</title>
+        <meta name="description" content="Zaynlo is the best digital marketing agency in Perinthalmanna. Expert SEO, branding, web development & social media marketing right here in Malappuram, Kerala." />
+        <meta name="keywords" content="best digital marketing agency Perinthalmanna, digital marketing Malappuram, SEO Perinthalmanna, branding agency Perinthalmanna, web development Perinthalmanna, Zaynlo" />
+        <link rel="canonical" href={`${site_url}/best-digital-marketing-agency-in-perinthalmanna`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Best Digital Marketing Agency in Perinthalmanna | Zaynlo" />
+        <meta property="og:description" content="Zaynlo is Perinthalmanna's best digital marketing agency. Local expertise in SEO, branding & web development in Malappuram, Kerala." />
+        <meta property="og:url" content={`${site_url}/best-digital-marketing-agency-in-perinthalmanna`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best Digital Marketing Agency in Perinthalmanna | Zaynlo" />
+        <meta name="twitter:description" content="Perinthalmanna's best digital marketing agency. SEO, branding & web development in Malappuram by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "Why is Zaynlo the best digital marketing agency in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo combines local presence in Perinthalmanna with elite digital marketing skills. We are an in-house team of developers, designers, and strategists at Aysha Commercial Complex, NH 966." } },
+            { "@type": "Question", "name": "Can I meet the Zaynlo team in person?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We are located at Aysha Commercial Complex, NH 966, Perinthalmanna. We strongly encourage face-to-face meetings to better understand your business goals." } },
+            { "@type": "Question", "name": "Does Zaynlo work with small local shops in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Zaynlo has specific, affordable packages designed for local retail shops, clinics, and service providers in Perinthalmanna and Malappuram to get them online and visible on Google." } },
+            { "@type": "Question", "name": "How does SEO help my local Perinthalmanna business?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo optimises your Google Business Profile so when someone in Perinthalmanna searches for your service, your shop appears at the top of Google Maps and local search results." } },
+            { "@type": "Question", "name": "Why choose Zaynlo over a freelancer in Malappuram?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is a registered company with a full in-house team and a physical office in Perinthalmanna. Unlike freelancers, we provide consistent delivery, reliability, and accountability for your brand." } }
+          ]}`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "Best Digital Marketing Agency in Perinthalmanna | Zaynlo", "description": "Zaynlo is the best digital marketing agency in Perinthalmanna. Expert SEO, branding & web development in Malappuram.", "url": "${site_url}/best-digital-marketing-agency-in-perinthalmanna", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup: Adjusted for Local SEO focus */}
         <script type="application/ld+json">

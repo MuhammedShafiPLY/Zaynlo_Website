@@ -349,20 +349,45 @@ const Seo_Agency_In_Kerala = () => {
   return (
     <>
       <Helmet>
-        <title>SEO Agency In Kerala | Zaynlo Digital</title>
-        <meta
-          name="description"
-          content="Drive qualified organic traffic and dominate search results with Zaynlo, the leading SEO Agency in Kerala. We specialize in Technical, Local, and E-commerce SEO."
-        />
-        <link
-          rel="canonical"
-          href={`${site_url}/seo-agency-in-kerala`}
-        />
-        
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
+        {/* ── Primary SEO ── */}
+        <title>SEO Agency in Kerala | Zaynlo Digital</title>
+        <meta name="description" content="Drive organic traffic with Zaynlo, the leading SEO agency in Kerala. Expert technical SEO, local maps optimisation & content strategy for Kerala brands." />
+        <meta name="keywords" content="SEO agency Kerala, SEO company Kerala, local SEO Kerala, Google Maps SEO Kerala, technical SEO agency Kerala, content SEO Kerala, Zaynlo" />
+        <link rel="canonical" href={`${site_url}/seo-agency-in-kerala`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="SEO Agency in Kerala | Zaynlo Digital" />
+        <meta property="og:description" content="Leading SEO agency in Kerala. Technical SEO, Google Maps & content strategy by Zaynlo." />
+        <meta property="og:url" content={`${site_url}/seo-agency-in-kerala`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SEO Agency in Kerala | Zaynlo Digital" />
+        <meta name="twitter:description" content="Leading SEO agency in Kerala. Technical SEO, Google Maps & content strategy by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What does an SEO agency do in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "An SEO agency like Zaynlo improves your website visibility on Google through technical optimisation, keyword targeting, content creation, link building, and local search strategies specific to the Kerala market." } },
+            { "@type": "Question", "name": "Why choose Zaynlo as your SEO agency in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo combines deep technical SEO expertise with an intimate understanding of the Kerala market, delivering transparent data-driven campaigns that improve rankings and drive qualified organic traffic." } },
+            { "@type": "Question", "name": "What is local SEO and does my Kerala business need it?", "acceptedAnswer": { "@type": "Answer", "text": "Local SEO optimises your presence for location-based searches. If you have a physical business serving local Kerala customers, local SEO is essential for appearing in Google Maps results." } },
+            { "@type": "Question", "name": "How does Zaynlo track SEO performance?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo uses Google Search Console, Analytics, and rank tracking tools to monitor keyword positions, organic traffic, click-through rates, and conversions — all shared in monthly reports." } },
+            { "@type": "Question", "name": "Can Zaynlo help an e-commerce business with SEO in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo has specific e-commerce SEO capabilities including product page optimisation, schema markup, category SEO, and Google Shopping feed management for Kerala online stores." } }
+          ]}`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "SEO Agency in Kerala | Zaynlo Digital", "description": "Drive qualified organic traffic with Zaynlo, the leading SEO agency in Kerala. Technical SEO, local maps & content strategy.", "url": "${site_url}/seo-agency-in-kerala", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup */}
         <script type="application/ld+json">

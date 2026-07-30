@@ -353,20 +353,55 @@ const BestWebDevelopmentAgencyInKerala = () => {
   return (
     <>
       <Helmet>
-        <title>Best Web Development Agency In Kerala | Zaynlo</title>
+        {/* ── Primary SEO ── */}
+        <title>Best Web Development Agency in Kerala | Zaynlo</title>
         <meta
           name="description"
-          content="Build high-performance websites with Zaynlo, the Best Web Development Agency In Kerala. We specialize in Custom React, Next.js, and E-commerce solutions."
+          content="Build high-performance websites with Zaynlo, the best web development agency in Kerala. Custom React, Next.js & e-commerce solutions for Kerala businesses."
         />
-        <link
-          rel="canonical"
-          href={`${site_url}/best-web-development-agency-in-kerala`}
-        />
-        
         <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+          name="keywords"
+          content="best web development agency Kerala, React web development Kerala, custom website Kerala, e-commerce development Kerala, web design company Kerala, Next.js developer Kerala, Zaynlo"
         />
+        <link rel="canonical" href={`${site_url}/best-web-development-agency-in-kerala`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Best Web Development Agency in Kerala | Zaynlo" />
+        <meta property="og:description" content="Kerala's best web development agency. Custom React, e-commerce & high-performance websites by Zaynlo." />
+        <meta property="og:url" content={`${site_url}/best-web-development-agency-in-kerala`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best Web Development Agency in Kerala | Zaynlo" />
+        <meta name="twitter:description" content="Kerala's best web development agency. Custom React, e-commerce & high-performance websites." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "What is the best web development agency in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is recognised as the best web development agency in Kerala, building fast, secure, and conversion-optimised websites using modern technologies like React and Next.js." } },
+              { "@type": "Question", "name": "Does Zaynlo build e-commerce websites in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo specialises in e-commerce development including custom Shopify stores, WooCommerce shops, and fully custom React-based online stores with secure payment integrations." } },
+              { "@type": "Question", "name": "How long does it take to build a website?", "acceptedAnswer": { "@type": "Answer", "text": "A basic business website typically takes 1 to 2 weeks. A complex e-commerce platform may take 4 to 8 weeks. Zaynlo provides a clear project timeline before development begins." } },
+              { "@type": "Question", "name": "Will my website be SEO-friendly?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Every Zaynlo website is built with SEO best practices baked in — fast loading speeds, clean code, proper heading structure, meta tags, schema markup, and mobile-first design." } },
+              { "@type": "Question", "name": "Do you provide website maintenance after launch?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo offers affordable monthly maintenance packages that include security updates, content changes, performance monitoring, and technical support for your Kerala-based website." } }
+            ]
+          }`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "Best Web Development Agency in Kerala | Zaynlo", "description": "Build high-performance websites with Zaynlo, the best web development agency in Kerala. Custom React, Next.js & e-commerce solutions.", "url": "${site_url}/best-web-development-agency-in-kerala", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup: Adjusted for Web Development focus */}
         <script type="application/ld+json">

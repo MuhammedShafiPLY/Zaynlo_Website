@@ -460,20 +460,121 @@ const Top_Digital_Marketing_Company_In_Kerala = () => {
   return (
     <>
       <Helmet>
+        {/* ── Primary SEO ── */}
         <title>Top Digital Marketing Company in Kerala | Zaynlo</title>
         <meta
           name="description"
-          content="Partner with the Top Digital Marketing Company in Kerala. Zaynlo delivers ROI-focused SEO, Branding, and Web Solutions to scale your business."
+          content="Partner with the top digital marketing company in Kerala. Zaynlo delivers ROI-focused SEO, branding, web design & Google Ads to scale your business."
+        />
+        <meta
+          name="keywords"
+          content="top digital marketing company Kerala, best digital marketing Kerala, digital agency Kochi, digital agency Calicut, SEO company Kerala, branding company Kerala, Zaynlo"
         />
         <link
           rel="canonical"
           href={`${site_url}/top-digital-marketing-company-in-kerala`}
         />
-
         <meta
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Top Digital Marketing Company in Kerala | Zaynlo" />
+        <meta property="og:description" content="Partner with Kerala's top digital marketing company. Zaynlo delivers ROI-focused SEO, branding, web design & Google Ads for growing brands." />
+        <meta property="og:url" content={`${site_url}/top-digital-marketing-company-in-kerala`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Top Digital Marketing Company in Kerala | Zaynlo" />
+        <meta name="twitter:description" content="Kerala's top digital marketing company. Expert SEO, branding, web design & Google Ads." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── AdvertisingAgency Schema ── */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "AdvertisingAgency",
+            "name": "Zaynlo",
+            "image": "${site_url}/logo.png",
+            "@id": "${site_url}/#organization",
+            "url": "${site_url}",
+            "telephone": "+919526299568",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Aysha Commercial Complex, NH 966",
+              "addressLocality": "Perinthalmanna",
+              "addressRegion": "Kerala",
+              "postalCode": "679322",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 10.9768,
+              "longitude": 76.2224
+            },
+            "areaServed": { "@type": "AdministrativeArea", "name": "Kerala" },
+            "sameAs": [
+              "https://www.instagram.com/__zaynlo",
+              "https://www.linkedin.com/in/zaynlo-advertising-agency-16a13b3a3"
+            ]
+          }`}
+        </script>
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What makes Zaynlo the top digital marketing company in Kerala?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo combines full-stack expertise in SEO, branding, and web development with a data-driven, transparent approach that consistently delivers measurable ROI for Kerala businesses." }
+              },
+              {
+                "@type": "Question",
+                "name": "Which industries does Zaynlo serve in Kerala?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo serves a wide range of industries including healthcare, real estate, retail, e-commerce, hospitality, education, and professional services across Kerala." }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Zaynlo offer custom digital marketing packages?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo builds completely custom digital marketing strategies based on your specific business goals, target audience, and budget — no generic templates." }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does it take to see results from digital marketing?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Paid ads (Google Ads, Meta Ads) can show results within days. SEO typically takes 3 to 6 months for significant organic growth. Branding results are measured in brand equity built over time." }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Zaynlo better than hiring an in-house team?",
+                "acceptedAnswer": { "@type": "Answer", "text": "For most Kerala businesses, partnering with Zaynlo is more cost-effective than building an in-house team. You get access to a full team of specialists — designers, developers, SEO experts, and strategists — at a fraction of the cost." }
+              }
+            ]
+          }`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Top Digital Marketing Company in Kerala | Zaynlo",
+            "description": "Partner with the top digital marketing company in Kerala. Zaynlo delivers ROI-focused SEO, branding, web design and Google Ads.",
+            "url": "${site_url}/top-digital-marketing-company-in-kerala",
+            "inLanguage": "en-IN",
+            "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } }
+          }`}
+        </script>
 
         {/* Schema Markup: Adjusted for "Company" keyword */}
         <script type="application/ld+json">

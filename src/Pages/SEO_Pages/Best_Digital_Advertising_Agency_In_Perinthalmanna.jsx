@@ -344,20 +344,45 @@ const Best_Digital_Advertising_Agency_In_Perinthalmanna = () => {
   return (
     <>
       <Helmet>
-        <title>Best Digital Advertising Agency In Perinthalmanna | Zaynlo</title>
-        <meta
-          name="description"
-          content="Get higher ROI with Zaynlo, the Best Digital Advertising Agency In Perinthalmanna. We run profitable Google Ads, Meta Ads, and Lead Generation campaigns."
-        />
-        <link
-          rel="canonical"
-          href={`${site_url}/best-digital-advertising-agency-in-perinthalmanna`}
-        />
-        
-        <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
+        {/* ── Primary SEO ── */}
+        <title>Best Digital Advertising Agency in Perinthalmanna | Zaynlo</title>
+        <meta name="description" content="Get high ROI with Zaynlo, the best digital advertising agency in Perinthalmanna. We run profitable Google Ads, Meta Ads & lead generation in Malappuram." />
+        <meta name="keywords" content="best digital advertising agency Perinthalmanna, Google Ads Perinthalmanna, Meta Ads Malappuram, PPC agency Perinthalmanna, lead generation Malappuram, Zaynlo" />
+        <link rel="canonical" href={`${site_url}/best-digital-advertising-agency-in-perinthalmanna`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Best Digital Advertising Agency in Perinthalmanna | Zaynlo" />
+        <meta property="og:description" content="Perinthalmanna's best digital advertising agency. High-ROI Google Ads, Meta Ads & lead generation campaigns by Zaynlo." />
+        <meta property="og:url" content={`${site_url}/best-digital-advertising-agency-in-perinthalmanna`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best Digital Advertising Agency in Perinthalmanna | Zaynlo" />
+        <meta name="twitter:description" content="Best digital advertising agency in Perinthalmanna. Google Ads, Meta Ads & lead generation by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What is the best digital advertising agency in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is the best digital advertising agency in Perinthalmanna, running profitable Google Ads, Meta Ads, and lead generation campaigns for local businesses in Malappuram." } },
+            { "@type": "Question", "name": "Does Zaynlo run Google Ads in Perinthalmanna?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo's Google Ads team creates targeted campaigns for local Perinthalmanna businesses, driving qualified leads and store visits through Search, Display, and Maps ads." } },
+            { "@type": "Question", "name": "What ad platforms does Zaynlo manage in Malappuram?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo manages advertising on Google Ads, Facebook (Meta), Instagram, YouTube, and LinkedIn for businesses in Perinthalmanna and across Malappuram." } },
+            { "@type": "Question", "name": "How quickly will I get leads from digital ads?", "acceptedAnswer": { "@type": "Answer", "text": "Paid advertising campaigns can generate leads within 24 to 48 hours of launch. Zaynlo continuously optimises your campaigns for better performance and lower cost-per-lead." } },
+            { "@type": "Question", "name": "Is digital advertising worth it for a local Perinthalmanna business?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Digital advertising lets you target customers in Perinthalmanna, Manjeri, and Malappuram with precision, ensuring your budget reaches people most likely to buy from you." } }
+          ]}`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "Best Digital Advertising Agency in Perinthalmanna | Zaynlo", "description": "Get higher ROI with Zaynlo, the best digital advertising agency in Perinthalmanna. Google Ads, Meta Ads & lead generation.", "url": "${site_url}/best-digital-advertising-agency-in-perinthalmanna", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup for Local Advertising Agency */}
         <script type="application/ld+json">

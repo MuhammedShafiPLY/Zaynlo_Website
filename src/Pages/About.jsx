@@ -21,35 +21,38 @@ const About = () => {
     <>
       {/* 2. SEO Configuration for About Page */}
       <Helmet>
-        <title>About Us - Top Creative Agency in Kerala | Zaynlo</title>
+        {/* ── Primary SEO ── */}
+        <title>About Zaynlo | Creative & Advertising Agency Kerala</title>
         <meta
           name="description"
-          content="Meet the experts behind Zaynlo. We are a passionate team of designers and developers dedicated to building premium brands in Kerala. Learn our story now."
+          content="Learn the story of Zaynlo, a leading advertising agency in Kerala. Meet our expert team of branding, web design, and digital marketing strategists."
+        />
+        <meta
+          name="keywords"
+          content="about Zaynlo, creative agency Kerala, advertising agency Kerala, branding experts Kerala, digital marketing team Perinthalmanna"
         />
         <link rel="canonical" href={`${site_url}/about`} />
-
         <meta
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
 
-        {/* Open Graph Tags for Social Media */}
-        <meta
-          property="og:title"
-          content="About Zaynlo - Creative Agency in Kerala"
-        />
-        <meta
-          property="og:description"
-          content="Meet the team transforming brands with premium design and digital strategies."
-        />
-        <meta
-          property="og:url"
-          content={`${site_url}/about`}
-        />
-        <meta
-          property="og:image"
-          content={`${site_url}/about_banner.webp`}
-        />
+        {/* ── Open Graph (Facebook / WhatsApp) ── */}
+        <meta property="og:title" content="About Zaynlo | Creative & Advertising Agency Kerala" />
+        <meta property="og:description" content="Meet the Zaynlo team — Kerala's creative branding, web design & digital marketing agency. Discover our story, mission, and vision." />
+        <meta property="og:url" content={`${site_url}/about`} />
+        <meta property="og:image" content={`${site_url}/about_banner.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter / X Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Zaynlo | Creative & Advertising Agency Kerala" />
+        <meta name="twitter:description" content="Meet the Zaynlo team — Kerala's creative branding, web design & digital marketing agency." />
+        <meta name="twitter:image" content={`${site_url}/about_banner.webp`} />
       </Helmet>
 
       <SmoothScroll>
@@ -58,10 +61,12 @@ const About = () => {
           <PageBanner
             title="About"
             highlight="Us."
-            description="We craft premium digital products, brand experiences, and growth strategies for ambitious teams."
+            keyword="About Zaynlo – Creative advertising agency in Kerala"
+            alt="About Zaynlo – Leading creative, branding and advertising agency in Kerala"
+            description="We craft premium brand experiences, digital products, and growth strategies for ambitious businesses across Kerala."
             imageSrc="/about_banner.webp"
             primaryBtn={{
-              text: "Get Us Now",
+              text: "Get In Touch",
               link: "/contact",
             }}
             secondaryBtn={{

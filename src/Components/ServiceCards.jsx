@@ -16,14 +16,16 @@ const servicesData = [
       "Fast Loading Speed",
     ],
     image: "/web_servi.webp",
+    imageAlt: "Professional web design and development services in Kerala by Zaynlo digital agency",
     link: "/services/web-development",
+    externalLink: null,
   },
 
   {
     id: 2,
-    title: "Serach Engine Optimization (SEO)",
+    title: "Search Engine Optimization (SEO)",
     description:
-      "A holistic approach to digital dominance combining organic growth, paid acceleration, and social engagement. This all-in-one strategy ensures your brand is visible everywhere.",
+      "A holistic approach to digital dominance combining organic growth, paid acceleration, and social engagement. Our SEO strategies follow industry best practices to ensure long-term ranking growth.",
     subServices: [
       "Keyword Dominance",
       "Cross-Channel Retargeting",
@@ -31,7 +33,12 @@ const servicesData = [
       "Unified Performance Tracking",
     ],
     image: "/seo_servi.webp",
+    imageAlt: "SEO services in Kerala – search engine optimisation by Zaynlo digital agency",
     link: "/services/seo",
+    externalLink: {
+      href: "https://moz.com/beginners-guide-to-seo",
+      text: "Learn SEO best practices →",
+    },
   },
 
   {
@@ -46,14 +53,16 @@ const servicesData = [
       "Market Positioning",
     ],
     image: "/brnd_servi.webp",
+    imageAlt: "Professional branding services in Kerala – visual identity and brand design by Zaynlo",
     link: "/services/branding",
+    externalLink: null,
   },
 
   {
     id: 4,
     title: "Google Ads",
     description:
-      "Accelerate your growth with targeted Pay-Per-Click (PPC) campaigns that place your brand directly in front of customers. We manage ad spend efficiently to maximize ROI.",
+      "Accelerate your growth with targeted Pay-Per-Click (PPC) campaigns that place your brand directly in front of customers. We manage ad spend efficiently to maximise ROI.",
     subServices: [
       "Precision Targeting",
       "Keyword Optimization",
@@ -61,7 +70,12 @@ const servicesData = [
       "Real-Time ROI Tracking",
     ],
     image: "/gog_servi.webp",
+    imageAlt: "Google Ads PPC campaign management services in Kerala by Zaynlo advertising agency",
     link: "/services/google-ads",
+    externalLink: {
+      href: "https://ads.google.com/home/how-it-works/",
+      text: "How Google Ads works →",
+    },
   },
 
   {
@@ -76,14 +90,19 @@ const servicesData = [
       "Growth Analytics",
     ],
     image: "/soci_servi.webp",
+    imageAlt: "Social media marketing services in Kerala – Instagram, Facebook & LinkedIn management by Zaynlo",
     link: "/services/social-media",
+    externalLink: {
+      href: "https://business.facebook.com",
+      text: "Explore Meta Business Suite →",
+    },
   },
 
   {
     id: 6,
     title: "E-Commerce Solutions",
     description:
-      "We build powerful online stores that make selling effortless. From product browsing to secure checkout, our solutions provide a seamless shopping experience.",
+      "We build powerful online stores that make selling effortless. From product browsing to secure checkout, our e-commerce solutions provide a seamless shopping experience.",
     subServices: [
       "Secure Payment Integration",
       "Inventory Management",
@@ -91,7 +110,9 @@ const servicesData = [
       "Scalable Architecture",
     ],
     image: "/ecom_servi.webp",
+    imageAlt: "E-commerce website development services in Kerala – online store solutions by Zaynlo",
     link: "/services/ecommerce",
+    externalLink: null,
   },
 ];
 
@@ -135,7 +156,7 @@ const ServiceCard = ({ data, index }) => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }} // Trigger slightly before it enters view
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
       className="bg-zinc-900 border border-white/5 rounded-[40px] p-8 md:p-12 lg:p-16 flex flex-col-reverse lg:flex-row gap-12 items-center group hover:border-[#dbe11d]/30 transition-colors duration-500 will-change-transform"
     >
@@ -165,6 +186,18 @@ const ServiceCard = ({ data, index }) => {
           ))}
         </ul>
 
+        {/* External Authority Link */}
+        {data.externalLink && (
+          <a
+            href={data.externalLink.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-[#dbe11d] transition-colors duration-300 border-b border-zinc-700 hover:border-[#dbe11d] pb-0.5"
+          >
+            {data.externalLink.text}
+          </a>
+        )}
+
         {/* Button */}
         <div className="pt-4">
           <a
@@ -181,18 +214,17 @@ const ServiceCard = ({ data, index }) => {
       <div className="w-full lg:w-1/2 h-[300px] md:h-[400px] lg:h-[450px] relative overflow-hidden rounded-3xl bg-zinc-800">
         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
 
-        {/* Placeholder Fallback Logic in case image fails to load or doesn't exist */}
         <img
           src={data.image}
-          alt={data.title}
+          alt={data.imageAlt || `${data.title} services in Kerala by Zaynlo digital agency`}
           onError={(e) => {
-            e.target.style.display = "none"; // Hide broken image
-            e.target.nextSibling.style.display = "flex"; // Show fallback
+            e.target.style.display = "none";
+            e.target.nextSibling.style.display = "flex";
           }}
           className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700 ease-in-out will-change-transform"
         />
 
-        {/* Fallback Div (Hidden by default, shown on error) */}
+        {/* Fallback Div */}
         <div className="hidden w-full h-full items-center justify-center bg-zinc-800 text-zinc-600 font-bold uppercase tracking-widest">
           {data.title}
         </div>

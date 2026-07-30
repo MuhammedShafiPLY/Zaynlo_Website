@@ -19,39 +19,41 @@ const Projects = () => {
     <>
       {/* 2. SEO Configuration for Projects Page */}
       <Helmet>
-        <title>Best Digital Marketing Agency In Kerala | Zaynlo</title>
+        {/* ── Primary SEO ── */}
+        <title>Our Portfolio & Projects | Zaynlo Kerala Agency</title>
         <meta
           name="description"
-          content="Browse our successful case studies. See how we helped Kerala businesses grow through stunning design and effective marketing campaigns. View our work."
+          content="Explore Zaynlo's portfolio of web design, branding & digital marketing projects in Kerala. See real case studies of businesses we've helped grow online."
+        />
+        <meta
+          name="keywords"
+          content="Zaynlo portfolio, web design projects Kerala, branding case studies Kerala, digital marketing portfolio Kerala, creative agency work Perinthalmanna"
         />
         <link
           rel="canonical"
           href={`${site_url}/projects`}
         />
-
         <meta
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
 
-        {/* Open Graph Tags for Social Media */}
-        <meta
-          property="og:title"
-          content="Best Digital Marketing Agency In Kerala | Zaynlo"
-        />
-        <meta
-          property="og:description"
-          content="Browse our successful case studies and see how we help businesses grow."
-        />
-        <meta
-          property="og:url"
-          content={`${site_url}/projects`}
-        />
-        {/* Ensures your banner image shows up when shared */}
-        <meta
-          property="og:image"
-          content={`${site_url}/project_banner.webp`}
-        />
+        {/* ── Open Graph (Facebook / WhatsApp) ── */}
+        <meta property="og:title" content="Our Portfolio & Projects | Zaynlo Kerala Agency" />
+        <meta property="og:description" content="Browse Zaynlo's portfolio: web design, branding & digital marketing case studies from Kerala. See how we help businesses grow online." />
+        <meta property="og:url" content={`${site_url}/projects`} />
+        <meta property="og:image" content={`${site_url}/project_banner.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter / X Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Portfolio & Projects | Zaynlo Kerala Agency" />
+        <meta name="twitter:description" content="Web design, branding & digital marketing case studies from Zaynlo — Kerala's creative agency." />
+        <meta name="twitter:image" content={`${site_url}/project_banner.webp`} />
       </Helmet>
 
       <SmoothScroll>
@@ -60,10 +62,12 @@ const Projects = () => {
           <PageBanner
             title="Featured"
             highlight="Work."
-            description="A showcase of our finest digital creations. See how we've helped ambitious brands redefine their digital presence."
+            keyword="Zaynlo portfolio – web design, branding & digital marketing Kerala"
+            alt="Zaynlo creative portfolio – web design, branding and digital marketing projects in Kerala"
+            description="A showcase of our finest digital creations. See how we've helped ambitious Kerala brands redefine their digital presence through strategy and design."
             imageSrc="/project_banner.webp"
             primaryBtn={{
-              text: "Get Us Now",
+              text: "Start a Project",
               link: "/contact",
             }}
           />

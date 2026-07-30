@@ -138,7 +138,7 @@ const Testimonials = () => {
           className="space-y-4 mb-16 md:mb-20 text-center md:text-left"
         >
           <h6 className="text-[#dbe11d] font-black uppercase tracking-[0.4em] text-xs">
-            Testimonials
+            Reviews | Branding Agency & Web Design Kerala
           </h6>
           <h2 className="text-5xl md:text-8xl font-black uppercase italic leading-[0.9] tracking-tighter text-white">
             WHAT THEY<br />
@@ -182,13 +182,13 @@ const Testimonials = () => {
                   <div className="flex items-center gap-4 mt-8 pt-6 border-t border-white/5">
                     <img
                       src={item.img}
-                      alt={item.name}
+                      alt={`${item.name} - client review for Zaynlo branding agency & web design Kerala`}
                       className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-[#dbe11d] transition-all"
                     />
                     <div>
-                      <h4 className="text-white font-bold uppercase tracking-wide text-sm">
+                      <h3 className="text-white font-bold uppercase tracking-wide text-sm">
                         {item.name}
-                      </h4>
+                      </h3>
                       <p className="text-zinc-500 text-xs uppercase tracking-widest font-semibold">
                         {item.company}
                       </p>

@@ -350,20 +350,55 @@ const Best_Digital_Advertising_Agency_In_Kerala = () => {
   return (
     <>
       <Helmet>
-        <title>Best Digital Advertising Agency In Kerala | Zaynlo</title>
+        {/* ── Primary SEO ── */}
+        <title>Best Digital Advertising Agency in Kerala | Zaynlo</title>
         <meta
           name="description"
-          content="Scale your business with the Best Digital Advertising Agency In Kerala. Zaynlo delivers high-ROI PPC, Social Media Ads, and Performance Marketing campaigns."
+          content="Scale your business with Zaynlo, Kerala's best digital advertising agency. We deliver high-ROI Google Ads, Meta Ads & performance marketing across Kerala."
         />
-        <link
-          rel="canonical"
-          href={`${site_url}/best-digital-advertising-agency-in-kerala`}
-        />
-        
         <meta
-          name="robots"
-          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+          name="keywords"
+          content="best digital advertising agency Kerala, Google Ads agency Kerala, Meta Ads Kerala, PPC agency Kerala, performance marketing Kerala, paid media agency Kerala, Zaynlo"
         />
+        <link rel="canonical" href={`${site_url}/best-digital-advertising-agency-in-kerala`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* ── Open Graph ── */}
+        <meta property="og:title" content="Best Digital Advertising Agency in Kerala | Zaynlo" />
+        <meta property="og:description" content="High-ROI Google Ads, Meta Ads & performance marketing in Kerala. Zaynlo delivers measurable results for growing brands." />
+        <meta property="og:url" content={`${site_url}/best-digital-advertising-agency-in-kerala`} />
+        <meta property="og:image" content={`${site_url}/seopage.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Zaynlo" />
+
+        {/* ── Twitter Card ── */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best Digital Advertising Agency in Kerala | Zaynlo" />
+        <meta name="twitter:description" content="High-ROI Google Ads, Meta Ads & performance marketing campaigns in Kerala by Zaynlo." />
+        <meta name="twitter:image" content={`${site_url}/seopage.webp`} />
+
+        {/* ── FAQPage Schema ── */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "What is the best digital advertising agency in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo is widely regarded as the best digital advertising agency in Kerala, specialising in Google Ads, Meta (Facebook & Instagram) Ads, and performance marketing campaigns that deliver measurable ROI." } },
+              { "@type": "Question", "name": "How does Zaynlo manage Google Ads campaigns?", "acceptedAnswer": { "@type": "Answer", "text": "Zaynlo's certified Google Ads team handles everything: keyword research, ad copy creation, bid management, A/B testing, and monthly performance reporting to ensure every rupee spent drives results." } },
+              { "@type": "Question", "name": "What is the minimum budget for digital advertising in Kerala?", "acceptedAnswer": { "@type": "Answer", "text": "There is no fixed minimum. Zaynlo designs campaigns based on your goals. We work with both small local businesses and large enterprises, optimising ad spend for maximum ROI at every budget level." } },
+              { "@type": "Question", "name": "How quickly can I see results from paid advertising?", "acceptedAnswer": { "@type": "Answer", "text": "Unlike SEO, paid advertising can generate leads within days of launch. Zaynlo sets up and launches campaigns quickly while continuously optimising for better performance over time." } },
+              { "@type": "Question", "name": "Does Zaynlo run ads for both B2B and B2C businesses?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zaynlo has experience running profitable ad campaigns for both B2B companies (LinkedIn Ads, Google Search) and B2C brands (Instagram, Facebook, Google Shopping) across Kerala." } }
+            ]
+          }`}
+        </script>
+
+        {/* ── WebPage Schema ── */}
+        <script type="application/ld+json">
+          {`{ "@context": "https://schema.org", "@type": "WebPage", "name": "Best Digital Advertising Agency in Kerala | Zaynlo", "description": "Scale your business with Zaynlo, Kerala's best digital advertising agency. High-ROI Google Ads, Meta Ads & performance marketing.", "url": "${site_url}/best-digital-advertising-agency-in-kerala", "inLanguage": "en-IN", "publisher": { "@type": "Organization", "name": "Zaynlo", "logo": { "@type": "ImageObject", "url": "${site_url}/logo.png" } } }`}
+        </script>
 
         {/* Schema Markup: Adjusted for Advertising Agency focus */}
         <script type="application/ld+json">
